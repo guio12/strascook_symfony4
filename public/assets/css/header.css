@@ -116,16 +116,10 @@ button span {
 }
 
 .nav-fill {
-<<<<<<< HEAD
-    font-size: 1.5vx;
-    color: white;
-    margin-left: 10vh;
-=======
     font-family: "Oxygen", sans-serif;
     font-size: 1rem;
     color: white;
     margin-left: 5vh;
->>>>>>> 5672d8076035c74adcda9e753cd74fe545c81f12
 }
 
 /* IDEE TRANSPARENCE MENU
