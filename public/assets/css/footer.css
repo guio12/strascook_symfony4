@@ -4,7 +4,7 @@
 
 p {text-align: center !important; margin: 10px !important;}
 
-a:hover, a:visited, a:link, a:active
+.white:hover, .white:visited, .white:link, .white:active
 {
 	text-decoration: none !important;
 	color: #FFF !important;

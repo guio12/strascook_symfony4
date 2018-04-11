@@ -2,11 +2,12 @@
 
 {% block stylesheetpages %}
 
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/contact.css">
 
 {% endblock %}
 
 {% block content %}
+
 
 
 
@@ -20,6 +21,13 @@
      </div>
 
 
+     {% if erreurs.echec is defined %}
+      <div class="alert alert-danger">
+          <p>Une erreur est survenue, votre e-mail n'a pas été prise en compte.</p>
+      </div>
+     {% endif %}
+
+
 
 
 
@@ -27,7 +35,7 @@
 <div class="row">
   <div class="offset-2 col-4">
 
-      <form class="form-group" action="" method="post">
+      <form class="form-group" action="/contact" method="post">
 
         <select class="form-control" name="objet" id="Motif" value="Motif">
           <option selected disabled>Motif :</option>
@@ -36,26 +44,36 @@
             <option value="3">Menus</option>
             <option value="4">horaire</option>
             <option value="5">matériel</option>
-        </select><br><br>
+        </select>
+        {{erreurs.motif}}
+
+        <br><br>
+
+        <input class="form-control" type="title" name="titre" placeholder="titre" { (form.titre, {'value' : 'Default title'} ) }>
+        {{erreurs.titre}}
+        <br><br>
+
+        <input class="form-control" type="email" name="email" placeholder="e-mail">
+        {{erreurs.email}}
+        <br><br>
 
 
-        <input class="form-control" type="title" name="titre" placeholder="titre" { (form.titre, {'value' : 'Default title'} ) }><br><br>
-
-        <input class="form-control" type="email" name="email" placeholder="e-mail"><br><br>
-
-
-        <textarea class="form-control" name="message" rows="8" cols="60" placeholder="Votre message"></textarea><br><br>
+        <textarea class="form-control" name="message" rows="8" cols="60" placeholder="Votre message"></textarea>
+        {{erreurs.message}}
+        <br><br>
 
         <input type="submit" class="btn btn-light btn-lg" value="Envoyer">
 
-  </div>
-
-  <div class="info col-3">
-
-        <p>tel : 03 57 27 18 81</p>
-        <p>e-mail : charlottehofrez@gmail.com</p>
 
   </div>
+
+  <address class="info offset-1 col-3">
+
+        <a class="lien" href="tel:0357271881">03 57 27 18 81</a>
+        <a class="lien" href="mailto:charlottehofraise@gmail.com">charlottehofraise@gmail.com</a>
+
+
+  </address>
       </form>
   </div>
 </div>
