@@ -1,6 +1,6 @@
-@import
+@import 
     url("https://fonts.googleapis.com/css?family=Oxygen");
-@import
+@import 
      url("https://fonts.googleapis.com/css?family=Muli");
 
 
@@ -12,16 +12,16 @@ h1 {
 }
 
 header {
-
+   
     margin-bottom: 0 !important;
     padding-top: 3vh !important;
-
+    
 }
 
-body {
+body {    
     margin: 0 !important;
     padding: 0 !important;
-
+    
 }
 
 .mynav {
@@ -42,7 +42,7 @@ body {
     margin-right: 15vw;
     align-content: center;
     justify-content: center;
-
+    
     text-shadow: 1px 1px;
 }
 
@@ -53,7 +53,7 @@ body {
     margin-left: 3vh;
     margin-right: 3vh;
     margin-top: -3vh;
-
+   
 }
 
 
@@ -73,9 +73,9 @@ body {
 
 
 .img-fluid {
-
-
-
+     
+   
+    
 
 }
 
@@ -85,7 +85,7 @@ button span {
     border-radius: 6px;
     font-size: 4vw;
     padding: 3px;
-
+    
 }
 
 
@@ -94,7 +94,7 @@ button span {
     margin-left: 3vh;
     margin-right: 0;
     margin-top: 0;
-
+   
 }
 
 
@@ -137,53 +137,45 @@ button span {
 
  .navbar li {
     color: white;
-
-
+    
+    
 }
 
-.navbar {
-    margin: 3vh;
-     margin-top: 3vw;
-}
 
 
 
 .navbar-brand img {
-
+  
   width: 35vw;
   height: 5vw;
-
+ 
 
 }
 
 
-
-@font-face {
-    font-family: "Oxygen"
-    src: url("https://fonts.googleapis.com/css?family=Oxygen");
-}
 
 
 /* Small devices (landscape phones, 544px and up) */
-@media (min-width: 544px) {
-  .mynav h1 {font-size:2.5rem;}
+@media (min-width: 544px) {  
+  .mynav h1 {font-size:2.5rem;} 
     /*1rem = 16px*/
-  .nav-fill {font-size:1rem;}
+  .nav-fill {font-size:1rem;} 
 }
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-@media (min-width: 768px) {
+@media (min-width: 768px) {  
   .mynav h1 {font-size:2.5rem;} /*1rem = 16px*/
-    .nav-fill {font-size:1rem; }
+    .nav-fill {font-size:1rem; } 
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
+@media (min-width: 992px) { 
  .mynav h1 {font-size:3.3rem;} /*1rem = 16px*/
-    .nav-fill {font-size:0.5rem; }
+    .nav-fill {font-size:0.5rem; } 
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
- .mynav h1 {font-size:4rem;} /*1rem = 16px*/ .nav-fill {font-size:0.7rem; }
+@media (min-width: 1200px) {  
+ .mynav h1 {font-size:4rem;} /*1rem = 16px*/ .nav-fill {font-size:0.7rem; } 
 }
+
