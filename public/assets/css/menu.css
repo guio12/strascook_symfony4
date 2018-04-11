@@ -57,3 +57,9 @@ li, p {
   text-decoration: underline;
   font-weight: bold;
 }
+
+.partenaires {
+  margin-top: 2% !important;
+  margin-bottom: 2%;
+  margin-left: auto;
+}
