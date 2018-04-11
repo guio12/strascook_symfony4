@@ -4,8 +4,14 @@
 
 .pFooter {text-align: center !important; margin: 10px !important; font-size: 1.1em;}
 
-.lienFooter:hover, .lienFooter:visited, .lienFooter:link, .lienFooter:active
+.lienFooter, .lienFooter:visited, .lienFooter:link, .lienFooter:active
 {
 	text-decoration: none !important;
 	color: #FFF !important;
+}
+
+.lienFooter:hover
+{
+	text-decoration: underline !important;
+	color: #FFB74D !important;
 }
