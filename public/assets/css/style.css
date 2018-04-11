@@ -13,22 +13,41 @@ text-align: center;
 
 p {
 font-family: 'Raleway', sans-serif;
+font-size: 1em;
 margin: 5%;
-text-align: justify;
+text-align: center;
 }
 
 @media screen and (min-width: 950px) {
   p {
   font-size: 20px;
-  } 
+  }
 }
 
 @media screen and (min-width: 1150px) {
   p {
   font-size: 24px;
-  } 
+  }
 }
 
+.lien {
+  color: #FFB74D !important;
+  text-decoration: underline;
+}
+
+.lien:hover {
+  color: #ED8A07 !important;
+}
+
+.modale {
+  font-family: Raleway, sans-serif;
+  font-size: 1em;
+  text-align: left !important;
+}
+
+li, p {
+  font-family: Raleway, sans-serif;
+}
 
 aside {
 padding: 0 !important;
@@ -37,10 +56,20 @@ padding: 0 !important;
 aside p {
 padding-left: 5%;
 padding-right: 5%;
+
+.sectionChef {
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-bottom: 5%;
+  text-align: center;
 }
 
 iframe {
-border: 0;
-height: 400px;
-padding: 0 !important;
+  border: 0;
+  height: 400px;
+  padding: 0px !important;
+}
+
+.eurometropole {
+  padding: 0 !important;
 }

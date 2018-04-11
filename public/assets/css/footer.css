@@ -2,9 +2,9 @@
 
 .jumbotron { color: white; border-radius: 0px !important;}
 
-p {text-align: center !important; margin: 10px !important;}
+.pFooter {text-align: center !important; margin: 10px !important; font-size: 1.1em;}
 
-a:hover, a:visited, a:link, a:active
+.lienFooter:hover, .lienFooter:visited, .lienFooter:link, .lienFooter:active
 {
 	text-decoration: none !important;
 	color: #FFF !important;
