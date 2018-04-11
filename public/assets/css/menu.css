@@ -38,13 +38,15 @@ hr {
 
 p {
   font-family: Raleway, sans-serif;
-  font-size: 1rem !important;
-
+  font-size: 1em;
+  text-align: left !important;
 }
 
 .bio {
   color: green;
   font-style: italic;
+  text-align: left !important;
+  font-size: 1.1em;
 }
 
 li, p {
@@ -52,6 +54,6 @@ li, p {
 }
 
 .titre {
-  text-decoration:underline;
+  text-decoration: underline;
   font-weight: bold;
 }

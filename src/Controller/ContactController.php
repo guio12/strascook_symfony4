@@ -10,37 +10,37 @@ class ContactController extends AbstractController
 
 // Create the Transport
 
-  public function Swift_SmtpTransport($email, $message, $objet)
-  {
-
-      $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465))
-        ->setUsername('charlottehofraise@gmail.com')
-        ->setPassword('tablechaise')
-      ;
-
-      // Create the Mailer using your created Transport
-      $mailer = new Swift_Mailer($transport);
-
-      // Create a message
-      $message = (new Swift_Message($objet))
-        ->setFrom($email)
-        ->setTo(['charlottehofraise@gmail.com', 'charlottehofraise@gmail.com' => 'Charlotte'])
-        ->setBody($message)
-        ;
-
-      // Send the message
-      $result = $mailer->send($message);
-
-      if ($result = $mailer->send($message)) {
-        echo "Votre message a bien été envoyé.";
-      }else{
-        $errors['echec'] = "Suite à une erreur, votre e-mail n'a pu être envoyé.";
-      }
-
-      var_dump($result);
-
-
-  }
+  // public function Swift_SmtpTransport($email, $message, $objet)
+  // {
+  //
+  //     $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465))
+  //       ->setUsername('charlottehofraise@gmail.com')
+  //       ->setPassword('tablechaise')
+  //     ;
+  //
+  //     // Create the Mailer using your created Transport
+  //     $mailer = new Swift_Mailer($transport);
+  //
+  //     // Create a message
+  //     $message = (new Swift_Message($objet))
+  //       ->setFrom($email)
+  //       ->setTo(['charlottehofraise@gmail.com', 'charlottehofraise@gmail.com' => 'Charlotte'])
+  //       ->setBody($message)
+  //       ;
+  //
+  //     // Send the message
+  //     $result = $mailer->send($message);
+  //
+  //     if ($result = $mailer->send($message)) {
+  //       echo "Votre message a bien été envoyé.";
+  //     }else{
+  //       $errors['echec'] = "Suite à une erreur, votre e-mail n'a pu être envoyé.";
+  //     }
+  //
+  //     // var_dump($result);
+  //
+  //
+  // }
 
     public function erreurs()
     {
@@ -62,7 +62,7 @@ class ContactController extends AbstractController
       }
 
       if (!array_key_exists('objet', $_POST) || $_POST['objet'] =='') {
-        $this->errors['objet'] = "Vous n'avez pas choisi de objet";
+        $this->errors['objet'] = "Vous n'avez pas choisi de motif";
       }else{
         $objet = $_POST['objet'];
       }
@@ -77,23 +77,17 @@ class ContactController extends AbstractController
 
       if(empty($this->errors))
       {
-        $this->Swift_SmtpTransport($email, $message, $objet);
+        $_POST = [];
       }
 
-      var_dump($this->errors);
     }
 
 
     public function index()
     {
 
-      // envoyer le mail si il n'y a pas d'erreurs
-      // if(empty($errors))
-      // {
-      // $this->Swift_SmtpTransport($email, $message, $objet);
-      // }
       $this->erreurs();
-      return $this->twig->render('StrasCook/contact.html.twig', ['erreurs' => $errors]);
+      return $this->twig->render('StrasCook/contact.html.twig', ['erreurs' => $errors, 'value'=>$_POST]);
 
     }
 
