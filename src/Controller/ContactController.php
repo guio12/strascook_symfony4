@@ -73,7 +73,7 @@ class ContactController extends AbstractController
         $objet = $_POST['titre'];
       }
 
-      // Faire apparaître les erreurs
+      // Faire dispparaître les erreurs
 
       if(empty($this->errors))
       {
@@ -87,7 +87,10 @@ class ContactController extends AbstractController
     {
 
       $this->erreurs();
-      return $this->twig->render('StrasCook/contact.html.twig', ['erreurs' => $errors, 'value'=>$_POST]);
+      if (isset($_POST['email'])) {
+          $visuelErreur = $this->errors;
+      }
+      return $this->twig->render('StrasCook/contact.html.twig', ['erreurs' => $visuelErreur, 'value'=>$_POST]);
 
     }
 
