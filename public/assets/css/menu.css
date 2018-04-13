@@ -12,6 +12,11 @@ h1 {
   padding-top: 1%;
 }
 
+#filters li{
+    display: inline;
+    list-style-type: none;
+}
+
 hr {
   width: 93%;
   height: 1px;
