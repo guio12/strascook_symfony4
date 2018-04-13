@@ -61,16 +61,16 @@ class ContactController extends AbstractController
         $message = $_POST['message'];
       }
 
+      if (!array_key_exists('titre', $_POST) || $_POST['titre'] =='') {
+        $this->errors['titre'] = "Vous n'avez pas renseigné de titre";
+      }else{
+        $titre = $_POST['titre'];
+      }
+
       if (!array_key_exists('objet', $_POST) || $_POST['objet'] =='') {
         $this->errors['objet'] = "Vous n'avez pas choisi de motif";
       }else{
         $objet = $_POST['objet'];
-      }
-
-      if (!array_key_exists('titre', $_POST) || $_POST['titre'] =='') {
-        $this->errors['titre'] = "Vous n'avez pas renseigné de titre";
-      }else{
-        $objet = $_POST['titre'];
       }
 
       // Faire dispparaître les erreurs
