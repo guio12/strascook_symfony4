@@ -10,7 +10,8 @@
     <div class="row">
       <aside class="col-md-6">
         <h2>Mes activités</h2>
-        <p>Chef à domicile, je conçois des menus, les prépare essentiellement chez mes clients, effectue le service et gère le nettoyage de la cuisine.</p>
+        <p>Chef à domicile, je conçois des menus, les prépare essentiellement chez mes clients, effectue le service et gère le nettoyage de la cuisine.
+        <br/>J'interviens uniquement dans les 33 communes de <a href="#carte"  class="lien">l'Eurométropole.</a></p>
         <p>Je vous propose des menus gastronomiques "healthy" (vegan, végétarien...) et des aliments bio sélectionnés au sein d'une réseau de producteurs locaux, parce que le plaisir culinaire peut se faire dans une approche respectueuse de l'environnement.</p>
       </aside>
       <aside class="col-md-6">
@@ -25,8 +26,35 @@
       </aside>
       <aside class="col-md-6 order-first order-md-2">
         <h2>Mes Garanties</h2>
-        <p>StrasCook c’est un chef expérimenté qui se déplace chez vous, avec les ingrédients et le matériel nécessaire*.</p>
-        <p>En adéquation avec le respect de l’environnement, StrasCook s’engage à ne cuisiner que des produits de saison et à favoriser autant que possible les produits locaux. C’est pourquoi, je ne vous proposerai jamais de desserts aux fraises en hiver (voir ci-dessous les tendances de la saison).</p>
+        <p>Stras'Cook c’est un chef expérimenté qui se déplace chez vous, avec les ingrédients et le <a href="modaleMateriel" data-toggle="modal" data-target="#modaleMateriel" class="lien">matériel nécessaire</a>.</p>
+
+          <!-- Modale Matériel -->
+          <div class="modal fade" id="modaleMateriel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title" id="exampleModalLongTitle">Matériel Nécessaire</h2>
+                </div>
+                <div class="modal-body">
+                  <p class="modale">Voici une liste du matériel nécessaire pour faire appel à mes services :</p>
+                  <ul>
+                    <li>Four</li>
+                    <li>Plaque de cuisson</li>
+                    <li>Trois casseroles</li>
+                    <li>Poêle</li>
+                    <li>Couteaux de cuisine, spatules, louche, …</li>
+                    <li>Planche à découper</li>
+                    <li>Assiettes, verres, couverts, … pour le service</li>
+                  </ul>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <p>En adéquation avec le respect de l’environnement, Stras'Cook s’engage à ne cuisiner que des produits de saison et à favoriser autant que possible les produits locaux. C’est pourquoi, je ne vous proposerai jamais de desserts aux fraises en hiver (voir ci-dessous les tendances de la saison).</p>
       </aside>
     </div>
   </section>
@@ -42,6 +70,8 @@
       </aside>
     </div>
   </section>
-    <iframe class="container-fluid" src="https://www.google.com/maps/d/embed?mid=16GGwOEa9yp-LH0PEVIusL9Ui9CB2kbSM" allowfullscreen></iframe>
+
+    <iframe class="container-fluid" id="carte"  src="https://www.google.com/maps/d/embed?mid=16GGwOEa9yp-LH0PEVIusL9Ui9CB2kbSM" allowfullscreen></iframe>
+
 
 {% endblock %}

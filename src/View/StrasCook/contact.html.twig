@@ -1,0 +1,82 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheetpages %}
+
+<link rel="stylesheet" href="/assets/css/contact.css">
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="container-fluid">
+      <h2>Contact</h2>
+
+      <div class="container">
+        <p>En tant que chef à domicile, j'anticipe certaines préparations culinaires que je cuisine dans les locaux de restaurants partenaires (cuisines agréées pour les normes sanitaires de restauration). Je n'ai donc pas de locaux à visiter ou pour me rencontrer.
+
+        Merci de prendre contact par mail ou par téléphone.</p>
+
+     </div>
+
+
+     {% if erreurs.echec is defined %}
+      <div class="alert alert-danger">
+          <p>Une erreur est survenue, votre e-mail n'a pas été prise en compte.</p>
+      </div>
+     {% endif %}
+
+
+
+
+
+
+<div class="row">
+  <div class="offset-2 col-4">
+
+      <form class="form-group" action="/contact" method="post">
+
+        <select class="form-control" name="objet" id="Motif" value="{{value.objet}}">
+          <option selected disabled>Motif :</option>
+            <option value="1">Objet</option>
+            <option value="2">Tenues</option>
+            <option value="3">Menus</option>
+            <option value="4">horaire</option>
+            <option value="5">matériel</option>
+        </select>
+        {{erreurs.objet}}
+
+        <br><br>
+
+        <input class="form-control" type="title" name="titre" placeholder="titre" value="{{value.titre}}">
+        {{erreurs.titre}}
+        <br><br>
+
+        <input class="form-control" type="email" name="email" placeholder="e-mail" value="{{value.email}}">
+        {{erreurs.email}}
+        <br><br>
+
+
+        <textarea class="form-control" name="message" rows="8" cols="60" placeholder="Votre message">{{value.message}}</textarea>
+        {{erreurs.message}}
+        <br><br>
+
+        <input type="submit" class="btn btn-light btn-lg" value="Envoyer">
+
+
+  </div>
+
+  <address class="info offset-1 col-4">
+
+        <a class="lien" href="tel:0357271881">03 57 27 18 81</a>
+        <a class="lien" href="mailto:charlottehofraise@gmail.com">charlottehofraise@gmail.com</a>
+
+
+  </address>
+      </form>
+  </div>
+</div>
+
+
+{% endblock %}

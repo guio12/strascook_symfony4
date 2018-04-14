@@ -17,7 +17,7 @@
      {% endblock %}
 
 
-    
+
     <link rel="icon" href="/assets/images/favicon.png">
 </head>
 
@@ -31,10 +31,17 @@
     {% endblock %}
 
 </header>
-   
+
     {% block content %}
 
     {% endblock %}
+
+
+    {% block javascript %}
+    {% include '/StrasCook/javascript.html.twig' %}
+    {% endblock %}
+
+</body>
 
 <footer>
 
@@ -43,13 +50,6 @@
     {% endblock %}
 
 </footer>
-
-
-    {% block javascript %}
-    {% include '/StrasCook/javascript.html.twig' %}
-    {% endblock %}
-
-</body>
 
 
 

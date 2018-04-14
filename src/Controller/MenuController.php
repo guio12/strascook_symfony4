@@ -29,7 +29,7 @@ class MenuController extends AbstractController
      */
     public function edit(int $id)
     {
-        // TODO : edit item with id $id
+
         return $this->twig->render('Item/edit.html.twig', ['item', $id]);
     }
 
@@ -39,7 +39,7 @@ class MenuController extends AbstractController
      */
     public function add()
     {
-        // TODO : add a new item
+
         return $this->twig->render('Item/add.html.twig');
     }
 
@@ -49,7 +49,7 @@ class MenuController extends AbstractController
      */
     public function delete(int $id)
     {
-        // TODO : delete the item with id $id
+
         return $this->twig->render('Item/index.html.twig');
     }
-}
+

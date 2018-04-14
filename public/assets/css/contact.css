@@ -1,0 +1,43 @@
+.info {
+  padding-top: 180px;
+  font-size: 25px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.lien{
+  color: black;
+}
+
+.lien:hover, .lien:visited, .lien:link, .lien:active{
+  color: black;
+}
+
+form{
+  margin-top: 40px ;
+}
+
+.btn, .btn:hover {
+  border: 1px solid black !important;
+  margin-left: 180px;
+  margin-bottom: 50px;
+}
+
+.form-control{
+  border: 1px solid black !important;
+}
+
+h2 {
+color: #FFB74D;
+font-family: 'Nothing You Could Do', cursive;
+padding-top: 5%;
+margin-left: 5%;
+margin-right: 5%;
+text-align: center;
+}
+
+p {
+font-family: 'Nunito', sans-serif;
+margin: 5%;
+text-align: justify;
+}
