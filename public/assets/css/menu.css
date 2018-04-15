@@ -51,6 +51,12 @@ p {
   text-align: left !important;
 }
 
+.tarifs {
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: right !important;
+}
+
 .bio {
   color: green;
   font-style: italic;
