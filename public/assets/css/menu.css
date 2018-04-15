@@ -12,6 +12,11 @@ h1 {
   padding-top: 1%;
 }
 
+#filters li{
+    display: inline;
+    list-style-type: none;
+}
+
 hr {
   width: 93%;
   height: 1px;
@@ -37,7 +42,7 @@ hr {
 }
 
 p {
-  font-family: Raleway, sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 1em;
   text-align: left !important;
 }
@@ -50,7 +55,7 @@ p {
 }
 
 li, p {
-  font-family: Raleway, sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .titre {

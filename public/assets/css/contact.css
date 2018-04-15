@@ -1,8 +1,16 @@
-
-
 .info {
   padding-top: 180px;
   font-size: 25px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.lienContact{
+  color: black;
+}
+
+.lienContact:hover, .lienContact:visited, .lienContact:link, .lienContact:active{
+  color: black;
 }
 
 form{

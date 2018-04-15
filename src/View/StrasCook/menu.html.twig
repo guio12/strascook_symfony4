@@ -4,11 +4,21 @@
 
 <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="/assets/css/menu.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/assets/js/application.js"></script>
+
+
+
 
 {% endblock %}
 
 
 {% block content %}
+
+<ul id="filters">
+<li><button class="tous btn btn-primary">Tous les menus</button></li>
+<li><button class="classiques btn btn-primary">Menus Classiques</button></li><li><button class="vegetariens btn btn-primary">Menus Végétariens</button></li><li><button class="vegans btn btn-primary">Menus Vegans</button></li>
+</ul>
 
 <br>
 <h1>Menus</h1>
@@ -18,10 +28,12 @@
   </p>
 </div>
 
+<div class="menus classiques">
 <h2 class="menu">Menus « Classiques »</h2>
 <hr>
+</div>
 
-<div class="container">
+<div class="container menus classiques">
 <!-- Colonne 1 -->
   <div class="row">
 
@@ -159,10 +171,12 @@
 <br><br>
 
 <!-- MENUS VEGETARIENS -->
+ <div class="menus vegetariens">
   <h2 class="menu">Menus Végétariens</h2>
   <hr>
+</div>
 
-  <div class="container">
+  <div class="container menus vegetariens">
   <!-- Colonne 2 -->
     <div class="row">
 
@@ -298,10 +312,13 @@
 <br>
 
 <!-- MENUS VEGANS -->
+ 
+ <div class="menus vegans">
   <h2 class="menu">Menus Végans</h2>
   <hr>
+</div>
 
-  <div class="container">
+  <div class="container menus vegans">
   <!-- Colonne 2 -->
     <div class="row">
 
