@@ -5,7 +5,7 @@ $(document).ready(function() {
   });
     
   $('#filters').on('click', '.classiques', function() {
-    $('.menus').filter('.vegetariens, .vegans').hide(1000)
+    $('.menus').filter('.vegetariens, .vegans', 'h1', 'p').hide(1000)
        $('.menus').filter('.classiques').show(1000)
   });
 
