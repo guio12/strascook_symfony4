@@ -4,8 +4,7 @@
 
 <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="/assets/css/menu.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/assets/js/application.js"></script>
+<script src="/assets/js/filtre_menus.js"></script>
 
 
 
@@ -15,16 +14,18 @@
 
 {% block content %}
 
-<div class="barre_filtres">
-<ul id="filters">
-<li><button class="tous btn btn-primary">Tous les menus</button></li>
-<li><button class="classiques btn btn-primary">Menus Classiques</button></li><li><button class="vegetariens btn btn-primary">Menus Végétariens</button></li><li><button class="vegans btn btn-primary">Menus Vegans</button></li>
+<nav class="barre_filtres col-12">
+<div class="row">
+<ul class="col-12" id="filters">
+<li><button class="offset-lg-1 col-lg-3 col-md-3 tous btn btn-dark">Tous les menus</button></li>
+<li><button class="offset-lg-1 col-lg-2 col-md-3 classiques btn btn-dark">Menus Classiques</button></li><li><button class="col-lg-2 col-md-3 vegetariens btn btn-dark">Menus Végétariens</button></li><li><button class="col-lg-2 col-md-3 vegans btn btn-dark">Menus Vegans</button></li>
 </ul>
 </div>
+</nav>
 
 <br>
-<h1>Menus</h1>
-<br>
+<h1 class="titre_cache2">Menus</h1>
+
 <div class="container bio">
   <p class="bio">Dans une démarche de développement durable mais également de qualité gustative, tous les aliments (hors épices, assaisonnement) des menus sont issus de l'agriculture biologique et cultivés ou élevés en Alsace.
   </p>
@@ -76,7 +77,7 @@
         <em>Fraises originaires de l'EARL de Jardin de Hanau, Ringendorf</em></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -118,7 +119,7 @@
         <em>Chocolat issu de la chocolaterie Anthony, Avolsheim.</em></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -160,7 +161,7 @@
             <em>Marc de Gewurztraminer originaire du Domaine Schlumberger, Guebwiller.</em></p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
           </div>
         </div>
       </div>
@@ -170,7 +171,7 @@
   </div>
 <!-- Fin de div "container" -->
   </div>
-<br><br>
+
 
 <!-- MENUS VEGETARIENS -->
  <div class="menus vegetariens">
@@ -218,7 +219,7 @@
           <em>Citrons bio, originaires du Sud de la France</em></p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         </div>
       </div>
     </div>
@@ -260,7 +261,7 @@
           <em>Carottes originaires de la ferme Maurer, Dorlisheim.</em></p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         </div>
       </div>
     </div>
@@ -302,7 +303,7 @@
               <em>Œufs et crème originaires de la ferme Maurer, Dorlisheim.</em></p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
             </div>
           </div>
         </div>
@@ -311,7 +312,7 @@
   <!-- Fin de div "row" -->
     </div>
 </div>
-<br>
+
 
 <!-- MENUS VEGANS -->
  
@@ -360,7 +361,7 @@
           <em>Fruits originaires du Jardin de Marthe, la Robertsau.</em></p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         </div>
       </div>
     </div>
@@ -402,7 +403,7 @@
           <em>Rhubarbe et Fraises originaires de la ferme Maurer, Dorlisheim.</em></p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         </div>
       </div>
     </div>
@@ -444,7 +445,7 @@
               <em>Fruits originaires de la ferme Maurer, Dorlisheim.</em></p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
             </div>
           </div>
         </div>
@@ -455,6 +456,7 @@
 </div>
 <br>
 <br>
+
 
 
 
