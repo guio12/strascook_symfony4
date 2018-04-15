@@ -17,6 +17,10 @@ h1 {
     list-style-type: none;
 }
 
+#filters {
+  text-align: center;
+}
+
 hr {
   width: 93%;
   height: 1px;

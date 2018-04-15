@@ -30,6 +30,7 @@ body {
     background-size:cover;
     background-repeat: no-repeat;
     margin-top:0;
+    text-shadow: 2px 2px 2px black
 }
 
 
@@ -42,8 +43,7 @@ body {
     margin-right: 15vw;
     align-content: center;
     justify-content: center;
-
-    text-shadow: 1px 1px;
+    text-shadow: 2px 2px 2px black
 }
 
 
