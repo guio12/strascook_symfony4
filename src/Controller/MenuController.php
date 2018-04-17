@@ -8,48 +8,4 @@ class MenuController extends AbstractController
     {
         return $this->twig->render('StrasCook/menu.html.twig');
     }
-
-
-
-    /**
-     * @param $id
-     * @return string
-     */
-    public function show(int $id)
-    {
-        $itemManager = new ItemManager();
-        $item = $itemManager->findOneById($id);
-
-        return $this->twig->render('Item/show.html.twig', ['item' => $item]);
-    }
-
-    /**
-     * @param $id
-     * @return string
-     */
-    public function edit(int $id)
-    {
-
-        return $this->twig->render('Item/edit.html.twig', ['item', $id]);
-    }
-
-    /**
-     * @param $id
-     * @return string
-     */
-    public function add()
-    {
-
-        return $this->twig->render('Item/add.html.twig');
-    }
-
-    /**
-     * @param $id
-     * @return string
-     */
-    public function delete(int $id)
-    {
-
-        return $this->twig->render('Item/index.html.twig');
-    }
-
+}

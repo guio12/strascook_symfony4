@@ -47,25 +47,26 @@ abstract class EntityManager
     /**
      *
      */
-    public function delete($id)
+    public function supprimer($id)
     {
-        //TODO : Implements SQL DELETE request
+        $statement = $this->conn->prepare("DELETE FROM $this->table WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        return $statement->execute();
     }
 
     /**
      *
      */
-    public function insert($data)
+    public function ajouter($data)
     {
         //TODO : Implements SQL INSERT request
         
     }
 
-
     /**
      *
      */
-    public function update($id, $data)
+    public function modifier($id, $data)
     {
         //TODO : Implements SQL UPDATE request
     }

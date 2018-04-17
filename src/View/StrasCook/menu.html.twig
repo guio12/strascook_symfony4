@@ -2,7 +2,9 @@
 
 {% block stylesheetpages %}
 
+<link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="/assets/css/menu.css">
+
 
 {% endblock %}
 
@@ -17,7 +19,7 @@
   </p>
 </div>
 
-<h2 class="menu">Menus « Classiques »</h2>
+<h2 class="menu">{% type_menu %}»</h2>
 <hr>
 
 <div class="container">
@@ -26,19 +28,19 @@
 
 <!-- Image 1 - Menu Printanier -->
     <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-      <img class="card-img-top" src="/assets/img/img-menu/egg-salad.jpg" alt="Card image cap">
+      <img class="card-img-top" src="{% image %}" alt="Card image cap">
       <div class="card-body">
-        <h2 class="card-title">Menu Printanier</h2>
-        <p class="card-text">Un menu renaissance composé de :
+        <h2 class="card-title">{% titre %}</h2>
+        <p class="card-text">{% introduction %}</p>
         <ul>
-          <li>Asperges et œufs en cocotte, pointe de piment d'Espelette</li>
-          <li>Gigot de sept heures accompagné de légumes nouveaux</li>
-          <li>Tartelette Fraise-Balsamique sans sucre</li>
+          <li>{% entree %}</li>
+          <li>{% plat %}</li>
+          <li>{% dessert %}</li>
         </ul>
-       </p>
        <div class="bouton">
         <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalPrintanier">Détails</a>
       </div>
+        {% prix %}
       </div>
     </div>
 
@@ -47,8 +49,8 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <h2>Menu Printanier</h2>
-        <p>Un menu de renaissance réalisé avec des ingrédients de saison et locaux !</p>
+        <h2>{% titre %}</h2>
+        <p>{% introduction %}</p>
         <p><span class="titre">Asperges et œufs en cocotte, pointe de piment d'Espelette</span>
         <br/>Les oeufs sont cuits façon cocotte et associés à des pointes d'asperges vertes, du parmesan, de la crème et une pointe de piment d'Espelette pour un résultat à la fois croquant et fondant irrésistible !<br>
         <em>Œufs originaires de la Ferme Fix, Pfettisheim, et Asperges en provenance de la ferme Maurer, Dorlisheim.</em></p>
@@ -69,7 +71,7 @@
 
 <!-- Image 2 - Menu Gourmand -->
     <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-      <img class="card-img-top" src="/assets/img/img-menu/pintade.jpg" alt="Card image cap">
+      <img class="card-img-top" src="/assets/img/menus/pintade.jpg" alt="Card image cap">
       <div class="card-body">
         <h2 class="card-title">Menu Gourmand</h2>
         <p class="card-text">Un menu goumand et délicat :
@@ -111,7 +113,7 @@
 
 <!-- Image 3 - Menu Tradition -->
     <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-      <img class="card-img-top" src="/assets/img/img-menu/onglet.jpg" alt="Card image cap">
+      <img class="card-img-top" src="/assets/img/menus/onglet.jpg" alt="Card image cap">
       <div class="card-body">
         <h2 class="card-title">Menu Tradition</h2>
         <p class="card-text">Un Menu très fin en bouche :
@@ -167,7 +169,7 @@
 
   <!-- Image 4 - Menu Banquet -->
       <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-        <img class="card-img-top" src="/assets/img/img-menu/gratin.jpg" alt="Card image cap">
+        <img class="card-img-top" src="/assets/img/menus/gratin.jpg" alt="Card image cap">
         <div class="card-body">
           <h2 class="card-title">Menu Banquet</h2>
           <p class="card-text">Un menu gourmand et convivial :
@@ -209,7 +211,7 @@
 
   <!-- Image 5 - Le citadin -->
       <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-        <img class="card-img-top" src="/assets/img/img-menu/burger_vege.jpg" alt="Card image cap">
+        <img class="card-img-top" src="/assets/img/menus/burger_vege.jpg" alt="Card image cap">
         <div class="card-body">
           <h2 class="card-title">Le Citadin</h2>
           <p class="card-text">Un menu inspiré de la ville :
@@ -251,7 +253,7 @@
 
   <!-- Image 6 - Menu Dégustation -->
       <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-        <img class="card-img-top" src="/assets/img/img-menu/risotto.jpg" alt="Card image cap">
+        <img class="card-img-top" src="/assets/img/menus/risotto.jpg" alt="Card image cap">
         <div class="card-body">
           <h2 class="card-title">Menu Dégustation</h2>
           <p class="card-text">Un Menu particulièrement délicat :
@@ -306,7 +308,7 @@
 
   <!-- Image 7 - Menu Léger -->
       <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-        <img class="card-img-top" src="/assets/img/img-menu/salade_tempeh.jpg" alt="Card image cap">
+        <img class="card-img-top" src="/assets/img/menus/salade_tempeh.jpg" alt="Card image cap">
         <div class="card-body">
           <h2 class="card-title">Menu Léger</h2>
           <p class="card-text">Un menu léger et très vert :
@@ -348,7 +350,7 @@
 
   <!-- Image 8 - Menu Saveurs-->
       <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-        <img class="card-img-top" src="/assets/img/img-menu/tartine.jpg" alt="Card image cap">
+        <img class="card-img-top" src="/assets/img/menus/tartine.jpg" alt="Card image cap">
         <div class="card-body">
           <h2 class="card-title">Menu Saveurs</h2>
           <p class="card-text">Un menu exaltant les saveurs :
@@ -390,7 +392,7 @@
 
   <!-- Image 9 - Menu Fête -->
       <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-        <img class="card-img-top" src="/assets/img/img-menu/banh_bao.jpg" alt="Card image cap">
+        <img class="card-img-top" src="/assets/img/menus/banh_bao.jpg" alt="Card image cap">
         <div class="card-body">
           <h2 class="card-title">Menu Fête</h2>
           <p class="card-text">Un menu festif et sans cruauté :
