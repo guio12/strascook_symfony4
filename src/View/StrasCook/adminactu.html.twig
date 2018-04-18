@@ -1,0 +1,51 @@
+{%  extends 'layout.html.twig' %}
+
+{% block header %}
+{% endblock %}
+
+
+{% block stylesheetpages %}
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="container">
+
+    <form class="row" method="post" action="/Admin">
+
+    <div class="col-6">
+
+        <label for="titre">Titre de l'actualité.</label><br>
+        <input type="text" name="titre" id="titre"><br><br>
+
+    </div>
+        
+    <div class="col-6">
+
+        <input class="btn btn-primary" type="submit" value="Sélectionner un fichier">
+        
+    </div>
+
+    <div class="col-12">
+
+        <label for="article">Introduction :</label><br>
+        <textarea class="form-control" name="article" id="article" cols="30" rows="10"></textarea>
+        <br>
+        <br>
+
+    </div>
+
+    </form>
+
+    </div>
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
