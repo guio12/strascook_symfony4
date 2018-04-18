@@ -4,9 +4,38 @@ namespace Controller;
 
 class AdminActuController extends AbstractController
 {
-    public function index()
+
+    protected $errors = [];
+
+    public function erreurs()
     {
-        return $this->twig->render('StrasCook/adminactu.html.twig');
+        //création des erreurs
+
+
+        if(!array_key_exists('message', $_POST) || $_POST['message'] == ''){
+            $this->errors['message'] = "Vous n'avez pas renseigné votre message";
+        }else{
+            $message = $_POST['message'];
+        }
+
+        // Faire dispparaître les erreurs
+
+        if(empty($this->errors))
+        {
+            $_POST = [];
+        }
+
+    }
+
+
+        public function index()
+    {
+
+        $this->erreurs();
+        if (isset($_POST['email'])) {
+            $visuelErreur = $this->errors;
+        }
+        return $this->twig->render('StrasCook/adminactu.html.twig', ['modif'=>$_POST]);
     }
 
 

@@ -7,6 +7,7 @@
 {% block stylesheetpages %}
 
     <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="assets/js/admin_actu.js"></script>
 
 {% endblock %}
 
@@ -20,7 +21,7 @@
 
     <div class="col-6">
 
-        <label for="titre">Titre de l'actualité.</label><br>
+        <label for="titre">Titre de l'actualité :</label><br>
         <input type="text" name="titre" id="titre"><br><br>
 
     </div>
@@ -40,7 +41,25 @@
 
     </div>
 
+
+    <div class="col-3 offset-5">
+
+        <input type="submit" value="Envoyer">
+
+    </div>
+
+
     </form>
+
+        <button class="btn-primary btn" id="bouton_ajout_actu">Voir tableau</button>
+
+    </div>
+
+    <hr>
+
+    <div class="container" id="ajout_actu" style="display: none;">
+
+        <p>Salut</p>
 
     </div>
 

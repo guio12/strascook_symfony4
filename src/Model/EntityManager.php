@@ -47,7 +47,7 @@ abstract class EntityManager
     /**
      *
      */
-    public function delete($id)
+    public function supprimer($id)
     {
         //TODO : Implements SQL DELETE request
     }
@@ -55,9 +55,13 @@ abstract class EntityManager
     /**
      *
      */
-    public function insert($data)
+    public function ajouter($data)
     {
         //TODO : Implements SQL INSERT request
+
+        $statement = $this->conn->prepare("INSERT INTO $this->table VALUES ('\$_POST[\'article\']");
+
+        $statement->execute();
         
     }
 
@@ -65,7 +69,7 @@ abstract class EntityManager
     /**
      *
      */
-    public function update($id, $data)
+    public function modifier($id, $data)
     {
         //TODO : Implements SQL UPDATE request
     }
