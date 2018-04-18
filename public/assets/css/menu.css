@@ -12,6 +12,23 @@ h1 {
   padding-top: 1%;
 }
 
+#filters li{
+  display: inline;
+  list-style-type: none;
+  /*margin-left: 12vw;*/
+  font-size: 2rem;
+  padding: 0.1vw;
+}
+
+.barre_filtres {
+  margin-top: 5vh;
+}
+
+
+#filters {
+  text-align: center;
+}
+
 hr {
   width: 93%;
   height: 1px;
@@ -36,10 +53,20 @@ hr {
   text-align: center;
 }
 
+.container.menus {
+  padding-bottom: 10vh;
+}
+
 p {
   font-family: 'Raleway', sans-serif;
   font-size: 1em;
   text-align: left !important;
+}
+
+.tarifs {
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: right !important;
 }
 
 .bio {
