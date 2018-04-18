@@ -4,8 +4,7 @@
 
 <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="/assets/css/menu.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/assets/js/application.js"></script>
+<script src="/assets/js/filtre_menus.js"></script>
 
 
 
@@ -16,19 +15,21 @@
 {% block content %}
 
 <br>
-<h1>Menus</h1>
-<br>
+<h1 class="titre_cache2">Menus</h1>
+
 <div class="container bio">
   <p class="bio">Dans une démarche de développement durable mais également de qualité gustative, tous les aliments (hors épices, assaisonnement) des menus sont issus de l'agriculture biologique et cultivés ou élevés en Alsace.
   </p>
 </div>
 
-<div class="container">
-    <ul id="filters">
-        <li><button class="tous btn btn-primary">Tous les menus</button></li>
-        <li><button class="classiques btn btn-primary">Menus Classiques</button></li><li><button class="vegetariens btn btn-primary">Menus Végétariens</button></li><li><button class="vegans btn btn-primary">Menus Vegans</button></li>
-    </ul>
-</div>
+  <nav class="barre_filtres col-12">
+    <div class="row">
+      <ul class="col-12" id="filters">
+        <li><button class="offset-lg-1 col-lg-3 col-md-3 tous btn btn-primary">Tous les menus</button></li>
+        <li><button class="offset-lg-1 col-lg-2 col-md-3 classiques btn btn-primary">Menus Classiques</button></li><li><button class="col-lg-2 col-md-3 vegetariens btn btn-primary">Menus Végétariens</button></li><li><button class="col-lg-2 col-md-3 vegans btn btn-primary">Menus Vegans</button></li>
+      </ul>
+    </div>
+  </nav>
 
   <div class="menus classiques">
 <h2 class="menu">Menus « Classiques »</h2>
@@ -77,7 +78,7 @@
           <p class="tarifs">49€/convive</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -120,7 +121,7 @@
           <p class="tarifs">59€/convive</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -163,7 +164,7 @@
               <p class="tarifs">79€/convive</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
           </div>
         </div>
       </div>
@@ -222,7 +223,7 @@
             <p class="tarifs">49€/convive</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         </div>
       </div>
     </div>
@@ -265,7 +266,7 @@
             <p class="tarifs">59€/convive</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         </div>
       </div>
     </div>
@@ -308,7 +309,7 @@
                 <p class="tarifs">79€/convive</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
             </div>
           </div>
         </div>
@@ -367,7 +368,7 @@
             <p class="tarifs">49€/convive</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         </div>
       </div>
     </div>
@@ -410,7 +411,7 @@
             <p class="tarifs">59€/convive</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         </div>
       </div>
     </div>
@@ -453,7 +454,7 @@
                 <p class="tarifs">79€/convive</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
             </div>
           </div>
         </div>
