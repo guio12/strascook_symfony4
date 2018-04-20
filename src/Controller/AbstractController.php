@@ -14,7 +14,8 @@ use Twig_Environment;
 abstract class AbstractController
 {
     protected $twig;
-
+    protected $errors = [];
+    
     public function __construct()
     {
         $loader = new Twig_Loader_Filesystem(APP_VIEW_PATH);

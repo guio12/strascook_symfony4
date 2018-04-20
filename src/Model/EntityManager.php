@@ -49,22 +49,7 @@ abstract class EntityManager
      */
     public function supprimer($id)
     {
-        //TODO : Implements SQL DELETE request
-    }
-
-    public function add()
-    {
 
     }
-
-
-    /**
-     *
-     */
-    public function delete($id, $data)
-    {
-        //TODO : Implements SQL UPDATE request
-    }
-
 
 }

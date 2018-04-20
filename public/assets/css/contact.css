@@ -26,3 +26,13 @@ form{
 .form-control{
   border: 1px solid black !important;
 }
+
+.back-to-top {
+    color:grey !important;
+    border: 1px solid grey !important;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display:none;
+}

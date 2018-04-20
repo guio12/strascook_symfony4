@@ -1,2 +1,4 @@
-/vendor
-/.idea
+/vendor/
+.DS_Store
+db.php
+/.idea/

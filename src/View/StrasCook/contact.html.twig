@@ -38,7 +38,7 @@
 
       <form class="form-group" action="/contact" method="post">
 
-        <select class="form-control" name="objet" id="Motif" value="{{value.objet}}">
+        <select class="form-control" name="objet" id="Motif">
             <option {% if value.objet == 0 %} selected {% endif %} value="0" disabled>Motif :</option>
             <option {% if value.objet == 1 %} selected {% endif %} value="1">Objet</option>
             <option {% if value.objet == 2 %} selected {% endif %} value="2">Tenues</option>
@@ -46,6 +46,7 @@
             <option {% if value.objet == 4 %} selected {% endif %} value="4">horaire</option>
             <option {% if value.objet == 5 %} selected {% endif %} value="5">matériel</option>
         </select>
+
         {{erreurs.objet}}
 
         <br><br>
