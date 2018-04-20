@@ -4,6 +4,9 @@
 
 <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="/assets/css/menu.css">
+<script src="/assets/js/filtre_menus.js"></script>
+
+
 
 
 {% endblock %}
@@ -12,35 +15,46 @@
 {% block content %}
 
 <br>
-<h1>Menus</h1>
-<br>
+<h1 class="titre_cache2">Menus</h1>
+
 <div class="container bio">
   <p class="bio">Dans une démarche de développement durable mais également de qualité gustative, tous les aliments (hors épices, assaisonnement) des menus sont issus de l'agriculture biologique et cultivés ou élevés en Alsace.
   </p>
 </div>
 
-<h2 class="menu">{% type_menu %}»</h2>
-<hr>
+  <nav class="barre_filtres col-12">
+    <div class="row">
+      <ul class="col-12" id="filters">
+        <li><button class="offset-lg-1 col-lg-3 col-md-3 tous btn btn-primary">Tous les menus</button></li>
+        <li><button class="offset-lg-1 col-lg-2 col-md-3 classiques btn btn-primary">Menus Classiques</button></li><li><button class="col-lg-2 col-md-3 vegetariens btn btn-primary">Menus Végétariens</button></li><li><button class="col-lg-2 col-md-3 vegans btn btn-primary">Menus Vegans</button></li>
+      </ul>
+    </div>
+  </nav>
 
-<div class="container">
+  <div class="menus classiques">
+<h2 class="menu">Menus « Classiques »</h2>
+<hr>
+</div>
+
+<div class="container menus classiques">
 <!-- Colonne 1 -->
   <div class="row">
 
 <!-- Image 1 - Menu Printanier -->
     <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-      <img class="card-img-top" src="{% image %}" alt="Card image cap">
+      <img class="card-img-top" src="/assets/img/img-menu/egg-salad.jpg" alt="Card image cap">
       <div class="card-body">
-        <h2 class="card-title">{% titre %}</h2>
-        <p class="card-text">{% introduction %}</p>
+        <h2 class="card-title">Menu Printanier</h2>
+        <p class="card-text">Un menu renaissance composé de :
         <ul>
-          <li>{% entree %}</li>
-          <li>{% plat %}</li>
-          <li>{% dessert %}</li>
+          <li>Asperges et œufs en cocotte, pointe de piment d'Espelette</li>
+          <li>Gigot de sept heures accompagné de légumes nouveaux</li>
+          <li>Tartelette Fraise-Balsamique sans sucre</li>
         </ul>
+       </p>
        <div class="bouton">
         <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalPrintanier">Détails</a>
       </div>
-        {% prix %}
       </div>
     </div>
 
@@ -49,8 +63,8 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <h2>{% titre %}</h2>
-        <p>{% introduction %}</p>
+        <h2>Menu Printanier</h2>
+        <p>Un menu de renaissance réalisé avec des ingrédients de saison et locaux !</p>
         <p><span class="titre">Asperges et œufs en cocotte, pointe de piment d'Espelette</span>
         <br/>Les oeufs sont cuits façon cocotte et associés à des pointes d'asperges vertes, du parmesan, de la crème et une pointe de piment d'Espelette pour un résultat à la fois croquant et fondant irrésistible !<br>
         <em>Œufs originaires de la Ferme Fix, Pfettisheim, et Asperges en provenance de la ferme Maurer, Dorlisheim.</em></p>
@@ -61,9 +75,10 @@
         <p><span class="titre">Tartelette Fraise-Balsamique</span>
         <br/>Originale, l'alliance entre les fraises, le vinaigre balsamique et le vin rouge va vous étonner agréablement. Garnies également de ricotta pour le côté crémeux, ces petites tartelettes sont par ailleurs réalisées sans sucre.<br>
         <em>Fraises originaires de l'EARL de Jardin de Hanau, Ringendorf</em></p>
+          <p class="tarifs">49€/convive</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -71,7 +86,7 @@
 
 <!-- Image 2 - Menu Gourmand -->
     <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-      <img class="card-img-top" src="/assets/img/menus/pintade.jpg" alt="Card image cap">
+      <img class="card-img-top" src="/assets/img/img-menu/pintade.jpg" alt="Card image cap">
       <div class="card-body">
         <h2 class="card-title">Menu Gourmand</h2>
         <p class="card-text">Un menu goumand et délicat :
@@ -103,9 +118,10 @@
         <p><span class="titre">Variation de trois Chocolats avec accompagnement fruité</span>
         <br/>Toute les typicités du chocolat nuancées par ses infinies variations. L'une apporte de la rondeur, l'autre de la longueur en bouche, quand une touche de chocolat noir rehausse les saveurs des fruits… À tester sans hésiter !<br>
         <em>Chocolat issu de la chocolaterie Anthony, Avolsheim.</em></p>
+          <p class="tarifs">59€/convive</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -113,7 +129,7 @@
 
 <!-- Image 3 - Menu Tradition -->
     <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-      <img class="card-img-top" src="/assets/img/menus/onglet.jpg" alt="Card image cap">
+      <img class="card-img-top" src="/assets/img/img-menu/onglet.jpg" alt="Card image cap">
       <div class="card-body">
         <h2 class="card-title">Menu Tradition</h2>
         <p class="card-text">Un Menu très fin en bouche :
@@ -145,9 +161,10 @@
             <p><span class="titre">Kougelhopf Glacé au Marc de Gewurztraminer</span>
             <br/>Ce kougelhopf glacé est idéal pour une fin de repas tout en fraîcheur et légèreté : le Marc de Gewurztraminer relève délicatement ses saveurs.<br>
             <em>Marc de Gewurztraminer originaire du Domaine Schlumberger, Guebwiller.</em></p>
+              <p class="tarifs">79€/convive</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
           </div>
         </div>
       </div>
@@ -157,19 +174,21 @@
   </div>
 <!-- Fin de div "container" -->
   </div>
-<br><br>
+
 
 <!-- MENUS VEGETARIENS -->
+ <div class="menus vegetariens">
   <h2 class="menu">Menus Végétariens</h2>
   <hr>
+</div>
 
-  <div class="container">
+  <div class="container menus vegetariens">
   <!-- Colonne 2 -->
     <div class="row">
 
   <!-- Image 4 - Menu Banquet -->
       <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-        <img class="card-img-top" src="/assets/img/menus/gratin.jpg" alt="Card image cap">
+        <img class="card-img-top" src="/assets/img/img-menu/gratin.jpg" alt="Card image cap">
         <div class="card-body">
           <h2 class="card-title">Menu Banquet</h2>
           <p class="card-text">Un menu gourmand et convivial :
@@ -201,9 +220,10 @@
           <p><span class="titre">Tarte au Citron et sa Meringue caramélisée</span>
           <br/>Délicieuse et raffinée, cette tarte au citron meringuée est composée d'un fond de tarte de pâte sablée qui se marie au goût acidulé du citron jaune ainsi que de la meringue qui lui apporte une touche de douceur.<br>
           <em>Citrons bio, originaires du Sud de la France</em></p>
+            <p class="tarifs">49€/convive</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         </div>
       </div>
     </div>
@@ -211,7 +231,7 @@
 
   <!-- Image 5 - Le citadin -->
       <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-        <img class="card-img-top" src="/assets/img/menus/burger_vege.jpg" alt="Card image cap">
+        <img class="card-img-top" src="/assets/img/img-menu/burger_vege.jpg" alt="Card image cap">
         <div class="card-body">
           <h2 class="card-title">Le Citadin</h2>
           <p class="card-text">Un menu inspiré de la ville :
@@ -243,9 +263,10 @@
           <p><span class="titre">Carrot Cake comme à New York et ses épices</span>
           <br/>Cette version du carrot cake contient la juste dose d'épices et de carottes, ainsi que des noix de Pécan pour le croquant ! Original, ce dessert ravira les fins gourmets !<br>
           <em>Carottes originaires de la ferme Maurer, Dorlisheim.</em></p>
+            <p class="tarifs">59€/convive</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         </div>
       </div>
     </div>
@@ -253,7 +274,7 @@
 
   <!-- Image 6 - Menu Dégustation -->
       <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-        <img class="card-img-top" src="/assets/img/menus/risotto.jpg" alt="Card image cap">
+        <img class="card-img-top" src="/assets/img/img-menu/risotto.jpg" alt="Card image cap">
         <div class="card-body">
           <h2 class="card-title">Menu Dégustation</h2>
           <p class="card-text">Un Menu particulièrement délicat :
@@ -285,9 +306,10 @@
               <p><span class="titre">Crème Brûlée et sa touche de Vanille des Îles</span>
               <br/>Une recette classique mais qui apporte toujours autant de douceur et de rondeur en bouche. Incontournabe !<br>
               <em>Œufs et crème originaires de la ferme Maurer, Dorlisheim.</em></p>
+                <p class="tarifs">79€/convive</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
             </div>
           </div>
         </div>
@@ -296,19 +318,22 @@
   <!-- Fin de div "row" -->
     </div>
 </div>
-<br>
+
 
 <!-- MENUS VEGANS -->
+ 
+ <div class="menus vegans">
   <h2 class="menu">Menus Végans</h2>
   <hr>
+</div>
 
-  <div class="container">
+  <div class="container menus vegans">
   <!-- Colonne 2 -->
     <div class="row">
 
   <!-- Image 7 - Menu Léger -->
       <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-        <img class="card-img-top" src="/assets/img/menus/salade_tempeh.jpg" alt="Card image cap">
+        <img class="card-img-top" src="/assets/img/img-menu/salade_tempeh.jpg" alt="Card image cap">
         <div class="card-body">
           <h2 class="card-title">Menu Léger</h2>
           <p class="card-text">Un menu léger et très vert :
@@ -340,9 +365,10 @@
           <p><span class="titre">Sorbet express Pomme-Framboise, épices exotiques</span>
           <br/>Léger et aérien, ce sorbet mêle pommes et framboises originaires d'Alsace avec des épices plus exotiques, le tout pour une explosion de saveurs !<br>
           <em>Fruits originaires du Jardin de Marthe, la Robertsau.</em></p>
+            <p class="tarifs">49€/convive</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         </div>
       </div>
     </div>
@@ -350,7 +376,7 @@
 
   <!-- Image 8 - Menu Saveurs-->
       <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-        <img class="card-img-top" src="/assets/img/menus/tartine.jpg" alt="Card image cap">
+        <img class="card-img-top" src="/assets/img/img-menu/tartine.jpg" alt="Card image cap">
         <div class="card-body">
           <h2 class="card-title">Menu Saveurs</h2>
           <p class="card-text">Un menu exaltant les saveurs :
@@ -382,9 +408,10 @@
           <p><span class="titre">Tarte à la Rhubarbe, compotée de fraises</span>
           <br/>Un dessert classique, ici revisité dans sa version végane : la pâte est 100% végétale et sans gluten, et le flan également.<br>
           <em>Rhubarbe et Fraises originaires de la ferme Maurer, Dorlisheim.</em></p>
+            <p class="tarifs">59€/convive</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         </div>
       </div>
     </div>
@@ -392,7 +419,7 @@
 
   <!-- Image 9 - Menu Fête -->
       <div class="card col-sm-6 col-md-6 col-lg-4 col-xs-12">
-        <img class="card-img-top" src="/assets/img/menus/banh_bao.jpg" alt="Card image cap">
+        <img class="card-img-top" src="/assets/img/img-menu/banh_bao.jpg" alt="Card image cap">
         <div class="card-body">
           <h2 class="card-title">Menu Fête</h2>
           <p class="card-text">Un menu festif et sans cruauté :
@@ -424,9 +451,10 @@
               <p><span class="titre">Charlotte Royale au Cacao et fruits rouges</span>
               <br/>Mon dessert préféré et ma spécialité : la Charlotte aux fruits rouges ! Ce dessert léger est ici revisité dans sa version végane.<br>
               <em>Fruits originaires de la ferme Maurer, Dorlisheim.</em></p>
+                <p class="tarifs">79€/convive</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
             </div>
           </div>
         </div>
