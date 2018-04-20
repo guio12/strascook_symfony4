@@ -19,6 +19,11 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('POST', '/contact', 'Contact/index');
     $r->addRoute('GET', '/menus', 'Menu/index');
     $r->addRoute('GET', '/partenaires', 'Partenaires/index');
+    $r->addRoute('GET', '/login', 'Login/index');
+    $r->addRoute('POST', '/login', 'Login/identifier');
+    $r->addRoute('GET', '/login2', 'Login/entree');
+    $r->addRoute('GET', '/logout', 'Login/deco');
+    
 
 });
 
