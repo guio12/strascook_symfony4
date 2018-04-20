@@ -14,15 +14,6 @@
 
 {% block content %}
 
-<nav class="barre_filtres col-12">
-<div class="row">
-<ul class="col-12" id="filters">
-<li><button class="offset-lg-1 col-lg-3 col-md-3 tous btn btn-dark">Tous les menus</button></li>
-<li><button class="offset-lg-1 col-lg-2 col-md-3 classiques btn btn-dark">Menus Classiques</button></li><li><button class="col-lg-2 col-md-3 vegetariens btn btn-dark">Menus Végétariens</button></li><li><button class="col-lg-2 col-md-3 vegans btn btn-dark">Menus Vegans</button></li>
-</ul>
-</div>
-</nav>
-
 <br>
 <h1 class="titre_cache2">Menus</h1>
 
@@ -31,7 +22,16 @@
   </p>
 </div>
 
-<div class="menus classiques">
+  <nav class="barre_filtres col-12">
+    <div class="row">
+      <ul class="col-12" id="filters">
+        <li><button class="offset-lg-1 col-lg-3 col-md-3 tous btn btn-primary">Tous les menus</button></li>
+        <li><button class="offset-lg-1 col-lg-2 col-md-3 classiques btn btn-primary">Menus Classiques</button></li><li><button class="col-lg-2 col-md-3 vegetariens btn btn-primary">Menus Végétariens</button></li><li><button class="col-lg-2 col-md-3 vegans btn btn-primary">Menus Vegans</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="menus classiques">
 <h2 class="menu">Menus « Classiques »</h2>
 <hr>
 </div>
@@ -75,6 +75,7 @@
         <p><span class="titre">Tartelette Fraise-Balsamique</span>
         <br/>Originale, l'alliance entre les fraises, le vinaigre balsamique et le vin rouge va vous étonner agréablement. Garnies également de ricotta pour le côté crémeux, ces petites tartelettes sont par ailleurs réalisées sans sucre.<br>
         <em>Fraises originaires de l'EARL de Jardin de Hanau, Ringendorf</em></p>
+          <p class="tarifs">49€/convive</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -117,6 +118,7 @@
         <p><span class="titre">Variation de trois Chocolats avec accompagnement fruité</span>
         <br/>Toute les typicités du chocolat nuancées par ses infinies variations. L'une apporte de la rondeur, l'autre de la longueur en bouche, quand une touche de chocolat noir rehausse les saveurs des fruits… À tester sans hésiter !<br>
         <em>Chocolat issu de la chocolaterie Anthony, Avolsheim.</em></p>
+          <p class="tarifs">59€/convive</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -159,6 +161,7 @@
             <p><span class="titre">Kougelhopf Glacé au Marc de Gewurztraminer</span>
             <br/>Ce kougelhopf glacé est idéal pour une fin de repas tout en fraîcheur et légèreté : le Marc de Gewurztraminer relève délicatement ses saveurs.<br>
             <em>Marc de Gewurztraminer originaire du Domaine Schlumberger, Guebwiller.</em></p>
+              <p class="tarifs">79€/convive</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -171,7 +174,7 @@
   </div>
 <!-- Fin de div "container" -->
   </div>
-
+<br><br>
 
 <!-- MENUS VEGETARIENS -->
  <div class="menus vegetariens">
@@ -217,6 +220,7 @@
           <p><span class="titre">Tarte au Citron et sa Meringue caramélisée</span>
           <br/>Délicieuse et raffinée, cette tarte au citron meringuée est composée d'un fond de tarte de pâte sablée qui se marie au goût acidulé du citron jaune ainsi que de la meringue qui lui apporte une touche de douceur.<br>
           <em>Citrons bio, originaires du Sud de la France</em></p>
+            <p class="tarifs">49€/convive</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -259,6 +263,7 @@
           <p><span class="titre">Carrot Cake comme à New York et ses épices</span>
           <br/>Cette version du carrot cake contient la juste dose d'épices et de carottes, ainsi que des noix de Pécan pour le croquant ! Original, ce dessert ravira les fins gourmets !<br>
           <em>Carottes originaires de la ferme Maurer, Dorlisheim.</em></p>
+            <p class="tarifs">59€/convive</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -301,6 +306,7 @@
               <p><span class="titre">Crème Brûlée et sa touche de Vanille des Îles</span>
               <br/>Une recette classique mais qui apporte toujours autant de douceur et de rondeur en bouche. Incontournabe !<br>
               <em>Œufs et crème originaires de la ferme Maurer, Dorlisheim.</em></p>
+                <p class="tarifs">79€/convive</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -312,7 +318,7 @@
   <!-- Fin de div "row" -->
     </div>
 </div>
-
+<br>
 
 <!-- MENUS VEGANS -->
  
@@ -359,6 +365,7 @@
           <p><span class="titre">Sorbet express Pomme-Framboise, épices exotiques</span>
           <br/>Léger et aérien, ce sorbet mêle pommes et framboises originaires d'Alsace avec des épices plus exotiques, le tout pour une explosion de saveurs !<br>
           <em>Fruits originaires du Jardin de Marthe, la Robertsau.</em></p>
+            <p class="tarifs">49€/convive</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -401,6 +408,7 @@
           <p><span class="titre">Tarte à la Rhubarbe, compotée de fraises</span>
           <br/>Un dessert classique, ici revisité dans sa version végane : la pâte est 100% végétale et sans gluten, et le flan également.<br>
           <em>Rhubarbe et Fraises originaires de la ferme Maurer, Dorlisheim.</em></p>
+            <p class="tarifs">59€/convive</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -443,6 +451,7 @@
               <p><span class="titre">Charlotte Royale au Cacao et fruits rouges</span>
               <br/>Mon dessert préféré et ma spécialité : la Charlotte aux fruits rouges ! Ce dessert léger est ici revisité dans sa version végane.<br>
               <em>Fruits originaires de la ferme Maurer, Dorlisheim.</em></p>
+                <p class="tarifs">79€/convive</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -456,7 +465,6 @@
 </div>
 <br>
 <br>
-
 
 
 
