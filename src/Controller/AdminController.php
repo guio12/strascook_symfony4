@@ -12,6 +12,7 @@ class AdminController extends AbstractController
         $resultat = "";
         $donnees = [];
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
             $donnees['type'] = $_POST['type'];
             $donnees['titre'] = $_POST['titre'];
             $donnees['image'] = $_POST['image'];

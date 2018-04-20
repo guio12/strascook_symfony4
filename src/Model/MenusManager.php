@@ -33,3 +33,10 @@ class MenusManager extends EntityManager
         return $requete->execute();
     }
 }
+
+public function recuperer($donnees)
+{
+    $requete = $this->conn->prepare("DELETE FROM $this->table WHERE id=:id");
+
+    return $requete->execute();
+}

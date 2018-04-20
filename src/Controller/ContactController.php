@@ -83,8 +83,9 @@ class ContactController extends AbstractController
         $this->erreurs();
         if (isset($_POST['email'])) {
             $visuelErreur = $this->errors;
+            return $this->twig->render('StrasCook/contact.html.twig', ['erreurs' => $visuelErreur, 'value' => $_POST]);
         }
-        return $this->twig->render('StrasCook/contact.html.twig', ['erreurs' => $visuelErreur, 'value' => $_POST]);
+        return $this->twig->render('StrasCook/contact.html.twig');
 
     }
 }
