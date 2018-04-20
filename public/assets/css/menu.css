@@ -12,6 +12,21 @@ h1 {
   padding-top: 1%;
 }
 
+
+
+#filters li{
+    display: inline;
+    list-style-type: none;
+    /*margin-left: 12vw;*/
+    font-size: 2rem;
+    padding: 0.1vw;
+}
+
+.barre_filtres {
+    margin-top: 5vh;
+}
+
+
 hr {
   width: 93%;
   height: 1px;
@@ -34,6 +49,10 @@ hr {
 
 .bouton {
   text-align: center;
+}
+
+.container.menus {
+    padding-bottom: 10vh;
 }
 
 p {
@@ -63,3 +82,5 @@ li, p {
   margin-bottom: 2%;
   margin-left: auto;
 }
+
+

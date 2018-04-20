@@ -43,7 +43,7 @@ body {
     align-content: center;
     justify-content: center;
 
-    text-shadow: 1px 1px;
+    text-shadow: 1px 1px black;
 }
 
 
@@ -120,6 +120,8 @@ button span {
     font-size: 1rem;
     color: white;
     margin-left: 5vh;
+    text-shadow: 1px 1px black;
+
 }
 
 /* IDEE TRANSPARENCE MENU

@@ -1,3 +1,109 @@
+{% block stylesheetpages %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+{% endblock %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="assets/js/admin_menu.js"></script>
+
 {% block content %}
 
+    {%  if resultatAjoutMenu == FALSE %}
+        <div class="alert alert-danger" role="alert">Erreur d'insertion dans la base de données</div>
+    {% endif %}
+
+    <div class="container">
+        <h2>Liste des menus</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Type</th>
+                <th scope="col">Menu</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Classique</td>
+                <td>Menu Sanglier</td>
+                <td><form action="/admin" method="post"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Végétarien</td>
+                <td>Menu Carottes</td>
+                <td><form action="/admin" method="post"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Vegan</td>
+                <td>Menu Graines de courge</td>
+                <td><form action="/admin" method="post"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>
+            </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-info" id="bouton_ajout_menu">Ajouter un menu</button>
+    </div>
+
+    <hr>
+
+    <section class="container" id="ajout_menu" style="display:none">
+        <h2>Menu</h2>
+        <form class="form-group" action="/admin" method="post">
+            <div class="row">
+                <div class="col">
+                    <label for="type">Type</label>
+                    <select class="form-control" name="type" id="type">
+                        <option value="1">Classique</option>
+                        <option value="2">Végétarien</option>
+                        <option value="3">Vegan</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="titre">Titre</label>
+                    <input type="text" class="form-control" name="titre" id="titre" placeholder="Titre du menu (Max 30 caractères)" >
+                </div>
+                <div class="col">
+                    <label for="prix">Prix</label>
+                    <input type="text" class="form-control" name="prix" id="prix" placeholder="Prix en €" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="mt-3" for="image">Image (Format .jpg / Max 2 Mo)</label>
+                    <input class="form-control" name="image" type="file" >
+                </div>
+
+                <div class="col">
+                    <label class="mt-3" for="introduction">Introduction</label>
+                    <input type="text" class="form-control" name="introduction" id="introduction" placeholder="Phrase d'introduction (Max 50 caractères)" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="mt-3" for="entree">Entrée</label>
+                    <input type="text" class="form-control" name="entree" id="entree" placeholder="Nom de l'entrée (Max 50 caractères)" >
+                    <textarea class="form-control mt-2" name="d_entree" id="d_entree" placeholder="Détails (qui apparaîtront quand on clique sur le bouton Détails)" ></textarea>
+                </div>
+
+                <div class="col">
+                    <label class="mt-3" for="entree">Plat</label>
+                    <input type="text" class="form-control" name="plat" id="plat" placeholder="Nom du plat (Max 50 caractères)" >
+                    <textarea class="form-control mt-2" name="d_plat" id="d_plat" placeholder="Détails (qui apparaîtront quand on clique sur le bouton Détails)" ></textarea>
+                </div>
+
+                <div class="col">
+                    <label class="mt-3" for="entree">Dessert</label>
+                    <input type="text" class="form-control" name="dessert" id="dessert" placeholder="Nom du dessert (Max 50 caractères)" >
+                    <textarea class="form-control mt-2" name="d_dessert" id="d_dessert" placeholder="Détails (qui apparaîtront quand on clique sur le bouton Détails)" ></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success mt-3">Enregistrer</button>
+
+        </form>
+
+    </section>
 {% endblock %}
