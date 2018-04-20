@@ -20,8 +20,12 @@ class ActuManager extends EntityManager
     }
 
 
-    public function add($id)
+    public function ajouter($donnees)
     {
+        $requete = $this->conn->prepare("INSERT INTO $this->table
+        (titre) VALUES (\"".$donnees['titre'].\"")");
+
+        $requete->execute();
 
     }
 

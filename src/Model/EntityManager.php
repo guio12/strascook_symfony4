@@ -52,24 +52,16 @@ abstract class EntityManager
         //TODO : Implements SQL DELETE request
     }
 
-    /**
-     *
-     */
-    public function ajouter($data)
+    public function add()
     {
-        //TODO : Implements SQL INSERT request
 
-        $statement = $this->conn->prepare("INSERT INTO $this->table VALUES ('\$_POST[\'article\']");
-
-        $statement->execute();
-        
     }
 
 
     /**
      *
      */
-    public function modifier($id, $data)
+    public function delete($id, $data)
     {
         //TODO : Implements SQL UPDATE request
     }

@@ -7,7 +7,10 @@
  */
 
 
-$dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
+$dispatcher = FastRoute\simpleDispatcher(/**
+ * @param \FastRoute\RouteCollector $r
+ */
+    function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/', 'Item/index');
     // {id} must be a number (\d+)
     $r->addRoute('GET', '/item/{id:\d+}', 'Item/show');
@@ -16,7 +19,9 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/accueil', 'Accueil/index');
     $r->addRoute('GET', '/lechef', 'Lechef/index');
     $r->addRoute('GET', '/contact', 'Contact/index');
+    //$r->addRoute('GET', '/contact', 'Contact/envoiMail');
     $r->addRoute('POST', '/contact', 'Contact/index');
+    //$r->addRoute('POST', '/contact', 'Contact/envoiMail');
     $r->addRoute('GET', '/menus', 'Menu/index');
     $r->addRoute('GET', '/partenaires', 'Partenaires/index');
     $r->addRoute('GET', '/Admin', 'AdminActu/index');
