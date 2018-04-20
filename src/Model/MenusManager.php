@@ -11,7 +11,7 @@ namespace Model;
 
 class MenusManager extends EntityManager
 {
-    const TABLE = 'menus';
+    const TABLE = 'img-menu';
 
 
     public function __construct()
