@@ -8,10 +8,9 @@
 
 namespace Model;
 
-
 class MenusManager extends EntityManager
 {
-    const TABLE = 'menus';
+    const TABLE = 'menu';
 
 
     public function __construct()
@@ -22,8 +21,7 @@ class MenusManager extends EntityManager
     public function ajouter($donnees)
     {
         $requete = $this->conn->prepare("INSERT INTO $this->table (`fk_type_menu`, `titre`, `image`, `introduction`, `entree`, `d_entree`, `plat`, `d_plat`, `dessert`, `d_dessert`, `prix`) VALUES (\"" . $donnees['type'] . "\", \"" . $donnees['titre'] . "\", \"" . $donnees['image'] . "\", \"" . $donnees['introduction'] . "\", \"" . $donnees['entree'] . "\", \"" . $donnees['d_entree'] . "\", \"" . $donnees['plat'] . "\", \"" . $donnees['d_plat'] . "\", \"" . $donnees['dessert'] . "\", \"" . $donnees['d_dessert'] . "\", \"" . $donnees['prix'] . "\")");
-
-        return $requete->execute();
+        return $requete->execute(header('Location:/admin'));
     }
 
     public function recuperer($donnees)
@@ -37,6 +35,6 @@ class MenusManager extends EntityManager
     public function supprimer($donnees)
     {
         $requete = $this->conn->prepare("DELETE * FROM $this->table");
-        return $requete->execute();
+        return $requete->execute(header('Location:/admin'));
     }
 }

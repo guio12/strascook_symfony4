@@ -20,18 +20,16 @@ $dispatcher = FastRoute\simpleDispatcher(/**
     $r->addRoute('GET', '/lechef', 'Lechef/index');
     $r->addRoute('GET', '/contact', 'Contact/index');
     $r->addRoute('POST', '/contact', 'Contact/index');
-    //$r->addRoute('GET', '/contact', 'Contact/envoiMail');
-    //$r->addRoute('POST', '/contact', 'Contact/envoiMail');
     $r->addRoute('GET', '/menus', 'Menu/index');
     $r->addRoute('GET', '/partenaires', 'Partenaires/index');
-    $r->addRoute('GET', '/Admin', 'AdminActu/index');
-    $r->addRoute('POST', '/Admin', 'AdminActu/index');
     $r->addRoute('GET', '/login', 'Login/index');
     $r->addRoute('POST', '/login', 'Login/identifier');
     $r->addRoute('GET', '/login2', 'Login/entree');
     $r->addRoute('GET', '/logout', 'Login/deco');
     $r->addRoute('GET', '/admin', 'AdminMenu/ajouter');
     $r->addRoute('POST', '/admin', 'AdminMenu/ajouter');
+    $r->addRoute('GET', '/Admin', 'AdminActu/ajouter');
+    $r->addRoute('POST', '/Admin', 'AdminActu/ajouter');
 
 });
 

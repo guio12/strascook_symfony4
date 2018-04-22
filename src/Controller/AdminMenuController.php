@@ -11,7 +11,6 @@ class AdminMenuController extends AbstractController
     {
 
 
-
         $resultat = "";
         $donnees = [];
 
@@ -33,7 +32,6 @@ class AdminMenuController extends AbstractController
                     $typeFichier = $_FILES['image']['type'][$i];
                     $tailleFichier = $_FILES['image']['size'][$i];
                     $erreurFichier = $_FILES['image']['error'][$i];
-
                     $extensionFichier = pathinfo($nomOriginal, PATHINFO_EXTENSION);
                     $nomFinal = 'image' . uniqid() . '.' . $extensionFichier;
                     $repFinal = 'public/assets/img/img-menu/';
@@ -43,11 +41,9 @@ class AdminMenuController extends AbstractController
                         if (!in_array($typeFichier, $typesAutorises)) {
                             echo '<div class="alert alert-warning" role="alert">
                             <strong>Le fichier n\'est pas au bon format.</strong></div>';
-
                         } elseif ($tailleFichier > $tailleAutorisee || $erreurFichier === 1) {
                             echo '<div class="alert alert-warning" role="alert">
                             <strong>Le fichier est trop lourd.</strong></div>';
-
                         } else {
                             move_uploaded_file($repTemp, $repFinal . $nomFinal);
                         }
@@ -63,18 +59,10 @@ class AdminMenuController extends AbstractController
             $donnees['dessert'] = $_POST['dessert'];
             $donnees['d_dessert'] = $_POST['d_dessert'];
             $donnees['prix'] = $_POST['prix'];
-
             $menusManager = new MenusManager();
             $resultat = $menusManager->ajouter($donnees);
         }
 
         return $this->twig->render('StrasCook/admin.html.twig', ['resultatAjoutMenu'=>$resultat]);
-
     }
-
 }
-
-
-
-
-
