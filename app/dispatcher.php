@@ -30,8 +30,8 @@ $dispatcher = FastRoute\simpleDispatcher(/**
     $r->addRoute('POST', '/login', 'Login/identifier');
     $r->addRoute('GET', '/login2', 'Login/entree');
     $r->addRoute('GET', '/logout', 'Login/deco');
-    $r->addRoute('GET', '/admin', 'Admin/index');
-    $r->addRoute('POST', '/admin', 'Admin/index');
+    $r->addRoute('GET', '/admin', 'AdminMenu/ajouter');
+    $r->addRoute('POST', '/admin', 'AdminMenu/ajouter');
 
 });
 

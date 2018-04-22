@@ -10,7 +10,7 @@ class ContactController extends AbstractController
     protected $errors = [];
 
 
-    public function envoiMail($email)
+    public function envoiMail()
     {
         $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
         try {
@@ -93,5 +93,5 @@ class ContactController extends AbstractController
         return $this->twig->render('StrasCook/contact.html.twig');
     }
 
-    }
+
 }

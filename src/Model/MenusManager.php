@@ -11,7 +11,7 @@ namespace Model;
 
 class MenusManager extends EntityManager
 {
-    const TABLE = 'img-menu';
+    const TABLE = 'menus';
 
 
     public function __construct()
@@ -21,22 +21,22 @@ class MenusManager extends EntityManager
 
     public function ajouter($donnees)
     {
-        $requete = $this->conn->prepare("INSERT INTO $this->table (`fk_type_menu`, `titre`, `image`, `introduction`, `entree`, `d_entree`, `plat`, `d_plat`, `dessert`, `d_dessert`, `prix`) VALUES (\"".$donnees['type']."\", \"".$donnees['titre']."\", \"".$donnees['image']."\", \"".$donnees['introduction']."\", \"".$donnees['entree']."\", \"".$donnees['d_entree']."\", \"".$donnees['plat']."\", \"".$donnees['d_plat']."\", \"".$donnees['dessert']."\", \"".$donnees['d_dessert']."\", \"".$donnees['prix']."\")");
+        $requete = $this->conn->prepare("INSERT INTO $this->table (`fk_type_menu`, `titre`, `image`, `introduction`, `entree`, `d_entree`, `plat`, `d_plat`, `dessert`, `d_dessert`, `prix`) VALUES (\"" . $donnees['type'] . "\", \"" . $donnees['titre'] . "\", \"" . $donnees['image'] . "\", \"" . $donnees['introduction'] . "\", \"" . $donnees['entree'] . "\", \"" . $donnees['d_entree'] . "\", \"" . $donnees['plat'] . "\", \"" . $donnees['d_plat'] . "\", \"" . $donnees['dessert'] . "\", \"" . $donnees['d_dessert'] . "\", \"" . $donnees['prix'] . "\")");
 
         return $requete->execute();
+    }
+
+    public function recuperer($donnees)
+    {
+        $requete = $this->conn->prepare("SELECT * FROM $this->table");
+        $requete->execute();
+        $donnees = $requete->fetchAll();
+        print_r($donnees);
     }
 
     public function supprimer($donnees)
     {
-        $requete = $this->conn->prepare("DELETE FROM $this->table WHERE id=:id");
-
+        $requete = $this->conn->prepare("DELETE * FROM $this->table");
         return $requete->execute();
     }
-}
-
-public function recuperer($donnees)
-{
-    $requete = $this->conn->prepare("DELETE FROM $this->table WHERE id=:id");
-
-    return $requete->execute();
 }
