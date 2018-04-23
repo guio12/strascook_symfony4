@@ -30,7 +30,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`menu`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`menu` (
+CREATE TABLE IF NOT EXISTS `strascook`.`menu` (
   `id` INT NOT NULL,
   `titre` VARCHAR(45) NULL,
   `image` VARCHAR(45) NULL,
