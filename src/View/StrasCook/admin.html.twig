@@ -20,24 +20,20 @@
             </tr>
             </thead>
             <tbody>
+             
+             <form action="/admin/supprimer" method="post" name="supprimer">
+             {% for menu in donnees %}
             <tr>
-                <td>1</td>
-                <td>Classique</td>
-                <td>Menu Sanglier</td>
-                #}{#<td><form action="/admin" method="post" name="supprimer"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>#}{#
+               <input type="hidden" name="delete" value="{{menu.id}}">
+                <td>{{ menu.id }}</td>
+                <td>{{ menu.nom }}</td>
+                <td>{{ menu.titre }}</td>
+                <td><button type="submit" name="supprimer" class="btn btn-danger ml-2">Supprimer</button></td>
+                
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Végétarien</td>
-                <td>Menu Carottes</td>
-                #}{#<td><form action="/admin" method="post" name="supprimer"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>#}{#
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Vegan</td>
-                <td>Menu Graines de courge</td>
-                #}{#<td><form action="/admin" method="post" name="supprimer"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>#}{#
-            </tr>
+            
+            {% endfor %}
+            </form>
             </tbody>
         </table>#}
         <button class="btn btn-info" id="bouton_ajout_menu">Ajouter un menu</button>
@@ -47,7 +43,7 @@
 
     <section class="container" id="ajout_menu" style="display:none">
         <h2>Menu</h2>
-        <form class="form-group" action="/admin" method="post">
+        <form class="form-group" action="/admin/ajouter" enctype="multipart/form-data" method="post">
             <div class="row">
                 <div class="col">
                     <label for="type">Type</label>

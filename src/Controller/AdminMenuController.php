@@ -7,41 +7,34 @@ use Model\MenusManager;
 
 class AdminMenuController extends AbstractController
 {
-    public function controllerImage()
+    
+    public function index ()
     {
-        if (isset($_FILES['image'])) {
-
-            $typesAutorises = ['image/jpeg', 'image/png'];
-            $tailleAutorisee = 2000000;
-            $nomOriginal = $_FILES['image']['name'];
-            $repTemp = $_FILES['image']['tmp_name'];
-            $typeFichier = $_FILES['image']['type'];
-            $tailleFichier = $_FILES['image']['size'];
-            $erreurFichier = $_FILES['image']['error'];
-            $extensionFichier = pathinfo($nomOriginal, PATHINFO_EXTENSION);
-            $nomFinal = 'image' . uniqid() . '.' . $extensionFichier;
-            $repFinal = 'public/assets/img/img-menu/';
-
-            if ($typeFichier != $typesAutorises) {
-                echo '<div class="alert alert-warning" role="alert">
-                            <strong>Le fichier n\'est pas au bon format.</strong></div>';
-
-            } elseif ($tailleFichier > $tailleAutorisee || $erreurFichier === 1) {
-                echo '<div class="alert alert-warning" role="alert">
-                            <strong>Le fichier est trop lourd.</strong></div>';
-
-            } else {
-                move_uploaded_file($repTemp, $repFinal . $nomFinal);
-
-            }
-
+        session_start();
+        
+        $donnees = [];
+        
+        if (!isset($_SESSION['user_id']))
+        {
+            header('Status: 301 Moved Permanently', false, 301); header('Location: /login'); exit();
+            
         }
-        return $nomFinal;
-    }
+        
+        
+        $menusManager = new MenusManager();
+        $resultat = $menusManager->recupererTypeTitre();
+      
 
+        return $this->twig->render('StrasCook/admin.html.twig', [
+                'donnees' => $resultat
+        ]);
+    }
+    
+    
     public function ajouter()
     {
-
+        session_start();
+        
         $resultat = "";
         $donnees = [];
 
@@ -64,11 +57,30 @@ class AdminMenuController extends AbstractController
             $menusManager = new MenusManager();
             $resultat = $menusManager->ajouter($donnees);
         }
-
-        return $this->twig->render('StrasCook/admin.html.twig', ['resultatAjoutMenu'=>$resultat]);
+        
+        header('Location: /admin');
 
     }
+    
+    public function supprimer()
+    {
+        session_start();
+       
+        $menu = [];
+        
+        if(isset($_POST['supprimer'])){
+            
+            $menu = $_POST['delete'];
+            echo $menu;
+            $menusManager = new MenusManager();
+            $menusManager->supprimer($menu);
+            
+        }
+        
+         header('Location: /admin');
+    }
 
+    
 }
 
 

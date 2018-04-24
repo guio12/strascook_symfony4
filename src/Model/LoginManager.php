@@ -31,11 +31,5 @@ class LoginManager extends EntityManager
         return $statement->fetch(PDO::FETCH_ASSOC);
   
     }
-    
-    public function test()
-    {
-        
-        $statement = $this->conn->prepare("SELECT * FROM $this->table");
-         return $statement->execute();
-    }
+
 }
