@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0aadb48d-eba6-4320-be60-2a943b99cfb6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dispatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/dispatcher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CalendarController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CalendarController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReservationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/boostrapCalendar/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/boostrapCalendar/bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Events.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Events.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,16 +50,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reservation_index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_index.html.twig">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="CalendarController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CalendarController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/CalendarController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="85" column="14" lean-forward="true" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="14" />
+            <state relative-caret-position="437">
+              <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Month.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Calendar/Month.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1210">
+              <caret line="55" column="21" lean-forward="true" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reservation_index.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="accueil.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/View/StrasCook/accueil.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="334">
+              <caret line="76" selection-start-line="76" selection-end-line="76" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -75,8 +89,8 @@
       <file leaf-file-name="bootstrap.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/boostrapCalendar/bootstrap.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+            <state relative-caret-position="368">
+              <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -99,24 +113,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReservationController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/ReservationController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventValidator.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Calendar/EventValidator.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -125,6 +121,7 @@
       <find>ombre</find>
       <find>btn</find>
       <find>href</find>
+      <find>events</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -160,7 +157,9 @@
         <option value="$PROJECT_DIR$/src/Controller/boostrapCalendar/bootstrap.php" />
         <option value="$PROJECT_DIR$/app/dispatcher.php" />
         <option value="$PROJECT_DIR$/src/Model/Events.php" />
+        <option value="$PROJECT_DIR$/src/Controller/ContactController.php" />
         <option value="$PROJECT_DIR$/src/Controller/CalendarController.php" />
+        <option value="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_index.html.twig" />
       </list>
     </option>
   </component>
@@ -186,10 +185,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1440" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="679" />
+    <option name="height" value="811" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -345,15 +343,15 @@
       <workItem from="1524431032882" duration="921000" />
       <workItem from="1524471844233" duration="1083000" />
       <workItem from="1524483210754" duration="507000" />
-      <workItem from="1524553200015" duration="5733000" />
+      <workItem from="1524553200015" duration="9188000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35061000" />
+    <option name="totallyTimeSpent" value="38516000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="23" width="1440" height="679" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="811" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -361,7 +359,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3286219" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.0" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18097281" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
@@ -410,27 +408,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/View/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/dispatcher.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CalendarController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1061">
@@ -650,13 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Calendar/Month.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="55" column="21" lean-forward="true" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -678,13 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/boostrapCalendar/bootstrap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -726,6 +689,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="87" column="64" selection-start-line="87" selection-start-column="64" selection-end-line="87" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/accueil.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="76" selection-start-line="76" selection-end-line="76" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_0.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="469" column="21" selection-start-line="469" selection-start-column="9" selection-end-line="469" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/boostrapCalendar/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Calendar/Month.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1210">
+          <caret line="55" column="21" lean-forward="true" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/StrasCook/reservation.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -733,13 +731,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_index.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CalendarController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="85" column="14" lean-forward="true" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="14" />
+        <state relative-caret-position="437">
+          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
         </state>
       </provider>
     </entry>

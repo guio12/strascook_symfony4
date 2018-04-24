@@ -27,65 +27,20 @@ class CalendarController extends AbstractController
         $weeks = $month->getWeeks();
         $end = $start->modify('+' . (6 + 7 * ($weeks -1)) . ' days');
         $events = $events->getEventsBetweenByDay($start, $end);
-        ?>
 
-        <div class="calendar">
+        $success=false;
+        if (isset($_GET['success']))
+        {$success = true;
+        }
 
-            <div class="calendar__container">
-                <h1><?= $month->toString(); ?></h1>
-
-                <?php if (isset($_GET['success'])): ?>
-                    <div class="container">
-                        <div class="alert alert-success">
-                            L'évènement a bien été enregistré
-                        </div>
-                    </div>
-                <?php endif; ?>
-
-            </div>
-
-            <div class="container calendar__nav col-md-8 col-sm-10 col-xs-12"">
-            <div class="nav__previous">
-                <a href="/reservation?month=<?= $month->previousMonth()->month; ?>&year=<?= $month->previousMonth()->year; ?>" class="btn btn-primary bouton"><</a>
-            </div>
-            <div class="nav__next">
-                <a href="/reservation?month=<?= $month->nextMonth()->month; ?>&year=<?= $month->nextMonth()->year; ?>" class="btn btn-primary bouton">></a>
-            </div>
-        </div>
-        <br>
-
-        <div class="container col-md-8 col-sm-10 col-xs-12">
-            <table class="calendar__table calendar__table--<?= $weeks; ?>weeks">
-                <?php for ($i = 0; $i < $weeks; $i++): ?>
-                    <tr>
-                        <?php
-                        foreach($month->days as $k => $day):
-                            $date = $start->modify("+" . ($k + $i * 7) . " days");
-                            $eventsForDay = $events[$date->format('Y-m-d')] ?? [];
-                            $isToday = date('Y-m-d') === $date->format('Y-m-d');
-                            ?>
-                            <td class="<?= $month->withinMonth($date) ? '' : 'calendar__othermonth'; ?> <?= $isToday ? 'is-today' : ''; ?>">
-                                <?php if ($i === 0): ?>
-                                    <div class="calendar__weekday"><?= $day; ?></div>
-                                <?php endif; ?>
-                                <a class="calendar__day" href="/reservation/add?date=<?= $date->format('Y-m-d'); ?>"><?= $date->format('d'); ?></a>
-                                <?php foreach($eventsForDay as $event): ?>
-                                    <div class="calendar__event">
-                                        <?= $event->getStart()->format('H:i') ?> - <a href="/reservation/edit?id=<?= $event->getId(); ?>"><?= h($event->getName()); ?></a>
-                                    </div>
-                                <?php endforeach; ?>
-                            </td>
-                        <?php endforeach; ?>
-                    </tr>
-                <?php endfor; ?>
-            </table>
-        </div>
-
-        <a href="/reservation/add" class="calendar__button bouton">+</a>
-
-        </div>
-
-        <?php
+        return $this->twig->render('StrasCook/calendar/reservation_index.html.twig',
+        ['month'=>$month,
+            'weeks'=>$weeks,
+            'start'=>$start,
+            'today'=>date('Y-m-d'),
+            'events'=>$events,
+            'success'=>$success
+        ]);
     }
 
     public function add()

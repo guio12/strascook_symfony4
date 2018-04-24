@@ -1,0 +1,57 @@
+
+<div class="calendar">
+
+    <div class="calendar__container">
+        <h1>{{ month.toString() }}</h1>
+
+        {% if success %}
+        <div class="container">
+            <div class="alert alert-success">
+                L'évènement a bien été enregistré
+            </div>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <div class="container calendar__nav col-md-8 col-sm-10 col-xs-12"">
+    <div class="nav__previous">
+        <a href="/reservation?month={{ month.previousMonth().month }}&year={{ month.previousMonth().year }}" class="btn btn-primary bouton"><</a>
+    </div>
+    <div class="nav__next">
+        <a href="/reservation?month={{ month.nextMonth().month }}&year={{  month.nextMonth().year }}" class="btn btn-primary bouton">></a>
+    </div>
+</div>
+<br>
+
+<div class="container col-md-8 col-sm-10 col-xs-12">
+    <table class="calendar__table calendar__table--{{ weeks }}weeks">
+        {% for i in 0..weeks %}
+        <tr>
+            {% for k,day in month.days %}
+            {% set date = start.modify("+" ~ (k + i * 7) ~ " days") %}
+            {% set eventsForDay = events[date.format('Y-m-d')] %} <!-- ATTENTION -->
+            {% set isToday = (today == date.format('Y-m-d')) %}
+            {% if (not month.withinMonth(date) or isToday) %}
+                {% set withinMonth = 'calendar__othermonth' %}
+            {% endif %}
+            <td class="{{ withinMonth }}" >
+                {% if i==0 %}
+                <div class="calendar__weekday">{{ day }}</div>
+                {% endif %}
+                <a class="calendar__day" href="/reservation/add?date={{ date.format('Y-m-d') }}">{{ date.format('d') }}</a>
+                {% for event in eventsForDay %}
+                <div class="calendar__event">
+                    {{ event.getStart().format('H:i') }} - <a href="/reservation/edit?id={{ event.getId() }}">{{ event.getName() }}</a>
+                </div>
+                {% endfor %}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<a href="/reservation/add" class="calendar__button bouton">+</a>
+
+</div>
