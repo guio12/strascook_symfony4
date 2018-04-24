@@ -47,27 +47,25 @@ abstract class EntityManager
     /**
      *
      */
-    public function delete($id)
+    public function supprimer($id)
     {
-        //TODO : Implements SQL DELETE request
+
     }
 
     /**
      *
      */
-    public function insert($data)
+    public function ajouter($donnees)
     {
-        //TODO : Implements SQL INSERT request
-        
-    }
 
+    }
 
     /**
      *
      */
-    public function update($id, $data)
+    public function modifier($id, $data)
     {
-        //TODO : Implements SQL UPDATE request
+
     }
 
 

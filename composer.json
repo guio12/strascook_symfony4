@@ -1,17 +1,28 @@
 {
-    "name": "aurel/simple-mvc",
-    "description": "Simple from scratch PHP MVC",
+    "name": "wcs/strascook",
+    "description": "Projet 2",
     "authors": [
         {
-            "name": "Aurelien",
-            "email": "barbier.aurelien@wildcodeschool.fr"
+            "name": "Xavier Vierling",
+            "email": "xvrlng@gmail.com"
+        },
+        {
+            "name": "Jennifer Lieby",
+            "email": "jennifr.lb@gmail.com"
+        },
+        {
+            "name": "Guillaume Audouze",
+            "email": "g.audouze@gmail.com"
+        },
+        {
+            "name": "Kévin Van Der Stracten",
+            "email": "kevinvanderstracten@gmail.com"
         }
     ],
     "minimum-stability": "stable",
     "require": {
         "nikic/fast-route": "^1.2",
         "twig/twig": "^2.4",
-        "squizlabs/php_codesniffer": "*",
         "swiftmailer/swiftmailer": "^6.0"
     },
     "autoload": {

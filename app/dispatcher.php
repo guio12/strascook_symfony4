@@ -19,10 +19,12 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('POST', '/contact', 'Contact/index');
     $r->addRoute('GET', '/menus', 'Menu/index');
     $r->addRoute('GET', '/partenaires', 'Partenaires/index');
-    $r->addRoute('GET', '/reservation', 'Calendar/index');
-    $r->addRoute('GET', '/reservation/add', 'Calendar/add');
-    $r->addRoute('POST', '/reservation/add', 'Calendar/add');
-    $r->addRoute('GET', '/reservation/edit', 'Calendar/edit');
+    $r->addRoute('GET', '/login', 'Login/index');
+    $r->addRoute('POST', '/login', 'Login/identifier');
+    $r->addRoute('GET', '/login2', 'Login/entree');
+    $r->addRoute('GET', '/logout', 'Login/deco');
+    $r->addRoute('GET', '/admin', 'Admin/index');
+    $r->addRoute('POST', '/admin', 'Admin/index');
 
 });
 
