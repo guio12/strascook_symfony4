@@ -26,17 +26,4 @@ class MenusManager extends EntityManager
         return $requete->execute();
     }
 
-    public function recuperer($donnees)
-    {
-        $requete = $this->conn->prepare("SELECT * FROM $this->table");
-        $requete->execute();
-        $donnees = $requete->fetchAll();
-        print_r($donnees);
-    }
-
-    public function supprimer($donnees)
-    {
-        $requete = $this->conn->prepare("DELETE * FROM $this->table");
-        return $requete->execute();
-    }
 }
