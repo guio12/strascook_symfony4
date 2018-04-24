@@ -108,7 +108,7 @@ class CalendarController extends AbstractController
                 $events = new \Model\Events(get_pdo());
                 $event = $events->hydrate(new \Model\Event(), $data);
                 $events->create($event);
-                header('Location: /index?success=1');
+                header('Location: /reservation?success=1');
                 exit();
             }
         }
@@ -138,7 +138,7 @@ class CalendarController extends AbstractController
     public function edit()
     {
         $pdo = get_pdo();
-        $events = new Calendar\Events($pdo);
+        $events = new \Model\Events($pdo);
         $errors = [];
         try {
             $event = $events->find($_GET['id'] ?? null);
@@ -163,7 +163,7 @@ class CalendarController extends AbstractController
             if (empty($errors)) {
                 $events->hydrate($event, $data);
                 $events->update($event);
-                header('Location: /index?success=1');
+                header('Location: /reservation?success=1');
                 exit();
             }
         }

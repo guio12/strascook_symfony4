@@ -24,8 +24,11 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/login2', 'Login/entree');
     $r->addRoute('GET', '/logout', 'Login/deco');
     $r->addRoute('GET', '/admin', 'Admin/index');
-    $r->addRoute('POST', '/admin', 'Admin/index');
-
+    $r->addRoute('GET', '/reservation', 'Calendar/index');
+    $r->addRoute('GET', '/reservation/add', 'Calendar/add');
+    $r->addRoute('POST', '/reservation/add', 'Calendar/add');
+    $r->addRoute('GET', '/reservation/edit', 'Calendar/edit');
+    $r->addRoute('POST', '/reservation/edit', 'Calendar/edit');
 });
 
 // Fetch method and URI from somewhere
@@ -41,7 +44,7 @@ $uri = rawurldecode($uri);
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
-        // ... 404 Not Found
+        echo "404 Not Found";
         break;
     case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
         $allowedMethods = $routeInfo[1];

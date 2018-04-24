@@ -72,6 +72,7 @@ class Events {
             $data['date'] . ' ' . $data['start'])->format('Y-m-d H:i:s'));
         $event->setEnd(\DateTimeImmutable::createFromFormat('Y-m-d H:i',
             $data['date'] . ' ' . $data['end'])->format('Y-m-d H:i:s'));
+        var_dump ($event);
         return $event;
     }
 
