@@ -7,37 +7,7 @@ use Model\MenusManager;
 
 class AdminMenuController extends AbstractController
 {
-    public function controllerImage()
-    {
-        if (isset($_FILES['image'])) {
-
-            $typesAutorises = ['image/jpeg', 'image/png'];
-            $tailleAutorisee = 2000000;
-            $nomOriginal = $_FILES['image']['name'];
-            $repTemp = $_FILES['image']['tmp_name'];
-            $typeFichier = $_FILES['image']['type'];
-            $tailleFichier = $_FILES['image']['size'];
-            $erreurFichier = $_FILES['image']['error'];
-            $extensionFichier = pathinfo($nomOriginal, PATHINFO_EXTENSION);
-            $nomFinal = 'image' . uniqid() . '.' . $extensionFichier;
-            $repFinal = 'public/assets/img/img-menu/';
-
-            if ($typeFichier != $typesAutorises) {
-                echo '<div class="alert alert-warning" role="alert">
-                            <strong>Le fichier n\'est pas au bon format.</strong></div>';
-
-            } elseif ($tailleFichier > $tailleAutorisee || $erreurFichier === 1) {
-                echo '<div class="alert alert-warning" role="alert">
-                            <strong>Le fichier est trop lourd.</strong></div>';
-
-            } else {
-                move_uploaded_file($repTemp, $repFinal . $nomFinal);
-
-            }
-
-        }
-        return $nomFinal;
-    }
+    public $erreurs = [];
 
     public function ajouter()
     {
@@ -45,12 +15,40 @@ class AdminMenuController extends AbstractController
         $resultat = "";
         $donnees = [];
 
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $donnees['type'] = $_POST['type'];
             $donnees['titre'] = $_POST['titre'];
 
-            $donnees['image'] = $this->controllerImage();
+            if (isset($_FILES['image'])) {
+
+                $typesAutorises = 'image/jpeg';
+                $tailleAutorisee = 2000000;
+                $nomOriginal = $_FILES['image']['name'];
+                $repTemp = $_FILES['image']['tmp_name'];
+                $typeFichier = $_FILES['image']['type'];
+                $tailleFichier = $_FILES['image']['size'];
+                $erreurFichier = $_FILES['image']['error'];
+                $extensionFichier = pathinfo($nomOriginal, PATHINFO_EXTENSION);
+                $repFinal = 'assets/img/img-menu/';
+
+                if (!empty($_FILES) && $typeFichier != $typesAutorises || $tailleFichier > $tailleAutorisee) {
+                    echo '<div class="alert alert-warning" role="alert">
+                      <strong>Erreur lors de l\'envoi de l\'image ! Veuillez vérifier que le type ou la taille sont bien respectés !!!</strong></div>';
+                    $this->erreurs['erreur'] = "Erreur d'envoi d'image";
+
+                /*} elseif ($tailleFichier > $tailleAutorisee) {
+                    echo '<div class="alert alert-warning" role="alert">
+                      <strong>Le fichier est trop lourd.</strong></div>';
+                    $this->erreurs['taille'] = "Taille de fichiers incorrecte";*/
+
+                } else {
+                    $nomFinal = 'image' . uniqid() . '.' . $extensionFichier;
+                    move_uploaded_file($repTemp, $repFinal . $nomFinal);
+                }
+
+            }
+            $donnees['image'] = $nomFinal;
 
             $donnees['introduction'] = $_POST['introduction'];
             $donnees['entree'] = $_POST['entree'];
@@ -61,8 +59,10 @@ class AdminMenuController extends AbstractController
             $donnees['d_dessert'] = $_POST['d_dessert'];
             $donnees['prix'] = $_POST['prix'];
 
-            $menusManager = new MenusManager();
-            $resultat = $menusManager->ajouter($donnees);
+            if (empty($this->erreurs)) {
+                $menusManager = new MenusManager();
+                $resultat = $menusManager->ajouter($donnees);
+            }
         }
 
         return $this->twig->render('StrasCook/admin.html.twig', ['resultatAjoutMenu'=>$resultat]);
