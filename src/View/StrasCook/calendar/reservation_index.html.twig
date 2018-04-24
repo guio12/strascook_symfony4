@@ -1,4 +1,11 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheetpages %}
+    <link rel="stylesheet" href="/assets/css/calendar.css">
+{% endblock %}
 
+{% block content %}
+
+    <br><br id="ancreDeChine">
 <div class="calendar">
 
     <div class="calendar__container">
@@ -16,10 +23,10 @@
 
     <div class="container calendar__nav col-md-8 col-sm-10 col-xs-12"">
     <div class="nav__previous">
-        <a href="/reservation?month={{ month.previousMonth().month }}&year={{ month.previousMonth().year }}" class="btn btn-primary bouton"><</a>
+        <a href="/reservation?month={{ month.previousMonth().month }}&year={{ month.previousMonth().year }}#ancreDeChine" class="btn btn-primary bouton"><</a>
     </div>
     <div class="nav__next">
-        <a href="/reservation?month={{ month.nextMonth().month }}&year={{  month.nextMonth().year }}" class="btn btn-primary bouton">></a>
+        <a href="/reservation?month={{ month.nextMonth().month }}&year={{  month.nextMonth().year }}#ancreDeChine"" class="btn btn-primary bouton">></a>
     </div>
 </div>
 <br>
@@ -55,3 +62,5 @@
 <a href="/reservation/add" class="calendar__button bouton">+</a>
 
 </div>
+
+{% endblock %}
