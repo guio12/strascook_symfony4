@@ -9,8 +9,13 @@
 {% block content %}
 
     <div class="container">
+        {% for error in erreurs %}
+            <div class="row">
+                <div class="alert alert-danger alerte_erreur">{{ error }}</div>
+            </div>
+        {% endfor %}
         <h2>Liste des menus</h2>
-        {#<table class="table">
+        <table class="table">
             <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -20,34 +25,29 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>Classique</td>
-                <td>Menu Sanglier</td>
-                #}{#<td><form action="/admin" method="post" name="supprimer"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>#}{#
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Végétarien</td>
-                <td>Menu Carottes</td>
-                #}{#<td><form action="/admin" method="post" name="supprimer"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>#}{#
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Vegan</td>
-                <td>Menu Graines de courge</td>
-                #}{#<td><form action="/admin" method="post" name="supprimer"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>#}{#
-            </tr>
+
+            <form action="/admin/supprimer" method="post" name="supprimer">
+                {% for menu in donnees %}
+                    <tr>
+                        <input type="hidden" name="delete" value="{{menu.id}}">
+                        <td>{{ menu.id }}</td>
+                        <td>{{ menu.nom }}</td>
+                        <td>{{ menu.titre }}</td>
+                        <td><button type="submit" name="supprimer" class="btn btn-danger ml-2">Supprimer</button></td>
+                    </tr>
+
+                {% endfor %}
+            </form>
             </tbody>
-        </table>#}
-        <button class="btn btn-info" id="bouton_ajout_menu">Ajouter un menu</button>
+        </table>
+        <button class="btn btn-info" id="bouton_ajout_menu"> Ajouter un menu</button>
     </div>
 
     <hr>
 
     <section class="container" id="ajout_menu" style="display:none">
         <h2>Menu</h2>
-        <form class="form-group" action="/admin" enctype="multipart/form-data" method="post">
+        <form class="form-group" action="/admin/ajouter" enctype="multipart/form-data" method="post">
             <div class="row">
                 <div class="col">
                     <label for="type">Type</label>
@@ -100,9 +100,9 @@
             <button type="submit" class="btn btn-success mt-3">Enregistrer</button>
 
         </form>
-{#        {%  if resultatAjoutMenu == FALSE %}
-            <div class="alert alert-danger" role="alert">Erreur d'insertion dans la base de données</div>
-        {% endif %}#}
+        {#        {%  if resultatAjoutMenu == FALSE %}
+                    <div class="alert alert-danger" role="alert">Erreur d'insertion dans la base de données</div>
+                {% endif %}#}
     </section>
 
 {% endblock %}

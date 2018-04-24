@@ -26,4 +26,18 @@ class MenusManager extends EntityManager
         return $requete->execute();
     }
 
+    public function recupererTypeTitre()
+    {
+        $requete = $this->conn->prepare("SELECT DISTINCT menus.id, type_menu.nom, menus.titre FROM type_menu INNER JOIN $this->table ON type_menu.id=menus.fk_type_menu ORDER BY menus.id");
+        $requete->execute();
+        $donnees = $requete->fetchAll();
+        return $donnees;
+    }
+
+    public function supprimer($menu)
+    {
+        $requete = $this->conn->prepare("DELETE FROM $this->table WHERE id = :menu");
+        $requete->bindValue(':menu', $menu);
+        return $requete->execute();
+    }
 }
