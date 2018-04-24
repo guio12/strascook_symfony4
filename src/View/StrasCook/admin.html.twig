@@ -9,6 +9,11 @@
 {% block content %}
 
     <div class="container">
+        {% for error in erreurs %}
+            <div class="row">
+                <div class="alert alert-danger alerte_erreur">{{ error }}</div>
+            </div>
+        {% endfor %}
         <h2>Liste des menus</h2>
         <table class="table">
             <thead>
@@ -20,6 +25,7 @@
             </tr>
             </thead>
             <tbody>
+<<<<<<< HEAD
             <tr>
                 <td>1</td>
                 <td>Classique</td>
@@ -41,13 +47,35 @@
             </tbody>
         </table>
         <button class="btn btn-info" id="bouton_ajout_menu">Ajouter un menu</button>
+=======
+
+            <form action="/admin/supprimer" method="post" name="supprimer">
+                {% for menu in donnees %}
+                    <tr>
+                        <input type="hidden" name="delete" value="{{menu.id}}">
+                        <td>{{ menu.id }}</td>
+                        <td>{{ menu.nom }}</td>
+                        <td>{{ menu.titre }}</td>
+                        <td><button type="submit" name="supprimer" class="btn btn-danger ml-2">Supprimer</button></td>
+                    </tr>
+
+                {% endfor %}
+            </form>
+            </tbody>
+        </table>
+        <button class="btn btn-info" id="bouton_ajout_menu"> Ajouter un menu</button>
+>>>>>>> b276efe9b7b75dabaea412fa46e43b3f9d4ba3a4
     </div>
 
     <hr>
 
     <section class="container" id="ajout_menu" style="display:none">
         <h2>Menu</h2>
+<<<<<<< HEAD
         <form class="form-group" action="/admin" enctype="multipart/form-data" method="post">
+=======
+        <form class="form-group" action="/admin/ajouter" enctype="multipart/form-data" method="post">
+>>>>>>> b276efe9b7b75dabaea412fa46e43b3f9d4ba3a4
             <div class="row">
                 <div class="col">
                     <label for="type">Type</label>
@@ -100,9 +128,9 @@
             <button type="submit" class="btn btn-success mt-3">Enregistrer</button>
 
         </form>
-{#        {%  if resultatAjoutMenu == FALSE %}
-            <div class="alert alert-danger" role="alert">Erreur d'insertion dans la base de données</div>
-        {% endif %}#}
+        {#        {%  if resultatAjoutMenu == FALSE %}
+                    <div class="alert alert-danger" role="alert">Erreur d'insertion dans la base de données</div>
+                {% endif %}#}
     </section>
 
 {% endblock %}

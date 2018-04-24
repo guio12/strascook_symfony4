@@ -6,16 +6,10 @@
  * Time: 17:20
  */
 
-
-$dispatcher = FastRoute\simpleDispatcher(/**
- * @param \FastRoute\RouteCollector $r
- */
-    function(FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/', 'Item/index');
-    // {id} must be a number (\d+)
-    $r->addRoute('GET', '/item/{id:\d+}', 'Item/show');
-    $r->addRoute('GET', '/item/add', 'Item/add');
-    $r->addRoute('GET', '/item/edit/{id:\d+}', 'Item/edit');
+   $dispatcher = FastRoute\simpleDispatcher(/**
+    * @param \FastRoute\RouteCollector $r
+    */
+     function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/accueil', 'Accueil/index');
     $r->addRoute('GET', '/lechef', 'Lechef/index');
     $r->addRoute('GET', '/contact', 'Contact/index');
@@ -26,10 +20,11 @@ $dispatcher = FastRoute\simpleDispatcher(/**
     $r->addRoute('POST', '/login', 'Login/identifier');
     $r->addRoute('GET', '/login2', 'Login/entree');
     $r->addRoute('GET', '/logout', 'Login/deco');
-    $r->addRoute('GET', '/admin', 'AdminMenu/ajouter');
-    $r->addRoute('POST', '/admin', 'AdminMenu/ajouter');
-    $r->addRoute('GET', '/Admin', 'AdminActu/ajouter');
-    $r->addRoute('POST', '/Admin', 'AdminActu/ajouter');
+    $r->addRoute('GET', '/admin', 'AdminMenu/index');
+    $r->addRoute('POST', '/admin/ajouter', 'AdminMenu/ajouter');
+    $r->addRoute('POST', '/admin/supprimer', 'AdminMenu/supprimer');
+    $r->addRoute('GET', '/admin/actu', 'AdminActu/ajouter');
+    $r->addRoute('POST', '/admin/actu', 'AdminActu/ajouter');
 
 });
 
