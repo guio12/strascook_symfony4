@@ -7,10 +7,40 @@ use Model\MenusManager;
 
 class AdminMenuController extends AbstractController
 {
+    public function controllerImage()
+    {
+        if (isset($_FILES['image'])) {
+
+            $typesAutorises = ['image/jpeg', 'image/png'];
+            $tailleAutorisee = 2000000;
+            $nomOriginal = $_FILES['image']['name'];
+            $repTemp = $_FILES['image']['tmp_name'];
+            $typeFichier = $_FILES['image']['type'];
+            $tailleFichier = $_FILES['image']['size'];
+            $erreurFichier = $_FILES['image']['error'];
+            $extensionFichier = pathinfo($nomOriginal, PATHINFO_EXTENSION);
+            $nomFinal = 'image' . uniqid() . '.' . $extensionFichier;
+            $repFinal = 'public/assets/img/img-menu/';
+
+            if ($typeFichier != $typesAutorises) {
+                echo '<div class="alert alert-warning" role="alert">
+                            <strong>Le fichier n\'est pas au bon format.</strong></div>';
+
+            } elseif ($tailleFichier > $tailleAutorisee || $erreurFichier === 1) {
+                echo '<div class="alert alert-warning" role="alert">
+                            <strong>Le fichier est trop lourd.</strong></div>';
+
+            } else {
+                move_uploaded_file($repTemp, $repFinal . $nomFinal);
+
+            }
+
+        }
+        return $nomFinal;
+    }
+
     public function ajouter()
     {
-
-
 
         $resultat = "";
         $donnees = [];
@@ -19,41 +49,8 @@ class AdminMenuController extends AbstractController
 
             $donnees['type'] = $_POST['type'];
             $donnees['titre'] = $_POST['titre'];
-            $donnees['image'] = $_POST['image'];
 
-            if (isset($_FILES['image'])) {
-
-                $typesAutorises = ['image/jpeg', 'image/png'];
-                $tailleAutorisee = 2000000;
-
-                for ($i = 0; $i < count($_FILES['image']['name']); $i++) {
-
-                    $nomOriginal = $_FILES['image']['name'][$i];
-                    $repTemp = $_FILES['image']['tmp_name'][$i];
-                    $typeFichier = $_FILES['image']['type'][$i];
-                    $tailleFichier = $_FILES['image']['size'][$i];
-                    $erreurFichier = $_FILES['image']['error'][$i];
-
-                    $extensionFichier = pathinfo($nomOriginal, PATHINFO_EXTENSION);
-                    $nomFinal = 'image' . uniqid() . '.' . $extensionFichier;
-                    $repFinal = 'public/assets/img/img-menu/';
-
-                    if ($repTemp != "") {
-
-                        if (!in_array($typeFichier, $typesAutorises)) {
-                            echo '<div class="alert alert-warning" role="alert">
-                            <strong>Le fichier n\'est pas au bon format.</strong></div>';
-
-                        } elseif ($tailleFichier > $tailleAutorisee || $erreurFichier === 1) {
-                            echo '<div class="alert alert-warning" role="alert">
-                            <strong>Le fichier est trop lourd.</strong></div>';
-
-                        } else {
-                            move_uploaded_file($repTemp, $repFinal . $nomFinal);
-                        }
-                    }
-                }
-            }
+            $donnees['image'] = $this->controllerImage();
 
             $donnees['introduction'] = $_POST['introduction'];
             $donnees['entree'] = $_POST['entree'];

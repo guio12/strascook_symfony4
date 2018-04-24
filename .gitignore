@@ -1,4 +1,4 @@
 /vendor/
 .DS_Store
-db.php
+/app/db.php
 /.idea/
