@@ -7,24 +7,8 @@ use Model\MenusManager;
 
 class AdminMenuController extends AbstractController
 {
-    
-    public function index ()
-    {
-        session_start();
-        
-        $donnees = [];
-        
-        if (!isset($_SESSION['user_id']))
-        {
-            header('Status: 301 Moved Permanently', false, 301); header('Location: /login'); exit();
-            
-        }
-        
-        
-        $menusManager = new MenusManager();
-        $resultat = $menusManager->recupererTypeTitre();
-      
     public $erreurs = [];
+    
 
     public function index ()
     {
@@ -46,7 +30,7 @@ class AdminMenuController extends AbstractController
 
     public function ajouter()
     {
-        session_start();
+       
         
         $resultat = "";
         $donnees = [];
@@ -95,36 +79,19 @@ class AdminMenuController extends AbstractController
             if (empty($this->erreurs)) {
                 $menusManager = new MenusManager();
                 $resultat = $menusManager->ajouter($donnees);
-                header('Location: /admin');
+               
             }
-
+            header('Location: /admin');
         }
         
-        header('Location: /admin');
+       
 
     }
     
-    public function supprimer()
-    {
-        session_start();
-       
-        $menu = [];
-        
-        if(isset($_POST['supprimer'])){
-            
-            $menu = $_POST['delete'];
-            echo $menu;
-            $menusManager = new MenusManager();
-            $menusManager->supprimer($menu);
-            
-        }
-        
-         header('Location: /admin');
-    }
 
     public function supprimer()
     {
-        session_start();
+        
         $menu = [];
 
         if(isset($_POST['supprimer'])) {
