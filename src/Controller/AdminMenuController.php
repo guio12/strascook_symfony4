@@ -7,11 +7,34 @@ use Model\MenusManager;
 
 class AdminMenuController extends AbstractController
 {
+    
+    public function index ()
+    {
+        session_start();
+        
+        $donnees = [];
+        
+        if (!isset($_SESSION['user_id']))
+        {
+            header('Status: 301 Moved Permanently', false, 301); header('Location: /login'); exit();
+            
+        }
+        
+        
+        $menusManager = new MenusManager();
+        $resultat = $menusManager->recupererTypeTitre();
+      
+
+        return $this->twig->render('StrasCook/admin.html.twig', [
+                'donnees' => $resultat
+        ]);
+    }
+    
+    
     public function ajouter()
     {
-
-
-
+        session_start();
+        
         $resultat = "";
         $donnees = [];
 
@@ -67,11 +90,30 @@ class AdminMenuController extends AbstractController
             $menusManager = new MenusManager();
             $resultat = $menusManager->ajouter($donnees);
         }
-
-        return $this->twig->render('StrasCook/admin.html.twig', ['resultatAjoutMenu'=>$resultat]);
+        
+        header('Location: /admin');
 
     }
+    
+    public function supprimer()
+    {
+        session_start();
+       
+        $menu = [];
+        
+        if(isset($_POST['supprimer'])){
+            
+            $menu = $_POST['delete'];
+            echo $menu;
+            $menusManager = new MenusManager();
+            $menusManager->supprimer($menu);
+            
+        }
+        
+         header('Location: /admin');
+    }
 
+    
 }
 
 
