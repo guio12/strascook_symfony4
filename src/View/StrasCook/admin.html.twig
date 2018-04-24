@@ -10,7 +10,7 @@
 
     <div class="container">
         <h2>Liste des menus</h2>
-        {#<table class="table">
+        <table class="table">
             <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -24,22 +24,22 @@
                 <td>1</td>
                 <td>Classique</td>
                 <td>Menu Sanglier</td>
-                #}{#<td><form action="/admin" method="post" name="supprimer"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>#}{#
+                <td><form action="/admin" method="post" name="supprimer"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>Végétarien</td>
                 <td>Menu Carottes</td>
-                #}{#<td><form action="/admin" method="post" name="supprimer"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>#}{#
+                <td><form action="/admin" method="post" name="supprimer"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>
             </tr>
             <tr>
                 <td>3</td>
                 <td>Vegan</td>
                 <td>Menu Graines de courge</td>
-                #}{#<td><form action="/admin" method="post" name="supprimer"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>#}{#
+                <td><form action="/admin" method="post" name="supprimer"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>
             </tr>
             </tbody>
-        </table>#}
+        </table>
         <button class="btn btn-info" id="bouton_ajout_menu">Ajouter un menu</button>
     </div>
 
@@ -47,7 +47,7 @@
 
     <section class="container" id="ajout_menu" style="display:none">
         <h2>Menu</h2>
-        <form class="form-group" action="/admin" method="post">
+        <form class="form-group" action="/admin" enctype="multipart/form-data" method="post">
             <div class="row">
                 <div class="col">
                     <label for="type">Type</label>

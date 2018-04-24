@@ -53,7 +53,7 @@ class AdminMenuController extends AbstractController
             $menusManager = new MenusManager();
             $resultat = $menusManager->ajouter($donnees);
         }
-        
+
         return $this->twig->render('StrasCook/admin.html.twig', ['resultatAjoutMenu'=>$resultat]);
     }
 }
