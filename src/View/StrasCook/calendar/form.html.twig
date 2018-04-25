@@ -27,7 +27,7 @@
             <label for="start">Démarrage</label>
             <input id="start" type="time" required class="form-control" name="start" placeholder="HH:MM" value="{{ start }}">
             {% if errors[start] is defined %}
-            <small class="form-text text-muted"><?= $errors['start']; ?></small>
+            <small class="form-text text-muted">{{ errors[start] }}</small>
             {% endif %}
         </div>
     </div>
