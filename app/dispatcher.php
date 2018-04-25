@@ -24,7 +24,7 @@
     $r->addRoute('POST', '/admin/ajouter', 'AdminMenu/ajouter');
     $r->addRoute('POST', '/admin/supprimer', 'AdminMenu/supprimer');
     $r->addRoute('GET', '/admin/actu', 'AdminActu/index');
-    $r->addRoute('POST', '/admin/actu', 'AdminActu/ajouter');
+    $r->addRoute('POST', '/admin/actu/ajouter', 'AdminActu/ajouter');
 
 });
 

@@ -7,7 +7,7 @@
 {% block stylesheetpages %}
 
     <link rel="stylesheet" href="/assets/css/style.css">
-    <script src="assets/js/admin_actu.js"></script>
+    <script src="../assets/js/admin_actu.js"></script>
 
 {% endblock %}
 
@@ -17,7 +17,7 @@
 
     <div class="container">
 
-    <form class="row" method="post" action="/admin/actu">
+    <form class="row" method="post" action="/admin/actu/ajouter">
 
     <div class="col-6">
 
@@ -35,8 +35,8 @@
 
     <div class="col-12">
 
-        <label for="article">Introduction :</label><br>
-        <textarea class="form-control" name="article" id="article" cols="30" rows="10"></textarea>
+        <label for="contenu">Introduction :</label><br>
+        <textarea class="form-control" name="contenu" id="contenu" cols="30" rows="10"></textarea>
         <br>
         <br>
 
@@ -60,7 +60,22 @@
 
     <div class="container" id="ajout_actu" style="display: none;">
 
-        <p>Salut</p>
+        <table class="table">
+          <tr>
+            <th>Titre</th>
+            <th>Image</th>
+            <th>Contenu</th>
+          </tr>
+          {% for actu in donnees %}
+            <tr>
+              <td>{{ actu.titre }}</td>
+              <td>{{ actu.image }}</td>
+              <td>{{ actu.contenu }}</td>
+            </tr>
+            {% endfor %}
+
+
+        </table>
 
     </div>
 

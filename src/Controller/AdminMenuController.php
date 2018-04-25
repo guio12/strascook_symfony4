@@ -26,7 +26,7 @@ class AdminMenuController extends AbstractController
         return $this->twig->render('StrasCook/admin.html.twig', ['donnees' => $resultat, 'erreurs' => $this->erreurs]);
 
     }
-    
+
     public function ajouter()
     {
         $resultat = "";

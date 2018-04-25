@@ -21,21 +21,22 @@ class ActuManager extends EntityManager
 
     public function ajouter($donnees)
     {
-        $requete = $this->conn->prepare("INSERT INTO $this->table (`titre`, `image`, `contenu`) VALUES (\"" . $donnees['titre'] . "\", \"" . $donnees['image'] . "\", \"" . $donnees['article'] . "\")");
+        $requete = $this->conn->prepare("INSERT INTO $this->table (`titre`, `contenu`, `image`) VALUES (\"" . $donnees['titre'] . "\", \"" . $donnees['contenu'] . "\", \"" . $donnees['image'] . "\")");
         return $requete->execute();
     }
 
-    public function recuperer($donnees)
+    public function recuperer()
     {
-        $requete = $this->conn->prepare("SELECT * FROM $this->table");
+        $requete = $this->conn->prepare("SELECT DISTINCT actu.titre, actu.contenu, actu.image FROM $this->table");
         $requete->execute();
         $donnees = $requete->fetchAll();
-        print_r($donnees);
+        return $donnees;
     }
 
-    public function supprimer($donnees)
+    public function supprimer($actu)
     {
-        $requete = $this->conn->prepare("DELETE * FROM $this->table");
+        $requete = $this->conn->prepare("DELETE FROM $this->table WHERE id = :actu");
+        $requete->bindValue(':actu', $menu);
         return $requete->execute();
     }
 

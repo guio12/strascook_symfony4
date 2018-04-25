@@ -10,7 +10,7 @@ namespace Model;
 
 class MenusManager extends EntityManager
 {
-    const TABLE = 'menu';
+    const TABLE = 'menus';
 
     public function __construct()
     {
