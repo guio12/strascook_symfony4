@@ -40,4 +40,12 @@ class MenusManager extends EntityManager
         $requete->bindValue(':menu', $menu);
         return $requete->execute();
     }
+
+    public function affichageMenus() {
+        $requete = $this->conn->prepare("SELECT DISTINCT type_menu.nom, menus.titre, menus.image, menus.introduction, menus.entree, menus.d_entree, menus.plat, menus.d_plat, menus.dessert, menus.d_dessert, menus.prix FROM type_menu INNER JOIN $this->table ON type_menu.id=menus.fk_type_menu ORDER BY type_menu.nom");
+        $requete->execute();
+        $donnees = $requete->fetchAll();
+        return $donnees;
+    }
+
 }
