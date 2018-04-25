@@ -8,8 +8,9 @@ use Model\MenusManager;
 class AdminMenuController extends AbstractController
 {
     public $erreurs = [];
+    
 
-    public function index ()
+    public function index()
     {
         session_start();
         $donnees = [];
@@ -22,13 +23,20 @@ class AdminMenuController extends AbstractController
 
         $menusManager = new MenusManager();
         $resultat = $menusManager->recupererTypeTitre();
-
+        
+        
         return $this->twig->render('StrasCook/admin.html.twig', ['donnees' => $resultat, 'erreurs' => $this->erreurs]);
 
     }
 
+<<<<<<< HEAD
     public function ajouter()
     {
+=======
+
+    public function ajouter()
+    {        
+>>>>>>> a4d69ef5463a09aa82bba06f0f2104e532219eb6
         $resultat = "";
         $donnees = [];
 
@@ -76,19 +84,19 @@ class AdminMenuController extends AbstractController
             if (empty($this->erreurs)) {
                 $menusManager = new MenusManager();
                 $resultat = $menusManager->ajouter($donnees);
-                header('Location: /admin');
+               
             }
-
+            header('Location: /admin');
         }
-
-
-        // return $this->twig->render('StrasCook/admin.html.twig', ['resultatAjoutMenu'=>$resultat]);
+        
+       
 
     }
+    
 
     public function supprimer()
     {
-        session_start();
+        
         $menu = [];
 
         if(isset($_POST['supprimer'])) {

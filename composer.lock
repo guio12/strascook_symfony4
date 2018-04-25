@@ -4,8 +4,13 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "hash": "b00e2c1a3daa9f9890bab6f18ab6c561",
     "content-hash": "1050835dd1ceaf029ac5ba80953a0e16",
+=======
+    "hash": "f64374f87c5e4f1a03d192a73696aefc",
+    "content-hash": "31578e13ccae7a4c61c11cc0eb6ff80b",
+>>>>>>> a4d69ef5463a09aa82bba06f0f2104e532219eb6
     "packages": [
         {
             "name": "nikic/fast-route",
@@ -51,7 +56,11 @@
                 "router",
                 "routing"
             ],
+<<<<<<< HEAD
             "time": "2018-02-13 20:26:39"
+=======
+            "time": "2014-09-09 13:34:57"
+>>>>>>> a4d69ef5463a09aa82bba06f0f2104e532219eb6
         },
         {
             "name": "phpmailer/phpmailer",
@@ -101,8 +110,46 @@
             ],
             "authors": [
                 {
-                    "name": "Jim Jagielski",
-                    "email": "jimjag@gmail.com"
+                  "name": "Jim Jagielski",
+                  "email": "jimjag@gmail.com",
+                  "name": "Eduardo Gulias Davis"
+                }
+            ],
+            "description": "A library for validating emails against several RFCs",
+            "homepage": "https://github.com/egulias/EmailValidator",
+            "keywords": [
+                "email",
+                "emailvalidation",
+                "emailvalidator",
+                "validation",
+                "validator"
+            ],
+            "time": "2018-04-10 10:11:19"
+        },
+        {
+            "name": "nikic/fast-route",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/FastRoute.git",
+                "reference": "181d480e08d9476e61381e04a71b34dc0432e812"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikic/FastRoute/zipball/181d480e08d9476e61381e04a71b34dc0432e812",
+                "reference": "181d480e08d9476e61381e04a71b34dc0432e812",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35|~5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FastRoute\\": "src/"
                 },
                 {
                     "name": "Marcus Bointon",
@@ -117,7 +164,13 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2018-03-27 13:49:45"
+            "time": "2018-03-27 13:49:45",
+            "description": "Fast request router for PHP",
+            "keywords": [
+                "router",
+                "routing"
+            ],
+            "time": "2018-02-13 20:26:39"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -168,7 +221,11 @@
                 "phpcs",
                 "standards"
             ],
+<<<<<<< HEAD
             "time": "2018-02-20 21:35:23"
+=======
+            "time": "2017-09-30 22:39:41"
+>>>>>>> a4d69ef5463a09aa82bba06f0f2104e532219eb6
         },
         {
             "name": "symfony/polyfill-mbstring",
