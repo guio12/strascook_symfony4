@@ -10,7 +10,7 @@ class AdminMenuController extends AbstractController
     public $erreurs = [];
     
 
-    public function index ()
+    public function index()
     {
         session_start();
         $donnees = [];
@@ -23,15 +23,14 @@ class AdminMenuController extends AbstractController
 
         $menusManager = new MenusManager();
         $resultat = $menusManager->recupererTypeTitre();
-
+        
         return $this->twig->render('StrasCook/admin.html.twig', ['donnees' => $resultat, 'erreurs' => $this->erreurs]);
-
+        
     }
 
+
     public function ajouter()
-    {
-       
-        
+    {        
         $resultat = "";
         $donnees = [];
 
@@ -105,8 +104,3 @@ class AdminMenuController extends AbstractController
     }
 
 }
-
-
-
-
-
