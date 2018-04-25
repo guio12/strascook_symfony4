@@ -7,6 +7,7 @@
 }
 
 .bouton {
+    font-family: Raleway;
     background-color: #FFB74D;
     border-color: #FFB74D;
     box-shadow: 0 6px 10px 0 #0000001a,0 1px 18px 0 #0000001a,0 3px 5px -1px #0003;
@@ -126,4 +127,12 @@
 
 .nav__next {
     float: right;
+}
+
+.input[type=value] {
+    color: red;
+}
+
+label {
+    font-family: Raleway;
 }

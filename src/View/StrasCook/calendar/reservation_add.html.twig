@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheetpages %}
+    <link rel="stylesheet" href="/assets/css/calendar.css">
+{% endblock %}
+
+{% block content %}
+
+<br>
+<div class="container">
+
+    {% if errors is not empty %}
+    <div class="alert alert-danger">
+        Merci de corriger vos erreurs
+    </div>
+    {% endif %}
+    <div class="calendar__container">
+        <h1>Ajouter un évènement</h1>
+    </div>
+    <br>
+    <form action="" method="post" class="form">
+
+        {% include 'StrasCook/calendar/form.html.twig' with {'data' : 'errors'} %}
+        <!--<?php render('calendar/form', ['data' => $data, 'errors' => $errors]); ?>-->
+        <div class="form-group calendar__container">
+            <button class="btn btn-primary bouton">Ajouter l'évènement</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

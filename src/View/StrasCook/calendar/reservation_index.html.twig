@@ -21,26 +21,30 @@
 
     </div>
 
-    <div class="container calendar__nav col-md-8 col-sm-10 col-xs-12"">
+    <div class="container calendar__nav col-md-8 col-sm-10 col-xs-12">
     <div class="nav__previous">
         <a href="/reservation?month={{ month.previousMonth().month }}&year={{ month.previousMonth().year }}#ancreDeChine" class="btn btn-primary bouton"><</a>
     </div>
     <div class="nav__next">
-        <a href="/reservation?month={{ month.nextMonth().month }}&year={{  month.nextMonth().year }}#ancreDeChine"" class="btn btn-primary bouton">></a>
+        <a href="/reservation?month={{ month.nextMonth().month }}&year={{  month.nextMonth().year }}#ancreDeChine" class="btn btn-primary bouton">></a>
     </div>
 </div>
 <br>
 
 <div class="container col-md-8 col-sm-10 col-xs-12">
     <table class="calendar__table calendar__table--{{ weeks }}weeks">
-        {% for i in 0..weeks %}
+        {% for i in 0..weeks-1 %}
         <tr>
             {% for k,day in month.days %}
             {% set date = start.modify("+" ~ (k + i * 7) ~ " days") %}
             {% set eventsForDay = events[date.format('Y-m-d')] %} <!-- ATTENTION -->
             {% set isToday = (today == date.format('Y-m-d')) %}
-            {% if (not month.withinMonth(date) or isToday) %}
+            {% if (not month.withinMonth(date)) %}
                 {% set withinMonth = 'calendar__othermonth' %}
+            {% elseif  isToday%}
+                {% set withinMonth = 'is-today' %}
+            {% else %}
+                {% set withinMonth = '' %}
             {% endif %}
             <td class="{{ withinMonth }}" >
                 {% if i==0 %}

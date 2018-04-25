@@ -39,7 +39,8 @@ class CalendarController extends AbstractController
             'start'=>$start,
             'today'=>date('Y-m-d'),
             'events'=>$events,
-            'success'=>$success
+            'success'=>$success,
+            'end'=>$end
         ]);
     }
 
@@ -67,27 +68,10 @@ class CalendarController extends AbstractController
                 exit();
             }
         }
-        ?>
-
-        <div class="container">
-
-            <?php if (!empty($errors)): ?>
-                <div class="alert alert-danger">
-                    Merci de corriger vos erreurs
-                </div>
-            <?php endif; ?>
-            <div class="calendar__container">
-                <h1>Ajouter un évènement</h1>
-            </div>
-            <br>
-            <form action="" method="post" class="form">
-                <?php render('calendar/form', ['data' => $data, 'errors' => $errors]); ?>
-                <div class="form-group calendar__container">
-                    <button class="btn btn-primary bouton">Ajouter l'évènement</button>
-                </div>
-            </form>
-        </div>
-        <?php
+        return $this->twig->render('StrasCook/calendar/reservation_add.html.twig',
+            ['errors'=>$errors,
+                'data'=>$data
+            ]);
     }
 
     public function edit()
@@ -122,23 +106,16 @@ class CalendarController extends AbstractController
                 exit();
             }
         }
-        ?>
-
-        <div class="container">
-
-            <h1>Editer l'évènement
-                <small><?= h($event->getName()); ?></small>
-            </h1>
-
-            <form action="" method="post" class="form">
-                <?php render('calendar/form', ['data' => $data, 'errors' => $errors]); ?>
-                <div class="form-group">
-                    <button class="btn btn-primary">Modifier l'évènement</button>
-                </div>
-            </form>
-        </div>
-
-        <?php
+        return $this->twig->render('StrasCook/calendar/reservation_edit.html.twig',
+            ['errors'=>$errors,
+                'name'=> $event->getName(),
+                'data'=>$data,
+                'event'=>$event,
+                'date'=> $event->getStart()->format('Y-m-d'),
+                'start'=>$event->getStart()->format('H:i'),
+                'end'=>$event->getEnd()->format('H:i'),
+                'description' => $event->getDescription()
+            ]);
     }
 
     public function event()
