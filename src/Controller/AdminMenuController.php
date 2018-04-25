@@ -24,8 +24,9 @@ class AdminMenuController extends AbstractController
         $menusManager = new MenusManager();
         $resultat = $menusManager->recupererTypeTitre();
         
-        return $this->twig->render('StrasCook/admin.html.twig', ['donnees' => $resultat, 'erreurs' => $this->erreurs]);
         
+        return $this->twig->render('StrasCook/admin.html.twig', ['donnees' => $resultat, 'erreurs' => $this->erreurs]);
+
     }
 
 
