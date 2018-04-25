@@ -26,13 +26,7 @@ class MenusManager extends EntityManager
         return $requete->execute();
     }
 
-    public function recuperer()
-    {
-        $requete = $this->conn->prepare("SELECT * FROM $this->table");
-        $requete->execute();
-        $donnees = $requete->fetchAll();
-        return $donnees;
-    }
+
     
     public function recupererTypeTitre()
     {
@@ -44,7 +38,6 @@ class MenusManager extends EntityManager
 
     public function supprimer($menu)
     {
-    
         $requete = $this->conn->prepare("DELETE FROM $this->table WHERE id = :menu");
         $requete->bindValue(':menu', $menu);
         return $requete->execute();

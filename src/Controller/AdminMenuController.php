@@ -7,29 +7,31 @@ use Model\MenusManager;
 
 class AdminMenuController extends AbstractController
 {
+    public $erreurs = [];
     
-    public function index ()
+
+    public function index()
     {
         session_start();
-        
         $donnees = [];
-        
-        if (!isset($_SESSION['user_id']))
-        {
-            header('Status: 301 Moved Permanently', false, 301); header('Location: /login'); exit();
-            
+
+        if (!isset($_SESSION['user_id'])) {
+            header('Status: 301 Moved Permanently', false, 301);
+            header('Location: /login');
+            exit();
         }
-        
-        
+
         $menusManager = new MenusManager();
         $resultat = $menusManager->recupererTypeTitre();
-      
-    public $erreurs = [];
+        
+        
+        return $this->twig->render('StrasCook/admin.html.twig', ['donnees' => $resultat, 'erreurs' => $this->erreurs]);
+
+    }
+
 
     public function ajouter()
-    {
-        session_start();
-        
+    {        
         $resultat = "";
         $donnees = [];
 
@@ -50,23 +52,20 @@ class AdminMenuController extends AbstractController
                 $extensionFichier = pathinfo($nomOriginal, PATHINFO_EXTENSION);
                 $repFinal = 'assets/img/img-menu/';
 
-                if (!empty($_FILES) && $typeFichier != $typesAutorises || $tailleFichier > $tailleAutorisee) {
-                    echo '<div class="alert alert-warning" role="alert">
-                      <strong>Erreur lors de l\'envoi de l\'image ! Veuillez vérifier que le type ou la taille sont bien respectés !!!</strong></div>';
-                    $this->erreurs['erreur'] = "Erreur d'envoi d'image";
+                if ($tailleFichier > $tailleAutorisee || $erreurFichier == 1) {
+                    $this->erreurs[] = "L'image dépasse les 2 Mo";
+                    return $this->index();
 
-                /*} elseif ($tailleFichier > $tailleAutorisee) {
-                    echo '<div class="alert alert-warning" role="alert">
-                      <strong>Le fichier est trop lourd.</strong></div>';
-                    $this->erreurs['taille'] = "Taille de fichiers incorrecte";*/
+                } elseif (!empty($_FILES) && $typeFichier != $typesAutorises) {
+                    $this->erreurs[] = "Le fichier n'est pas au format JPEG";
+                    return $this->index();
 
                 } else {
                     $nomFinal = 'image' . uniqid() . '.' . $extensionFichier;
                     move_uploaded_file($repTemp, $repFinal . $nomFinal);
+                    $donnees['image'] = $nomFinal;
                 }
-
             }
-            $donnees['image'] = $nomFinal;
 
             $donnees['introduction'] = $_POST['introduction'];
             $donnees['entree'] = $_POST['entree'];
@@ -80,35 +79,29 @@ class AdminMenuController extends AbstractController
             if (empty($this->erreurs)) {
                 $menusManager = new MenusManager();
                 $resultat = $menusManager->ajouter($donnees);
+               
             }
+            header('Location: /admin');
         }
         
-        header('Location: /admin');
+       
 
     }
     
+
     public function supprimer()
     {
-        session_start();
-       
-        $menu = [];
         
-        if(isset($_POST['supprimer'])){
-            
+        $menu = [];
+
+        if(isset($_POST['supprimer'])) {
             $menu = $_POST['delete'];
             echo $menu;
             $menusManager = new MenusManager();
             $menusManager->supprimer($menu);
-            
         }
-        
-         header('Location: /admin');
+
+        header('Location: /admin');
     }
 
-    
 }
-
-
-
-
-
