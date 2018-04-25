@@ -7,74 +7,91 @@ use Model\ActuManager;
 class AdminActuController extends AbstractController
 {
 
+  public function index ()
+  {
+      session_start();
+      $donnees = [];
 
-    public function ajouter()
-    {
+      if (!isset($_SESSION['user_id'])) {
+          header('Status: 301 Moved Permanently', false, 301);
+          header('Location: /login');
+          exit();
+      }
+
+      // $menusManager = new ActuManager();
+      // $resultat = $menusManager->recupererTypeTitre();
+
+      return $this->twig->render('StrasCook/adminactu.html.twig');
+
+  }
+
+  public function ajouter()
+  {
+      $resultat = "";
+      $donnees = [];
+
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
-        if(!array_key_exists('message', $_POST) || $_POST['message'] == ''){
-            $this->errors['message'] = "Vous n'avez pas renseigné votre message";
-        }else{
-            $message = $_POST['message'];
-        }
+          if (isset($_FILES['image'])) {
 
-        // Faire dispparaître les erreurs
+              $typesAutorises = 'image/jpeg';
+              $tailleAutorisee = 2000000;
+              $nomOriginal = $_FILES['image']['name'];
+              $repTemp = $_FILES['image']['tmp_name'];
+              $typeFichier = $_FILES['image']['type'];
+              $tailleFichier = $_FILES['image']['size'];
+              $erreurFichier = $_FILES['image']['error'];
+              $extensionFichier = pathinfo($nomOriginal, PATHINFO_EXTENSION);
+              $repFinal = 'assets/img/img-actu/';
 
-        if(empty($this->errors))
-        {
-            $_POST = [];
-        }
+              if ($tailleFichier > $tailleAutorisee || $erreurFichier == 1) {
+                  $this->erreurs[] = "L'image dépasse les 2 Mo";
+                  return $this->index();
+
+              } elseif (!empty($_FILES) && $typeFichier != $typesAutorises) {
+                  $this->erreurs[] = "Le fichier n'est pas au format JPEG";
+                  return $this->index();
+
+              } else {
+                  $nomFinal = 'image' . uniqid() . '.' . $extensionFichier;
+                  move_uploaded_file($repTemp, $repFinal . $nomFinal);
+                  $donnees['image'] = $nomFinal;
+              }
+          }
+
+          $donnees['titre'] = $_POST['titre'];
+          $donnees['article'] = $_POST['article'];
 
 
-        $donnees = [];
+          if (empty($this->erreurs)) {
+              $actuManager = new ActuManager();
+              $resultat = $actuManager->ajouter($donnees);
+              header('Location: /admin/actu');
+          }
 
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+      }
 
-            $donnees['titre'] = $_POST['titre'];
-            $donnees['image'] = $_POST['image'];
-            $donnees['contenu'] = $_POST['contenu'];
 
-            if (isset($_FILES['image'])) {
+      // return $this->twig->render('StrasCook/admin.html.twig', ['resultatAjoutMenu'=>$resultat]);
 
-                $typesAutorises = ['image/jpeg', 'image/png'];
-                $tailleAutorisee = 2000000;
+  }
 
-                for ($i = 0; $i < count($_FILES['image']['name']); $i++) {
 
-                    $nomOriginal = $_FILES['image']['name'][$i];
-                    $repTemp = $_FILES['image']['tmp_name'][$i];
-                    $typeFichier = $_FILES['image']['type'][$i];
-                    $tailleFichier = $_FILES['image']['size'][$i];
-                    $erreurFichier = $_FILES['image']['error'][$i];
+  public function supprimer()
+  {
+      session_start();
+      $menu = [];
 
-                    $extensionFichier = pathinfo($nomOriginal, PATHINFO_EXTENSION);
-                    $nomFinal = 'image' . uniqid() . '.' . $extensionFichier;
-                    $repFinal = 'public/assets/img/img-actu/';
+      if(isset($_POST['supprimer'])) {
+          $menu = $_POST['delete'];
+          echo $menu;
+          $menusManager = new MenusManager();
+          $menusManager->supprimer($menu);
+      }
 
-                    if ($repTemp != "") {
-
-                        if (!in_array($typeFichier, $typesAutorises)) {
-                            echo '<div class="alert alert-warning" role="alert">
-                            <strong>Le fichier n\'est pas au bon format.</strong></div>';
-
-                        } elseif ($tailleFichier > $tailleAutorisee || $erreurFichier === 1) {
-                            echo '<div class="alert alert-warning" role="alert">
-                            <strong>Le fichier est trop lourd.</strong></div>';
-
-                        } else {
-                            move_uploaded_file($repTemp, $repFinal . $nomFinal);
-                        }
-                    }
-                }
-            }
-
-            $actuManager = new ActuManager();
-            $resultat = $actuManager->ajouter($donnees);
-        }
-
-        return $this->twig->render('StrasCook/adminactu.html.twig');
-
-    }
+      header('Location: /admin');
+  }
 
 
 }

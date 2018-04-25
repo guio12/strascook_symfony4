@@ -25,29 +25,6 @@
             </tr>
             </thead>
             <tbody>
-<<<<<<< HEAD
-            <tr>
-                <td>1</td>
-                <td>Classique</td>
-                <td>Menu Sanglier</td>
-                <td><form action="/admin" method="post" name="supprimer"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Végétarien</td>
-                <td>Menu Carottes</td>
-                <td><form action="/admin" method="post" name="supprimer"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Vegan</td>
-                <td>Menu Graines de courge</td>
-                <td><form action="/admin" method="post" name="supprimer"><button type="submit" class="btn btn-danger ml-2">Supprimer</button></form></td>
-            </tr>
-            </tbody>
-        </table>
-        <button class="btn btn-info" id="bouton_ajout_menu">Ajouter un menu</button>
-=======
 
             <form action="/admin/supprimer" method="post" name="supprimer">
                 {% for menu in donnees %}
@@ -64,18 +41,13 @@
             </tbody>
         </table>
         <button class="btn btn-info" id="bouton_ajout_menu"> Ajouter un menu</button>
->>>>>>> b276efe9b7b75dabaea412fa46e43b3f9d4ba3a4
     </div>
 
     <hr>
 
     <section class="container" id="ajout_menu" style="display:none">
         <h2>Menu</h2>
-<<<<<<< HEAD
-        <form class="form-group" action="/admin" enctype="multipart/form-data" method="post">
-=======
         <form class="form-group" action="/admin/ajouter" enctype="multipart/form-data" method="post">
->>>>>>> b276efe9b7b75dabaea412fa46e43b3f9d4ba3a4
             <div class="row">
                 <div class="col">
                     <label for="type">Type</label>

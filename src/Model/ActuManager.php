@@ -21,8 +21,7 @@ class ActuManager extends EntityManager
 
     public function ajouter($donnees)
     {
-        $requete = $this->conn->prepare("INSERT INTO $this->table (`titre`, `image`, `contenu`) VALUES (\"" . $donnees['titre'] . "\", \"" . $donnees['image'] . "\", \"" . $donnees['contenu'] . "\")");
-
+        $requete = $this->conn->prepare("INSERT INTO $this->table (`titre`, `image`, `contenu`) VALUES (\"" . $donnees['titre'] . "\", \"" . $donnees['image'] . "\", \"" . $donnees['article'] . "\")");
         return $requete->execute();
     }
 
