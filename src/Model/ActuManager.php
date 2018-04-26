@@ -27,16 +27,27 @@ class ActuManager extends EntityManager
 
     public function recuperer()
     {
-        $requete = $this->conn->prepare("SELECT DISTINCT actu.titre, actu.contenu, actu.image FROM $this->table");
+        $requete = $this->conn->prepare("SELECT DISTINCT actu.id, actu.titre, actu.contenu, actu.image FROM $this->table");
         $requete->execute();
         $donnees = $requete->fetchAll();
         return $donnees;
     }
 
+    // public function utilisation($actu)
+    // {
+    //     $requete = $this->conn->prepare("SELECT DISTINCT actu.titre, actu.contenu, actu.image FROM $this->table WHERE id = :actu");
+    //     $requete->bindValue(':actu', $actu);
+    //     $requete->execute();
+    //     $donnees = $requete->fetch();
+    //     return $donnees;
+    // }
+
+
+
     public function supprimer($actu)
     {
         $requete = $this->conn->prepare("DELETE FROM $this->table WHERE id = :actu");
-        $requete->bindValue(':actu', $menu);
+        $requete->bindValue(':actu', $actu);
         return $requete->execute();
     }
 

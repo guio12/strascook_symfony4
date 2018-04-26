@@ -8,6 +8,8 @@ use Model\ActuManager;
 class AdminActuController extends AbstractController
 {
 
+    public $erreurs = [];
+
 
     public function index ()
     {
@@ -23,13 +25,18 @@ class AdminActuController extends AbstractController
         $actuManager = new ActuManager();
         $resultat = $actuManager->recuperer();
 
-        var_dump($resultat);
-        return $this->twig->render('StrasCook/adminactu.html.twig', ['donnnees' => $resultat]);
+
+
+        return $this->twig->render('StrasCook/adminactu.html.twig', ['erreurs' =>$this->erreurs, 'donnees' => $resultat]);
 
     }
 
+    // Methode pour ajouter les données dans la bdd de la page admin/actu :
+
     public function ajouter()
     {
+
+
         $resultat = "";
         $donnees = [];
 
@@ -46,7 +53,9 @@ class AdminActuController extends AbstractController
                 $tailleFichier = $_FILES['image']['size'];
                 $erreurFichier = $_FILES['image']['error'];
                 $extensionFichier = pathinfo($nomOriginal, PATHINFO_EXTENSION);
-                $repFinal = '../assets/img/img-actu/';
+                $repFinal = 'assets/img/img-actu/';
+
+                // vérification des erreurs
 
                 if ($tailleFichier > $tailleAutorisee || $erreurFichier == 1) {
                     $this->erreurs[] = "L'image dépasse les 2 Mo";
@@ -56,7 +65,11 @@ class AdminActuController extends AbstractController
                     $this->erreurs[] = "Le fichier n'est pas au format JPEG";
                     return $this->index();
 
-                } else {
+                }
+
+                // s'il n'y a pas d'erreur on envoie l'image dans le dossier :
+
+                else {
                     $nomFinal = 'image' . uniqid() . '.' . $extensionFichier;
                     move_uploaded_file($repTemp, $repFinal . $nomFinal);
                     $donnees['image'] = $nomFinal;
@@ -66,31 +79,49 @@ class AdminActuController extends AbstractController
             $donnees['titre'] = $_POST['titre'];
             $donnees['contenu'] = $_POST['contenu'];
 
+            // Si le tableau "erreurs" est vide, alors on ajoute les données
+            // dans la base de données :
 
             if (empty($this->erreurs)) {
                 $actuManager = new ActuManager();
                 $resultat = $actuManager->ajouter($donnees);
-                header('Location: /admin/actu');
-            }
 
+            }
+            header('Location: /admin/actu');
         }
 
 
-        // return $this->twig->render('StrasCook/admin.html.twig', ['resultatAjoutMenu'=>$resultat]);
 
     }
 
+    // Methode pour utiliser les données dans la bdd de la page admin/actu :
+
+    // public function utiliser()
+    // {
+    //     $menu = [];
+    //
+    //     if(isset($_POST['utiliser'])) {
+    //         $actu = $_POST['utilisation'];
+    //         echo $actu;
+    //         $actuManager = new ActuManager();
+    //         $actuManager->utilisation($actu);
+    //     }
+    //
+    //     header('Location: /admin/actu');
+    // }
+
+
+    // Methode pour supprimer les données dans la bdd de la page admin/actu :
 
     public function supprimer()
     {
-        session_start();
-        $menu = [];
+        $actu = [];
 
         if(isset($_POST['supprimer'])) {
-            $menu = $_POST['delete'];
-            echo $menu;
-            $menusManager = new MenusManager();
-            $menusManager->supprimer($menu);
+            $actu = $_POST['delete'];
+            echo $actu;
+            $actuManager = new ActuManager();
+            $actuManager->supprimer($actu);
         }
 
         header('Location: /admin/actu');

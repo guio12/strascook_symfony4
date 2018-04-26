@@ -11,6 +11,26 @@ class ContactController extends AbstractController
     protected $errors = [];
 
 
+    public function index()
+    {
+
+          session_start();
+
+          if (isset($_SESSION['user_id']))
+          {
+              header('Status: 301 Moved Permanently', false, 301); header('Location: /login2'); exit();
+
+          }
+
+          $this->erreurs();
+          if (isset($_POST['email'])) {
+              $visuelErreur = $this->errors;
+              return $this->twig->render('StrasCook/contact.html.twig', ['erreurs' => $visuelErreur, 'value' => $_POST]);
+          }
+          return $this->twig->render('StrasCook/contact.html.twig');
+    }
+
+
     public function envoiMail()
     {
         $mail = new PHPMailer(true);
@@ -83,23 +103,6 @@ class ContactController extends AbstractController
             $this->envoiMail();
         }
 
-    }
-
-    public function index()
-    {
-        session_start();
-        
-        if (isset($_SESSION['user_id']))
-        {
-            header('Status: 301 Moved Permanently', false, 301); header('Location: /login2'); exit();
-            
-        }
-        $this->erreurs();
-        if (isset($_POST['email'])) {
-            $visuelErreur = $this->errors;
-            return $this->twig->render('StrasCook/contact.html.twig', ['erreurs' => $visuelErreur, 'value' => $_POST]);
-        }
-        return $this->twig->render('StrasCook/contact.html.twig');
     }
 
 

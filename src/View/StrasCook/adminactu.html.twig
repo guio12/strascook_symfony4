@@ -1,23 +1,18 @@
-{%  extends 'layout.html.twig' %}
-
-{% block header %}
-{% endblock %}
-
-
 {% block stylesheetpages %}
-
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <script src="../assets/js/admin_actu.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
 {% endblock %}
-
-
 
 {% block content %}
 
     <div class="container">
+      {% for error in erreurs %}
+          <div class="row">
+              <div class="alert alert-danger alerte_erreur">{{ error }}</div>
+          </div>
+      {% endfor %}
 
-    <form class="row" method="post" action="/admin/actu/ajouter">
+    <form class="row" method="post" action="/admin/actu/ajouter" enctype="multipart/form-data">
 
     <div class="col-6">
 
@@ -52,25 +47,30 @@
 
     </form>
 
-        <button class="btn-primary btn" id="bouton_ajout_actu">Voir tableau</button>
-
     </div>
 
     <hr>
 
-    <div class="container" id="ajout_actu" style="display: none;">
 
-        <table class="table">
-          <tr>
-            <th>Titre</th>
-            <th>Image</th>
-            <th>Contenu</th>
-          </tr>
+      <form action="/admin/actu/supprimer" method="post">
+        <table class="table table-striped table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th>Id</th>
+              <th>Titre</th>
+              <th>Image</th>
+              <th>Contenu</th>
+              <th></th>
+            </tr>
+          </thead>
           {% for actu in donnees %}
             <tr>
-              <td>{{ actu.titre }}</td>
-              <td>{{ actu.image }}</td>
-              <td>{{ actu.contenu }}</td>
+              <input type="hidden" name="delete" value="{{actu.id}}">
+              <td>{{actu.id }}</td>
+              <td>{{actu.titre }}</td>
+              <td>{{actu.image }}</td>
+              <td>{{actu.contenu}}</td>
+              <td><button type="submit" name="supprimer" class="btn btn-danger ml-2">Supprimer</button></td>
             </tr>
             {% endfor %}
 
