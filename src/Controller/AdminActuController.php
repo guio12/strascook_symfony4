@@ -110,6 +110,23 @@ class AdminActuController extends AbstractController
     //     header('Location: /admin/actu');
     // }
 
+    //Methode pour update les données dans la bd de la page admin/actu :
+
+    public function update()
+    {
+        $actu = [];
+
+        if(isset($_POST['supprimer'])) {
+            $actu = $_POST['delete'];
+            $actuManager = new ActuManager();
+            $actuManager->update($actu);
+        }
+
+        header('Location: /admin/actu');
+    }
+
+
+
 
     // Methode pour supprimer les données dans la bdd de la page admin/actu :
 
@@ -119,7 +136,10 @@ class AdminActuController extends AbstractController
 
         if(isset($_POST['supprimer'])) {
             $actu = $_POST['delete'];
-            echo $actu;
+            $fileToDelete = 'assets/img/img-actu/' . $_POST['supp'];
+            if (file_exists($fileToDelete)) {
+                unlink($fileToDelete);
+            }
             $actuManager = new ActuManager();
             $actuManager->supprimer($actu);
         }

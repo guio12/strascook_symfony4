@@ -66,6 +66,7 @@
           {% for actu in donnees %}
             <tr>
               <input type="hidden" name="delete" value="{{actu.id}}">
+              <input type="hidden" name="supp" value="{{actu.image }}">
               <td>{{actu.id }}</td>
               <td>{{actu.titre }}</td>
               <td>{{actu.image }}</td>
@@ -76,7 +77,7 @@
 
 
         </table>
-
+      </form>
     </div>
 
 
