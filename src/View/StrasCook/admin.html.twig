@@ -29,7 +29,8 @@
             <form action="/admin/supprimer" method="post" name="supprimer">
                 {% for menu in donnees %}
                     <tr>
-                        <input type="hidden" name="delete" value="{{menu.id}}">
+                        <input type="hidden" name="delete" value="{{ menu.id }}">
+                        <input type="hidden" name="deleteImage" value="{{ menu.image }}">
                         <td>{{ menu.id }}</td>
                         <td>{{ menu.nom }}</td>
                         <td>{{ menu.titre }}</td>

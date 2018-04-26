@@ -38,4 +38,26 @@ class MenusManager extends EntityManager
         return $requete->execute();
 
     }
+
+    public function affichageMenusClassiques() {
+        $requete = $this->conn->prepare("SELECT DISTINCT menus.id, menus.titre, menus.image, menus.introduction, menus.entree, menus.d_entree, menus.plat, menus.d_plat, menus.dessert, menus.d_dessert, menus.prix FROM menus WHERE fk_type_menu = 1");
+        $requete->execute();
+        $donneesClassiques = $requete->fetchAll();
+        return $donneesClassiques;
+    }
+
+    public function affichageMenusVegetariens() {
+        $requete = $this->conn->prepare("SELECT DISTINCT menus.id, menus.titre, menus.image, menus.introduction, menus.entree, menus.d_entree, menus.plat, menus.d_plat, menus.dessert, menus.d_dessert, menus.prix FROM menus WHERE fk_type_menu = 2");
+        $requete->execute();
+        $donneesVegetariens = $requete->fetchAll();
+        return $donneesVegetariens;
+    }
+
+    public function affichageMenusVegans() {
+        $requete = $this->conn->prepare("SELECT DISTINCT menus.id, menus.titre, menus.image, menus.introduction, menus.entree, menus.d_entree, menus.plat, menus.d_plat, menus.dessert, menus.d_dessert, menus.prix FROM menus WHERE fk_type_menu = 3");
+        $requete->execute();
+        $donneesVegans = $requete->fetchAll();
+        return $donneesVegans;
+    }
+
 }

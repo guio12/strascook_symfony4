@@ -57,7 +57,7 @@ hr {
     padding-bottom: 10vh;
 }
 
-p {
+h3 {
     font-family: 'Raleway', sans-serif;
     font-size: 1em;
     text-align: left !important;
@@ -76,13 +76,14 @@ p {
     font-size: 1.1em;
 }
 
-li, p {
+li, h3 {
     font-family: 'Raleway', sans-serif;
 }
 
 .titre {
     text-decoration: underline;
     font-weight: bold;
+    font-size: 1.1em;
 }
 
 .partenaires {

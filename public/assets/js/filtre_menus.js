@@ -1,9 +1,7 @@
-
 $(document).ready(function() {
     $('#filters').on('click', '.tous', function() {
         $('.menus').show(1000)
         $('.titre_cache2').show(1000)
-
         $('.container.bio').show(1000)
     });
 
