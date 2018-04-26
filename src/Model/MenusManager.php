@@ -41,11 +41,25 @@ class MenusManager extends EntityManager
         return $requete->execute();
     }
 
-    public function affichageMenus() {
-        $requete = $this->conn->prepare("SELECT DISTINCT type_menu.nom, menus.titre, menus.image, menus.introduction, menus.entree, menus.d_entree, menus.plat, menus.d_plat, menus.dessert, menus.d_dessert, menus.prix FROM type_menu INNER JOIN $this->table ON type_menu.id=menus.fk_type_menu ORDER BY type_menu.nom");
+    public function affichageMenusClassiques() {
+        $requete = $this->conn->prepare("SELECT DISTINCT menus.id, menus.titre, menus.image, menus.introduction, menus.entree, menus.d_entree, menus.plat, menus.d_plat, menus.dessert, menus.d_dessert, menus.prix FROM menus WHERE fk_type_menu = 1");
         $requete->execute();
-        $donnees = $requete->fetchAll();
-        return $donnees;
+        $donneesClassiques = $requete->fetchAll();
+        return $donneesClassiques;
+    }
+
+    public function affichageMenusVegetariens() {
+        $requete = $this->conn->prepare("SELECT DISTINCT menus.id, menus.titre, menus.image, menus.introduction, menus.entree, menus.d_entree, menus.plat, menus.d_plat, menus.dessert, menus.d_dessert, menus.prix FROM menus WHERE fk_type_menu = 2");
+        $requete->execute();
+        $donneesVegetariens = $requete->fetchAll();
+        return $donneesVegetariens;
+    }
+
+    public function affichageMenusVegans() {
+        $requete = $this->conn->prepare("SELECT DISTINCT menus.id, menus.titre, menus.image, menus.introduction, menus.entree, menus.d_entree, menus.plat, menus.d_plat, menus.dessert, menus.d_dessert, menus.prix FROM menus WHERE fk_type_menu = 3");
+        $requete->execute();
+        $donneesVegans = $requete->fetchAll();
+        return $donneesVegans;
     }
 
 }

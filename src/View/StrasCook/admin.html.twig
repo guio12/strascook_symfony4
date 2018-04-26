@@ -4,7 +4,7 @@
 {% endblock %}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="assets/js/admin_menu.js"></script>
+<script src="/assets/js/admin_menu.js"></script>
 
 {% block content %}
 
@@ -29,7 +29,8 @@
             <form action="/admin/supprimer" method="post" name="supprimer">
                 {% for menu in donnees %}
                     <tr>
-                        <input type="hidden" name="delete" value="{{menu.id}}">
+                        <input type="hidden" name="delete" value="{{ menu.id }}">
+                        <input type="hidden" name="deleteImage" value="{{ menu.image }}">
                         <td>{{ menu.id }}</td>
                         <td>{{ menu.nom }}</td>
                         <td>{{ menu.titre }}</td>
@@ -40,7 +41,7 @@
             </form>
             </tbody>
         </table>
-        <button class="btn btn-info" id="bouton_ajout_menu"> Ajouter un menu</button>
+        <button class="btn btn-info" id="bouton_ajout_menu">Ajouter un menu</button>
     </div>
 
     <hr>

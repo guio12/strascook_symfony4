@@ -81,7 +81,6 @@ class AdminMenuController extends AbstractController
 
         }
         return $nomFinal;
-        // return $this->twig->render('StrasCook/admin.html.twig', ['resultatAjoutMenu'=>$resultat]);
     }
 
     public function supprimer()
@@ -90,11 +89,16 @@ class AdminMenuController extends AbstractController
         $menu = [];
 
         if(isset($_POST['supprimer'])) {
+
+            $deleteImage = 'assets/img/img-menu/' . $_POST['deleteImage'];
+
+            if (file_exists($deleteImage)) {
+                unlink($deleteImage);
+            }
+
             $menu = $_POST['delete'];
-            echo $menu;
             $menusManager = new MenusManager();
             $menusManager->supprimer($menu);
-
         }
         header('Location: /admin');
     }
