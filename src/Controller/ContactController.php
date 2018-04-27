@@ -2,110 +2,107 @@
 
 namespace Controller;
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+
 class ContactController extends AbstractController
 {
-
-
     protected $errors = [];
-
-// Create the Transport
-
-    // public function Swift_SmtpTransport($email, $message, $objet)
-    // {
-    //
-    //     $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465))
-    //       ->setUsername('charlottehofraise@gmail.com')
-    //       ->setPassword('tablechaise')
-    //     ;
-    //
-    //     // Create the Mailer using your created Transport
-    //     $mailer = new Swift_Mailer($transport);
-    //
-    //     // Create a message
-    //     $message = (new Swift_Message($objet))
-    //       ->setFrom($email)
-    //       ->setTo(['charlottehofraise@gmail.com', 'charlottehofraise@gmail.com' => 'Charlotte'])
-    //       ->setBody($message)
-    //       ;
-    //
-    //     // Send the message
-    //     $result = $mailer->send($message);
-    //
-    //     if ($result = $mailer->send($message)) {
-    //       echo "Votre message a bien été envoyé.";
-    //     }else{
-    //       $errors['echec'] = "Suite à une erreur, votre e-mail n'a pu être envoyé.";
-    //     }
-    //
-    //     // var_dump($result);
-    //
-    //
-    // }
-
-    public function erreurs()
-    {
-      //création des erreurs
-
-      if(!array_key_exists('email', $_POST) || $_POST['email'] == ''){
-      $this->errors['email'] = "Vous n'avez pas renseigné votre email";
-      }
-      elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        $this->errors['email'] = "Vous n'avez pas renseigné un email valide";
-      }else {
-        $email=$_POST['email'];
-      }
-
-      if(!array_key_exists('message', $_POST) || $_POST['message'] == ''){
-        $this->errors['message'] = "Vous n'avez pas renseigné votre message";
-      }else{
-        $message = $_POST['message'];
-      }
-
-      if (!array_key_exists('titre', $_POST) || $_POST['titre'] =='') {
-        $this->errors['titre'] = "Vous n'avez pas renseigné de titre";
-      }else{
-        $titre = $_POST['titre'];
-      }
-
-      if (!array_key_exists('objet', $_POST) || $_POST['objet'] =='') {
-        $this->errors['objet'] = "Vous n'avez pas choisi de motif";
-      }else{
-        $objet = $_POST['objet'];
-      }
-
-      // Faire dispparaître les erreurs
-
-      if(empty($this->errors))
-      {
-        $_POST = [];
-      }
-
-    }
 
 
     public function index()
     {
-        session_start();
 
-        if (isset($_SESSION['user_id']))
-        {
-            header('Status: 301 Moved Permanently', false, 301); header('Location: /login2'); exit();
+          session_start();
 
-        }
-        $this->erreurs();
-        if (isset($_POST['email'])) {
-            $visuelErreur = $this->errors;
-            return $this->twig->render('StrasCook/contact.html.twig', ['erreurs' => $visuelErreur, 'value' => $_POST]);
-        }
-        return $this->twig->render('StrasCook/contact.html.twig');
+          if (isset($_SESSION['user_id']))
+          {
+              header('Status: 301 Moved Permanently', false, 301); header('Location: /login2'); exit();
 
-    /**
-     * @param $id
-     * @return string
-     */
-    public function delete(int $id)
-    {
-        // TODO : delete the item with id $id
-        return $this->twig->render('Item/index.html.twig');
+          }
+
+          $this->erreurs();
+          if (isset($_POST['email'])) {
+              $visuelErreur = $this->errors;
+              return $this->twig->render('StrasCook/contact.html.twig', ['erreurs' => $visuelErreur, 'value' => $_POST]);
+          }
+          return $this->twig->render('StrasCook/contact.html.twig');
     }
+
+
+    public function envoiMail()
+    {
+        $mail = new PHPMailer(true);
+        // Passing `true` enables exceptions
+        try {
+            //Server settings
+            $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+            $mail->isSMTP();                                      // Set mailer to use SMTP
+            $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+            $mail->SMTPAuth = true;                               // Enable SMTP authentication
+            $mail->Username = 'charlottehofraise@gmail.com';                 // SMTP username
+            $mail->Password = 'tablechaise';                           // SMTP password
+            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = 587;                                    // TCP port to connect to
+
+            //Recipients
+            $mail->setFrom('charlottehofraise@gmail.com', 'Mailer');
+            $mail->addAddress('charlottehofraise@gmail.com', 'Luc HUET');     // Add a recipient
+            $mail->addReplyTo(" $this->email ", 'Information');
+
+            //Content
+            $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->Subject = " $this->titre ";
+
+            $mail->Body = " $this->message ";
+
+            $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+            $mail->send(header('Location:/contact'));
+        } catch (Exception $e) {
+            echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+        }
+    }
+
+    public function erreurs()
+    {
+
+        //création des erreurs
+
+        if (!array_key_exists('email', $_POST) || $_POST['email'] == '') {
+            $this->errors['email'] = "Vous n'avez pas renseigné votre email";
+        } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+            $this->errors['email'] = "Vous n'avez pas renseigné un email valide";
+        } else {
+            $this->email = $_POST['email'];
+        }
+
+        if (!array_key_exists('message', $_POST) || $_POST['message'] == '') {
+            $this->errors['message'] = "Vous n'avez pas renseigné votre message";
+        } else {
+            $this->message = $_POST['message'];
+        }
+
+        if (!array_key_exists('objet', $_POST) || $_POST['objet'] == '') {
+            $this->errors['objet'] = "Vous n'avez pas choisi de motif";
+        } else {
+            $this->objet = $_POST['objet'];
+        }
+
+        if (!array_key_exists('titre', $_POST) || $_POST['titre'] == '') {
+            $this->errors['titre'] = "Vous n'avez pas renseigné de titre";
+        } else {
+            $this->titre = $_POST['titre'];
+        }
+
+        // Faire dispparaître les erreurs
+
+        if (empty($this->errors)) {
+            $_POST = [];
+            $this->envoiMail();
+        }
+
+    }
+
 }

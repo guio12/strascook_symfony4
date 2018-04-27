@@ -162,7 +162,7 @@ class CalendarController extends AbstractController
         $errors = [];
 
         $id = $_GET['id'];
-        if (isset($_POST['deleteEvent'])) {
+        if (isset($_GET['deleteEvent'])) {
             $id = $_GET['id'];
             $events = new \Model\Events($pdo);
             //$eventToDelete = ($_POST['delete']);

@@ -2,39 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0aadb48d-eba6-4320-be60-2a943b99cfb6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/img/img-menu/image5adf6dfc0ba58.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/img-menu/image5adf81b7bd806.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/img-menu/image5ae033e19a90c.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/img-menu/image5ae04a5da1ca7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/img-menu/image5ae04abc392f9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/img-menu/image5ae04d0fadf61.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/AdminMenuController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/CalendarManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/DNSCheckValidation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/SpoofCheckValidation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vendor/egulias/email-validator/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/admin_actu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminActuController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Actu.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/ActuManager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/StrasCook/adminactu.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/StrasCook/reste.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strascook-22-04-2018.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/db.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/dispatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/dispatcher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/img-menu/banh_bao.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/img-menu/image5adf6dfc0ba58.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/img-menu/image5adf81b7bd806.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/img-menu/image5ae033e19a90c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/img-menu/image5ae04a5da1ca7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/img-menu/image5ae04abc392f9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/img-menu/image5ae04d0fadf61.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/img-menu/risotto.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/img-menu/salade_tempeh.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/img-menu/tartine.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/filtre_menus.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/filtre_menus.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AccueilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccueilController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminMenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminMenuController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CalendarController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CalendarController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/LechefController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LechefController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PartenairesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PartenairesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/EntityManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/EntityManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Events.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Events.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/LoginManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/LoginManager.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/MenusManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MenusManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/StrasCook/accueil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/StrasCook/accueil.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/StrasCook/admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/StrasCook/admin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/StrasCook/back_to_top.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/StrasCook/back_to_top.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/StrasCook/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/StrasCook/contact.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/StrasCook/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/StrasCook/login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/StrasCook/login2.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/StrasCook/login2.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/StrasCook/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/StrasCook/menu.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/DNSCheckValidation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/EmailValidator/Validation/SpoofCheckValidation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/egulias/email-validator/composer.json" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -78,17 +92,17 @@
       <file leaf-file-name="dispatcher.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/dispatcher.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+            <state relative-caret-position="78">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reservation_edit.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reservation_edit.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_edit.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+            <state relative-caret-position="238">
+              <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="25" selection-end-column="33" />
               <folding>
                 <element signature="e#12#28#0#Twig" expanded="true" />
                 <element signature="e#567#600#0#Twig" expanded="true" />
@@ -101,24 +115,15 @@
         <entry file="file://$PROJECT_DIR$/src/Model/Events.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="121" column="47" lean-forward="true" selection-start-line="121" selection-start-column="47" selection-end-line="121" selection-end-column="47" />
+              <caret line="121" column="47" selection-start-line="121" selection-start-column="47" selection-end-line="121" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Event.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Event.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalendarController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CalendarController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/CalendarController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
+            <state relative-caret-position="434">
               <caret line="174" column="30" selection-start-line="174" selection-start-column="30" selection-end-line="174" selection-end-column="30" />
               <folding>
                 <element signature="e#28#57#0#PHP" expanded="true" />
@@ -141,8 +146,8 @@
       <file leaf-file-name="AdminMenuController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/AdminMenuController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="100" column="31" lean-forward="true" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
+            <state relative-caret-position="326">
+              <caret line="99" column="31" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -192,7 +197,6 @@
         <option value="$PROJECT_DIR$/src/Controller/ReservationController.php" />
         <option value="$PROJECT_DIR$/src/bootstrap.php" />
         <option value="$PROJECT_DIR$/src/Controller/boostrapCalendar/bootstrap.php" />
-        <option value="$PROJECT_DIR$/src/Controller/ContactController.php" />
         <option value="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_add.html.twig" />
         <option value="$PROJECT_DIR$/public/assets/css/calendar.css" />
         <option value="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_index.html.twig" />
@@ -211,6 +215,7 @@
         <option value="$PROJECT_DIR$/src/Model/CalendarManager.php" />
         <option value="$PROJECT_DIR$/app/dispatcher.php" />
         <option value="$PROJECT_DIR$/src/Model/Events.php" />
+        <option value="$PROJECT_DIR$/src/Controller/ContactController.php" />
         <option value="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/CalendarController.php" />
       </list>
@@ -228,15 +233,14 @@
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/nikic/fast-route" />
-      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
-      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1429" />
     <option name="height" value="811" />
@@ -266,6 +270,12 @@
               <item name="strasbourg_0218_php_Strascook" type="b2602c69:ProjectViewProjectNode" />
               <item name="strasbourg_0218_php_Strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="strasbourg_0218_php_Strascook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strasbourg_0218_php_Strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="strasbourg_0218_php_Strascook" type="b2602c69:ProjectViewProjectNode" />
@@ -325,11 +335,6 @@
               <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="StrasCook" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="calendar" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="strasbourg_0218_php_Strascook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strasbourg_0218_php_Strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -399,18 +404,18 @@
       <workItem from="1524639361100" duration="10840000" />
       <workItem from="1524658830250" duration="10944000" />
       <workItem from="1524725968181" duration="8504000" />
-      <workItem from="1524812855249" duration="8279000" />
+      <workItem from="1524812855249" duration="10296000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84060000" />
+    <option name="totallyTimeSpent" value="86077000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1429" height="811" extended-state="0" />
+    <frame x="0" y="23" width="1435" height="811" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49856734" visible="true" weight="0.16222063" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49856734" visible="true" weight="0.16511127" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3295129" />
@@ -530,13 +535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="291" column="9" selection-start-line="291" selection-start-column="9" selection-end-line="291" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -679,13 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ContactController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret line="87" column="24" lean-forward="true" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/404.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -737,8 +728,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/dispatcher.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+        <state relative-caret-position="78">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
@@ -751,14 +742,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/AdminMenuController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="100" column="31" lean-forward="true" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
+        <state relative-caret-position="326">
+          <caret line="99" column="31" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/StrasCook/admin.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-551" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="809">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Event.php">
@@ -771,13 +776,24 @@
     <entry file="file://$PROJECT_DIR$/src/Model/Events.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="121" column="47" lean-forward="true" selection-start-line="121" selection-start-column="47" selection-end-line="121" selection-end-column="47" />
+          <caret line="121" column="47" selection-start-line="121" selection-start-column="47" selection-end-line="121" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="25" selection-end-column="33" />
+          <folding>
+            <element signature="e#12#28#0#Twig" expanded="true" />
+            <element signature="e#567#600#0#Twig" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CalendarController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="434">
           <caret line="174" column="30" selection-start-line="174" selection-start-column="30" selection-end-line="174" selection-end-column="30" />
           <folding>
             <element signature="e#28#57#0#PHP" expanded="true" />
@@ -785,17 +801,6 @@
             <element signature="e#2080#2126#0#PHP" expanded="true" />
             <element signature="e#3349#3396#0#PHP" expanded="true" />
             <element signature="e#5275#5322#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-          <folding>
-            <element signature="e#12#28#0#Twig" expanded="true" />
-            <element signature="e#567#600#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
