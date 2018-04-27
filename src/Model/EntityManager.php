@@ -44,29 +44,4 @@ abstract class EntityManager
         return $statement->fetch(\PDO::FETCH_ASSOC);
     }
 
-    /**
-     *
-     */
-    public function supprimer($id)
-    {
-
-    }
-
-    /**
-     *
-     */
-    public function ajouter($donnees)
-    {
-
-    }
-
-    /**
-     *
-     */
-    public function modifier($id, $data)
-    {
-
-    }
-
-
 }

@@ -92,7 +92,8 @@ class CalendarController extends AbstractController
             'date'        => $event->getStart()->format('Y-m-d'),
             'start'       => $event->getStart()->format('H:i'),
             'end'         => $event->getEnd()->format('H:i'),
-            'description' => $event->getDescription()
+            'description' => $event->getDescription(),
+            'id'          => $event->getId()
         ];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -147,4 +148,38 @@ class CalendarController extends AbstractController
 
         <?php
     }
+
+    /**
+     * @return string
+     * @throws \Twig_Error_Loader
+     * @throws \Twig_Error_Runtime
+     * @throws \Twig_Error_Syntax
+     */
+    public function delete ()
+    {
+        $pdo = get_pdo();
+        $event = new \Model\Events($pdo);
+        $errors = [];
+
+        $id = $_GET['id'];
+        if (isset($_POST['deleteEvent'])) {
+            $id = $_GET['id'];
+            $events = new \Model\Events($pdo);
+            //$eventToDelete = ($_POST['delete']);
+            //$data = $_POST['delete'];
+
+            $events->delete($id);
+            header('Location: /reservation?success=1');
+            exit();
+        }
+        $id = $event->getId();
+        return $this->twig->render('StrasCook/calendar/reservation_edit.html.twig',
+            ['errors'=>$errors,
+                'id'=>$id,
+                'eventToDelete'=>$eventToDelete
+            ]);
+        }
+
+
+
 }

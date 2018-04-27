@@ -8,11 +8,6 @@
 
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/', 'Item/index');
-    // {id} must be a number (\d+)
-    $r->addRoute('GET', '/item/{id:\d+}', 'Item/show');
-    $r->addRoute('GET', '/item/add', 'Item/add');
-    $r->addRoute('GET', '/item/edit/{id:\d+}', 'Item/edit');
     $r->addRoute('GET', '/accueil', 'Accueil/index');
     $r->addRoute('GET', '/lechef', 'Lechef/index');
     $r->addRoute('GET', '/contact', 'Contact/index');
@@ -23,12 +18,15 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('POST', '/login', 'Login/identifier');
     $r->addRoute('GET', '/login2', 'Login/entree');
     $r->addRoute('GET', '/logout', 'Login/deco');
-    $r->addRoute('GET', '/admin', 'Admin/index');
+    $r->addRoute('GET', '/admin', 'AdminMenu/index');
+    $r->addRoute('POST', '/admin/ajouter', 'AdminMenu/ajouter');
+    $r->addRoute('POST', '/admin/supprimer', 'AdminMenu/supprimer');
     $r->addRoute('GET', '/reservation', 'Calendar/index');
     $r->addRoute('GET', '/reservation/add', 'Calendar/add');
     $r->addRoute('POST', '/reservation/add', 'Calendar/add');
     $r->addRoute('GET', '/reservation/edit', 'Calendar/edit');
     $r->addRoute('POST', '/reservation/edit', 'Calendar/edit');
+    $r->addRoute('GET', '/reservation/delete/{id:\d+}', 'Calendar/delete');
 });
 
 // Fetch method and URI from somewhere
@@ -44,7 +42,7 @@ $uri = rawurldecode($uri);
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
-        echo "404 Not Found";
+        // ... 404 Not Found
         break;
     case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
         $allowedMethods = $routeInfo[1];

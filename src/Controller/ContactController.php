@@ -4,6 +4,8 @@ namespace Controller;
 
 class ContactController extends AbstractController
 {
+
+
     protected $errors = [];
 
 // Create the Transport
@@ -42,44 +44,54 @@ class ContactController extends AbstractController
 
     public function erreurs()
     {
-        //création des erreurs
+      //création des erreurs
 
-        if (!array_key_exists('email', $_POST) || $_POST['email'] == '') {
-            $this->errors['email'] = "Vous n'avez pas renseigné votre email";
-        } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            $this->errors['email'] = "Vous n'avez pas renseigné un email valide";
-        } else {
-            $email = $_POST['email'];
-        }
+      if(!array_key_exists('email', $_POST) || $_POST['email'] == ''){
+      $this->errors['email'] = "Vous n'avez pas renseigné votre email";
+      }
+      elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $this->errors['email'] = "Vous n'avez pas renseigné un email valide";
+      }else {
+        $email=$_POST['email'];
+      }
 
-        if (!array_key_exists('message', $_POST) || $_POST['message'] == '') {
-            $this->errors['message'] = "Vous n'avez pas renseigné votre message";
-        } else {
-            $message = $_POST['message'];
-        }
+      if(!array_key_exists('message', $_POST) || $_POST['message'] == ''){
+        $this->errors['message'] = "Vous n'avez pas renseigné votre message";
+      }else{
+        $message = $_POST['message'];
+      }
 
-        if (!array_key_exists('objet', $_POST) || $_POST['objet'] == '') {
-            $this->errors['objet'] = "Vous n'avez pas choisi de motif";
-        } else {
-            $objet = $_POST['objet'];
-        }
+      if (!array_key_exists('titre', $_POST) || $_POST['titre'] =='') {
+        $this->errors['titre'] = "Vous n'avez pas renseigné de titre";
+      }else{
+        $titre = $_POST['titre'];
+      }
 
-        if (!array_key_exists('titre', $_POST) || $_POST['titre'] == '') {
-            $this->errors['titre'] = "Vous n'avez pas renseigné de titre";
-        } else {
-            $objet = $_POST['titre'];
-        }
+      if (!array_key_exists('objet', $_POST) || $_POST['objet'] =='') {
+        $this->errors['objet'] = "Vous n'avez pas choisi de motif";
+      }else{
+        $objet = $_POST['objet'];
+      }
 
-        // Faire dispparaître les erreurs
+      // Faire dispparaître les erreurs
 
-        if (empty($this->errors)) {
-            $_POST = [];
-        }
+      if(empty($this->errors))
+      {
+        $_POST = [];
+      }
 
     }
 
+
     public function index()
     {
+        session_start();
+
+        if (isset($_SESSION['user_id']))
+        {
+            header('Status: 301 Moved Permanently', false, 301); header('Location: /login2'); exit();
+
+        }
         $this->erreurs();
         if (isset($_POST['email'])) {
             $visuelErreur = $this->errors;
@@ -87,5 +99,13 @@ class ContactController extends AbstractController
         }
         return $this->twig->render('StrasCook/contact.html.twig');
 
+    /**
+     * @param $id
+     * @return string
+     */
+    public function delete(int $id)
+    {
+        // TODO : delete the item with id $id
+        return $this->twig->render('Item/index.html.twig');
     }
 }

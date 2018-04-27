@@ -22,6 +22,16 @@
             <button class="btn btn-primary bouton">Modifier l'évènement</button>
         </div>
     </form>
+    {{ dump(event) }}
+    <pre>{{ dump(delete) }}</pre>
+    <pre>{{ dump(id) }}</pre>
+
+    <form action="reservation/delete" method="post" class="form" name="deleteEvent" value="deleteEvent">
+        <div class="form-group calendar__container">
+            <input type="hidden" id="deleteEvent" name="delete" value="{{ event.id }}">
+            <button class="btn btn-primary bouton" name="delete">Supprimer ? l'évènement</button>
+        </div>
+    </form>
 </div>
 
 {% endblock %}
