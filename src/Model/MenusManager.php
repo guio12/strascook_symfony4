@@ -50,6 +50,7 @@ class MenusManager extends EntityManager
     {
         $requete = $this->conn->prepare("UPDATE $this->table SET `fk_type_menu` = \"" . $donnees['type']. "\", `titre` = \"" . $donnees['titre'] . "\", `image` = \"" . $donnees['image'] . "\", `introduction` = \"" .$donnees['introduction']. "\", `entree` = \"" . $donnees['entree']. "\", `d_entree` = \"" . $donnees['d_entree'] . "\", `plat` = \"" . $donnees['plat'] . "\", `d_plat` = \"" . $donnees['plat'] . "\", `dessert` = \"" . $donnees['dessert'] . "\", `d_dessert` = \"" . $donnees['d_dessert'] . "\", `prix` = \"" . $donnees['prix'] . "\" WHERE menus.id = :menu");
         $requete->bindValue(':menu', $recup_id);
+        echo $recup_id;
         return $requete->execute();
     }
     

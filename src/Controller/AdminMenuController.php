@@ -94,7 +94,6 @@ class AdminMenuController extends AbstractController
             $recup_id = $id;
         if (isset($_POST['modifier']))
         {
-        var_dump($_POST['modifier']);
             $donnes['id'] = $recup_id;
             
             $menusManager = new MenusManager();
@@ -108,9 +107,9 @@ class AdminMenuController extends AbstractController
     {        
         $resultat = "";
         $donnees = [];
-        
+       
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['modif_menu'])) {
 
             $donnees['type'] = $_POST['type'];
             $donnees['titre'] = $_POST['titre'];
@@ -150,14 +149,21 @@ class AdminMenuController extends AbstractController
             $donnees['dessert'] = $_POST['dessert'];
             $donnees['d_dessert'] = $_POST['d_dessert'];
             $donnees['prix'] = $_POST['prix'];
+            
+            $recup_id = $donnees['id'];
+            
 
-            if (empty($this->erreurs) && isset($_POST['modif_menu'])){
-                $recup_id = $donnees['id'];
+            if (empty($this->erreurs)){
+                
                 $menusManager = new MenusManager();
                 $resultat = $menusManager->modifier($donnees, $recup_id);
-               
+                header('Location: /admin');
+            } else {
+                echo "Ca marche pas";
             }
-            header('Location: /admin');
+            
+        } else {
+            echo "Ca marche pas";
         }
         
        
