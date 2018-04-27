@@ -17,7 +17,7 @@ class AccueilController extends AbstractController
 
         }
 
-        return $this->twig->render('StrasCook/accueil.html.twig', ['donnees' => $resultat]);
+        return $this->twig->render('StrasCook/accueil.html.twig');
     }
 
 }
