@@ -6,8 +6,10 @@
  * Time: 17:20
  */
 
-
-$dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
+   $dispatcher = FastRoute\simpleDispatcher(/**
+    * @param \FastRoute\RouteCollector $r
+    */
+     function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/accueil', 'Accueil/index');
     $r->addRoute('GET', '/lechef', 'Lechef/index');
     $r->addRoute('GET', '/contact', 'Contact/index');
@@ -23,6 +25,10 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('POST', '/admin/modifier', 'AdminMenu/modifier');
     $r->addRoute('POST', '/admin/modifier/{id: \d+}', 'AdminMenu/afficherModifsMenu');
     $r->addRoute('POST', '/admin/supprimer', 'AdminMenu/supprimer');
+    $r->addRoute('GET', '/admin/actu', 'AdminActu/index');
+    $r->addRoute('POST', '/admin/actu/ajouter', 'AdminActu/ajouter');
+    $r->addRoute('POST', '/admin/actu/supprimer', 'AdminActu/supprimer');
+
 
 });
 

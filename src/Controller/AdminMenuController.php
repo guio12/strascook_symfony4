@@ -8,7 +8,6 @@ use Model\MenusManager;
 class AdminMenuController extends AbstractController
 {
     public $erreurs = [];
-    
 
     public function index()
     {
@@ -30,9 +29,8 @@ class AdminMenuController extends AbstractController
 
     }
 
-
     public function ajouter()
-    {        
+    {
         $resultat = "";
         $donnees = [];
 
@@ -80,7 +78,7 @@ class AdminMenuController extends AbstractController
             if (empty($this->erreurs)) {
                 $menusManager = new MenusManager();
                 $resultat = $menusManager->ajouter($donnees);
-               
+                header('Location: /admin');
             }
             header('Location: /admin');
         }
@@ -168,22 +166,26 @@ class AdminMenuController extends AbstractController
         
        
 
+        }
+        return $nomFinal;
     }
-    
 
     public function supprimer()
     {
-        
         $menu = [];
 
         if(isset($_POST['supprimer'])) {
+
+            $deleteImage = 'assets/img/img-menu' . $_POST['deleteImage'];
+
+            if (file_exists($deleteImage)) {
+                unlink($deleteImage);
+            }
+
             $menu = $_POST['delete'];
-            echo $menu;
             $menusManager = new MenusManager();
             $menusManager->supprimer($menu);
         }
-
         header('Location: /admin');
     }
-
 }
