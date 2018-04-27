@@ -94,30 +94,15 @@ class AdminActuController extends AbstractController
 
     }
 
-    // Methode pour utiliser les données dans la bdd de la page admin/actu :
 
-    // public function utiliser()
-    // {
-    //     $menu = [];
-    //
-    //     if(isset($_POST['utiliser'])) {
-    //         $actu = $_POST['utilisation'];
-    //         echo $actu;
-    //         $actuManager = new ActuManager();
-    //         $actuManager->utilisation($actu);
-    //     }
-    //
-    //     header('Location: /admin/actu');
-    // }
-
-    //Methode pour update les données dans la bd de la page admin/actu :
+    //Methode pour update les données dans la bdd de la page admin/actu :
 
     public function update()
     {
         $actu = [];
 
-        if(isset($_POST['supprimer'])) {
-            $actu = $_POST['delete'];
+        if(isset($_POST['utiliser'])) {
+            $actu = $_POST['update'];
             $actuManager = new ActuManager();
             $actuManager->update($actu);
         }

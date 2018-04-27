@@ -33,13 +33,20 @@ class ActuManager extends EntityManager
         return $donnees;
     }
 
-    public function utilisation($actu)
+    public function utilisation()
     {
-        $requete = $this->conn->prepare("SELECT  FROM $this->table WHERE utilisation = 1");
+        $requete = $this->conn->prepare("SELECT titre, contenu, image FROM $this->table INNER JOIN actualite where $this->table.id = actualite.actualite_id ");
+        $requete->execute();
         $donnees = $requete->fetch();
         return $donnees;
     }
 
+    public function update($actu)
+    {
+        $requete = $this->conn->prepare("UPDATE actualite SET actualite_id = :actu ");
+        $requete->bindValue(':actu', $actu);
+        return $requete->execute();
+    }
 
 
     public function supprimer($actu)

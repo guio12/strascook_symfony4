@@ -14,40 +14,39 @@
 
     <form class="row" method="post" action="/admin/actu/ajouter" enctype="multipart/form-data">
 
-    <div class="col-6">
+      <div class="col-6">
 
-        <label for="titre">Titre de l'actualité :</label><br>
-        <input type="text" name="titre" id="titre"><br><br>
+          <label for="titre">Titre de l'actualité :</label><br>
+          <input type="text" name="titre" id="titre"><br><br>
 
-    </div>
+      </div>
 
-    <div class="col">
+      <div class="col">
 
-            <label for="image">Image (Format .jpg / Max 2 Mo)</label>
-            <input class="form-control" name="image" type="file" required>
+              <label for="image">Image (Format .jpg / Max 2 Mo)</label>
+              <input class="form-control" name="image" type="file" required>
 
-    </div>
+      </div>
 
-    <div class="col-12">
+      <div class="col-12">
 
-        <label for="contenu">Introduction :</label><br>
-        <textarea class="form-control" name="contenu" id="contenu" cols="30" rows="10"></textarea>
-        <br>
-        <br>
+          <label for="contenu">Introduction :</label><br>
+          <textarea class="form-control" name="contenu" id="contenu" cols="30" rows="10"></textarea>
+          <br>
+          <br>
 
-    </div>
+      </div>
 
 
-    <div class="col-3 offset-5">
+      <div class="col-3 offset-5">
 
-        <input type="submit" value="Envoyer">
+          <input type="submit" value="Envoyer">
 
-    </div>
+      </div>
 
 
     </form>
-
-    </div>
+  </div>
 
     <hr>
 
@@ -61,17 +60,20 @@
               <th>Image</th>
               <th>Contenu</th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
           {% for actu in donnees %}
             <tr>
               <input type="hidden" name="delete" value="{{actu.id}}">
               <input type="hidden" name="supp" value="{{actu.image }}">
+              <input type="hidden" name="update" value="{{actu.id}}">
               <td>{{actu.id }}</td>
               <td>{{actu.titre }}</td>
               <td>{{actu.image }}</td>
               <td>{{actu.contenu}}</td>
               <td><button type="submit" name="supprimer" class="btn btn-danger ml-2">Supprimer</button></td>
+              <td><button type="submit" name="utiliser" class="btn btn-primary ml-2">Utiliser</button></td>
             </tr>
             {% endfor %}
 

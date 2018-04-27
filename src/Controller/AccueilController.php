@@ -17,7 +17,10 @@ class AccueilController extends AbstractController
 
         }
 
-        return $this->twig->render('StrasCook/accueil.html.twig');
+        $actuManager = new ActuManager();
+        $resultatActu = $actuManager->utilisation();
+
+        return $this->twig->render('StrasCook/accueil.html.twig', ['actu' => $resultatActu]);
     }
 
 }
