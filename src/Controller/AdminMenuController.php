@@ -166,7 +166,7 @@ class AdminMenuController extends AbstractController
         
        
 
-        }
+        
         return $nomFinal;
     }
 
