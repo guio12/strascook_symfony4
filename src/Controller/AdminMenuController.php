@@ -85,12 +85,11 @@ class AdminMenuController extends AbstractController
 
     public function supprimer()
     {
-        session_start();
         $menu = [];
 
         if(isset($_POST['supprimer'])) {
 
-            $deleteImage = 'assets/img/img-menu/' . $_POST['deleteImage'];
+            $deleteImage = 'assets/img/img-menu' . $_POST['deleteImage'];
 
             if (file_exists($deleteImage)) {
                 unlink($deleteImage);
@@ -103,8 +102,3 @@ class AdminMenuController extends AbstractController
         header('Location: /admin');
     }
 }
-
-
-
-
-

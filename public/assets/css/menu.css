@@ -57,7 +57,7 @@ hr {
     padding-bottom: 10vh;
 }
 
-h3 {
+h3, p {
     font-family: 'Raleway', sans-serif;
     font-size: 1em;
     text-align: left !important;
@@ -76,7 +76,7 @@ h3 {
     font-size: 1.1em;
 }
 
-li, h3 {
+li, h3, p {
     font-family: 'Raleway', sans-serif;
 }
 
