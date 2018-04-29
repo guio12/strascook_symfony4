@@ -35,9 +35,6 @@ class AdminActuController extends AbstractController
 
     public function ajouter()
     {
-
-
-        $resultat = "";
         $donnees = [];
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {

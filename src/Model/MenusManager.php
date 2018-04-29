@@ -21,7 +21,7 @@ class MenusManager extends EntityManager
 
     public function recupererTypeTitre()
     {
-        $requete = $this->conn->prepare("SELECT DISTINCT menus.id, type_menu.nom, menus.titre FROM type_menu INNER JOIN $this->table ON type_menu.id=menus.fk_type_menu ORDER BY menus.id");
+        $requete = $this->conn->prepare("SELECT DISTINCT menus.id, type_menu.nom, menus.titre, menus.image FROM type_menu INNER JOIN $this->table ON type_menu.id=menus.fk_type_menu ORDER BY menus.id");
         $requete->execute();
         $donnees = $requete->fetchAll();
         return $donnees;
