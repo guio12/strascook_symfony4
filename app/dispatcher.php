@@ -20,9 +20,17 @@
     $r->addRoute('POST', '/login', 'Login/identifier');
     $r->addRoute('GET', '/login2', 'Login/entree');
     $r->addRoute('GET', '/logout', 'Login/deco');
-    $r->addRoute('GET', '/admin', 'AdminMenu/index');
+    $r->addRoute('GET', '/admin/menu', 'AdminMenu/index');
     $r->addRoute('POST', '/admin/ajouter', 'AdminMenu/ajouter');
+    $r->addRoute('POST', '/admin/modifier', 'AdminMenu/modifier');
+    $r->addRoute('POST', '/admin/modifier/{id: \d+}', 'AdminMenu/afficherModifsMenu');
     $r->addRoute('POST', '/admin/supprimer', 'AdminMenu/supprimer');
+    $r->addRoute('GET', '/reservation', 'Calendar/index');
+    $r->addRoute('GET', '/reservation/add', 'Calendar/add');
+    $r->addRoute('POST', '/reservation/add', 'Calendar/add');
+    $r->addRoute('GET', '/reservation/edit', 'Calendar/edit');
+    $r->addRoute('POST', '/reservation/edit', 'Calendar/edit');
+    $r->addRoute('GET', '/reservation/edit?delete/{id:\d+}', 'Calendar/delete');
     $r->addRoute('GET', '/admin/actu', 'AdminActu/index');
     $r->addRoute('POST', '/admin/actu/ajouter', 'AdminActu/ajouter');
     $r->addRoute('POST', '/admin/actu/supprimer', 'AdminActu/supprimer');
@@ -45,7 +53,7 @@ $uri = rawurldecode($uri);
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
-        // ... 404 Not Found
+        echo" 404 Not Found";
         break;
     case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
         $allowedMethods = $routeInfo[1];
