@@ -32,9 +32,13 @@
     $r->addRoute('POST', '/reservation/edit', 'Calendar/edit');
     $r->addRoute('GET', '/reservation/edit?delete/{id:\d+}', 'Calendar/delete');
     $r->addRoute('GET', '/admin/actu', 'AdminActu/index');
+    $r->addRoute('POST', '/admin/actu', 'AdminActu/index');
     $r->addRoute('POST', '/admin/actu/ajouter', 'AdminActu/ajouter');
     $r->addRoute('POST', '/admin/actu/supprimer', 'AdminActu/supprimer');
     $r->addRoute('POST', '/admin/actu/update', 'AdminActu/update');
+    $r->addRoute('GET', '/admin/actu/modif', 'AdminActu/afficherActuModif');
+    $r->addRoute('POST', '/admin/actu/modif', 'AdminActu/afficherActuModif');
+    $r->addRoute('POST', '/admin/actu/modifier', 'AdminActu/modifier');
 
 
 

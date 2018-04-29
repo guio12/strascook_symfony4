@@ -108,6 +108,51 @@ class AdminActuController extends AbstractController
     }
 
 
+    // Mehode pour afficher les informations de la bcad
+    // pour les modifiers
+
+    public function afficherActuModif()
+    {
+
+      $actuManager = new ActuManager();
+      $resultat = $actuManager->afficherActuModif();
+
+      return $this->twig->render('StrasCook/adminactu.html.twig', ['erreurs' =>$this->erreurs, 'modifs' => $resultat]);
+
+    }
+
+
+    // Methode pour modifier les données dans la bdd de la page admin/actu :
+
+    public function modifier()
+    {
+        $actu = [];
+        $modifs = [];
+
+        if(isset($_POST['modifier'])) {
+            $actu = $_POST['modification'];
+            $modifs['titre'] = $_POST['titre'];
+            $modifs['image'] = $_POST['image'];
+            $modifs['contenu'] = $_POST['contenu'];
+            echo $actu;
+            $actuManager = new ActuManager();
+            $actuManager->modifier($actu, $modifs);
+        }
+
+        if(isset($_POST['modifier_utiliser'])) {
+            $actu = $_POST['modification'];
+            $modifs['titre'] = $_POST['titre'];
+            $modifs['image'] = $_POST['image'];
+            $modifs['contenu'] = $_POST['contenu'];
+            echo $actu;
+            $actuManager = new ActuManager();
+            $actuManager->modifierUtiliser($actu, $modifs);
+        }
+
+
+    }
+
+
 
 
     // Methode pour supprimer les données dans la bdd de la page admin/actu :

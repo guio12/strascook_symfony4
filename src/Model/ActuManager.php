@@ -48,6 +48,32 @@ class ActuManager extends EntityManager
         return $requete->execute();
     }
 
+    public function afficherActuModif() // methode pour modifier une actualite
+    {
+        $requete = $this->conn->prepare("SELECT id, titre, contenu, image FROM $this->table");
+        $requete->execute();
+        $donnees = $requete->fetchAll();
+        return $donnees;
+    }
+
+
+    public function modifier($actu, $modifs) // methode pour mettre à jour les actualites
+    {
+        $requete = $this->conn->prepare("UPDATE actu SET titre = \"" .$modifs['titre']. "\", image = \"" .$modifs['image']. "\", contenu = \"" .$modifs['contenu']. "\"  WHERE id = :actu ");
+        $requete->bindValue(':actu', $actu);
+        return $requete->execute(header('Location: /admin/actu/modif'));
+    }
+
+    public function modifierUtiliser($actu, $modifs) // methode pour mettre à jour les actualites
+    {
+        $requete = $this->conn->prepare("UPDATE actu SET titre = \"" .$modifs['titre']. "\", image = \"" .$modifs['image']. "\", contenu = \"" .$modifs['contenu']. "\"  WHERE id = :actu ");
+        $requete2 = $this->conn->prepare("UPDATE actualite SET actualite_id = :actu ");
+        $requete->bindValue(':actu', $actu);
+        $requete->execute();
+        return $requete2->execute(header('Location: /admin/actu'));
+
+    }
+
 
     public function supprimer($actu) // mehode pour supprimer une actualité
     {
