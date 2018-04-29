@@ -35,9 +35,6 @@ class AdminActuController extends AbstractController
 
     public function ajouter()
     {
-
-
-        $resultat = "";
         $donnees = [];
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -65,14 +62,13 @@ class AdminActuController extends AbstractController
                     $this->erreurs[] = "Le fichier n'est pas au format JPEG";
                     return $this->index();
 
-                }
-
-                // s'il n'y a pas d'erreur on envoie l'image dans le dossier :
-
-                else {
-                    $nomFinal = 'image' . uniqid() . '.' . $extensionFichier;
-                    move_uploaded_file($repTemp, $repFinal . $nomFinal);
-                    $donnees['image'] = $nomFinal;
+                } else { // s'il n'y a pas d'erreur, on recadre l'image en carré et on déplace dans le bon répertoire.
+                    $imageNonRecadree = imagecreatefromjpeg($repTemp);
+                    $imageRecadree = imagecrop($imageNonRecadree, ['x' => 0, 'y' => 0, 'width' => 900, 'height' => 900]);
+                    if ($imageRecadree !== FALSE) {
+                        imagejpeg($imageRecadree, $repFinal . 'image' . uniqid() . '.' . $extensionFichier);
+                    }
+                    $donnees['image'] = $imageRecadree;
                 }
             }
 
