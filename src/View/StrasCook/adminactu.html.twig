@@ -111,6 +111,7 @@
             {# Modifier les données de la bdd et pouvoir les utiliser
               tout de suite si souhaité #}
 
+            {% if modifs is defined %}
             {% for modifs in modifs %}
 
             <tr>
@@ -121,11 +122,12 @@
             <td><textarea rows="5" cols="55" class="mt-2" name="contenu" required>{{ modifs.contenu }}</textarea></td>
             <input type="hidden" name="modification" value="{{modifs.id}}">
             <td><button type="submit" name="modifier" class="btn btn-primary ml-2">Modifier</button></td>
-            <td><button type="submit" name="modifier_utiliser" class="btn btn-primary ml-2">Modifier et utiliser</button></td>
+            <td><button type="submit" name="modifierUtiliser" class="btn btn-primary ml-2">Modifier et utiliser</button></td>
             </form>
             </tr>
 
             {% endfor %}
+            {% endif %}
 
         </table>
     </div>

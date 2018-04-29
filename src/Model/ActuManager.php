@@ -69,6 +69,7 @@ class ActuManager extends EntityManager
         $requete = $this->conn->prepare("UPDATE actu SET titre = \"" .$modifs['titre']. "\", image = \"" .$modifs['image']. "\", contenu = \"" .$modifs['contenu']. "\"  WHERE id = :actu ");
         $requete2 = $this->conn->prepare("UPDATE actualite SET actualite_id = :actu ");
         $requete->bindValue(':actu', $actu);
+        $requete2->bindValue(':actu', $actu);
         $requete->execute();
         return $requete2->execute(header('Location: /admin/actu'));
 

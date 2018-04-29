@@ -139,7 +139,7 @@ class AdminActuController extends AbstractController
             $actuManager->modifier($actu, $modifs);
         }
 
-        if(isset($_POST['modifier_utiliser'])) {
+        if(isset($_POST['modifierUtiliser'])) {
             $actu = $_POST['modification'];
             $modifs['titre'] = $_POST['titre'];
             $modifs['image'] = $_POST['image'];
