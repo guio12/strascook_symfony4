@@ -25,6 +25,12 @@
     $r->addRoute('POST', '/admin/modifier', 'AdminMenu/modifier');
     $r->addRoute('POST', '/admin/modifier/{id: \d+}', 'AdminMenu/afficherModifsMenu');
     $r->addRoute('POST', '/admin/supprimer', 'AdminMenu/supprimer');
+    $r->addRoute('GET', '/reservation', 'Calendar/index');
+    $r->addRoute('GET', '/reservation/add', 'Calendar/add');
+    $r->addRoute('POST', '/reservation/add', 'Calendar/add');
+    $r->addRoute('GET', '/reservation/edit', 'Calendar/edit');
+    $r->addRoute('POST', '/reservation/edit', 'Calendar/edit');
+    $r->addRoute('GET', '/reservation/edit?delete/{id:\d+}', 'Calendar/delete');
     $r->addRoute('GET', '/admin/actu', 'AdminActu/index');
     $r->addRoute('POST', '/admin/actu/ajouter', 'AdminActu/ajouter');
     $r->addRoute('POST', '/admin/actu/supprimer', 'AdminActu/supprimer');
