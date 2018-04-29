@@ -33,9 +33,8 @@ class MenusManager extends EntityManager
     
     public function recupererTableauModifs($recup_id)
     {
-        $requete = $this->conn->prepare("SELECT DISTINCT menus.fk_type_menu, menus.id, type_menu.nom, menus.titre, menus.prix, menus.introduction, menus.entree, menus.d_entree, menus.plat, menus.d_plat, menus.dessert, menus.d_dessert FROM type_menu INNER JOIN $this->table ON type_menu.id=menus.fk_type_menu WHERE menus.id = :id");
+        $requete = $this->conn->prepare("SELECT DISTINCT menus.fk_type_menu, menus.id, type_menu.nom, menus.titre, menus.prix, menus.image, menus.introduction, menus.entree, menus.d_entree, menus.plat, menus.d_plat, menus.dessert, menus.d_dessert FROM type_menu INNER JOIN $this->table ON type_menu.id=menus.fk_type_menu WHERE menus.id = :id");
         $requete->bindValue(':id', $recup_id);
-        echo $recup_id;
         $requete->execute();
         $recupTableaux = $requete->fetchAll();
         return $recupTableaux;
@@ -45,7 +44,6 @@ class MenusManager extends EntityManager
     {
         $requete = $this->conn->prepare("UPDATE $this->table SET `fk_type_menu` = \"" . $donnees['type']. "\", `titre` = \"" . $donnees['titre'] . "\", `image` = \"" . $donnees['image'] . "\", `introduction` = \"" .$donnees['introduction']. "\", `entree` = \"" . $donnees['entree']. "\", `d_entree` = \"" . $donnees['d_entree'] . "\", `plat` = \"" . $donnees['plat'] . "\", `d_plat` = \"" . $donnees['plat'] . "\", `dessert` = \"" . $donnees['dessert'] . "\", `d_dessert` = \"" . $donnees['d_dessert'] . "\", `prix` = \"" . $donnees['prix'] . "\" WHERE menus.id = :menu");
         $requete->bindValue(':menu', $recup_id);
-        echo $recup_id;
         return $requete->execute();
     }
     

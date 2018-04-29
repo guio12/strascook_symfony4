@@ -147,6 +147,7 @@ class AdminMenuController extends AbstractController
             $donnees['dessert'] = $_POST['dessert'];
             $donnees['d_dessert'] = $_POST['d_dessert'];
             $donnees['prix'] = $_POST['prix'];
+            $donnees['id'] = $_POST['id'];
             
             $recup_id = $donnees['id'];
             
@@ -154,19 +155,14 @@ class AdminMenuController extends AbstractController
             if (empty($this->erreurs)){
                 
                 $menusManager = new MenusManager();
+                
                 $resultat = $menusManager->modifier($donnees, $recup_id);
+                
+                
                 header('Location: /admin');
-            } else {
-                echo "Ca marche pas";
-            }
+            } 
             
-        } else {
-            echo "Ca marche pas";
-        }
-        
-       
-
-        
+        } 
         return $nomFinal;
     }
 

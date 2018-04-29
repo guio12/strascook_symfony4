@@ -29,8 +29,6 @@
            
                 {% for menu in donnees %}
                     <tr>
-                        
-                        
                         <td>{{ menu.id }}</td>
                         <td>{{ menu.nom }}</td>
                         <td>{{ menu.titre }}</td>
@@ -50,6 +48,8 @@
                 
             
             <section class="container" id="modif_menu" style="<!--display: none-->">
+               <br>
+               <hr>
                 <h2>Menu</h2>
                 <form class="form-group" action="/admin/modifier" enctype="multipart/form-data" method="post" name="modif_menu">
                    {% for menu in recupTableaux %}
@@ -59,10 +59,14 @@
                                 <select class="form-control" name="type" id="type">
                                     {% set hidden = "hidden" %}
                                     <option value="{{ menu.fk_type_menu }}">{{ menu.nom }}</option>
-                                    <option {% if menu.fk_type_menu == 1 %}{{ hidden }}{% endif %} value="{{ menu.fk_type_menu }}">Classique</option>
-                                    <option {% if menu.fk_type_menu == 2 %}{{ hidden }}{% endif %} value="{{ menu.fk_type_menu }}">Végétarien</option>
-                                    <option {% if menu.fk_type_menu == 3 %}{{ hidden }}{% endif %} value="{{ menu.fk_type_menu }}">Vegan</option>
+                                    <option {% if menu.fk_type_menu == 1 %}{{ hidden }}{% endif %} value="1">Classique</option>
+                                    <option {% if menu.fk_type_menu == 2 %}{{ hidden }}{% endif %} value="2">Végétarien</option>
+                                    <option {% if menu.fk_type_menu == 3 %}{{ hidden }}{% endif %} value="3">Vegan</option>
                                 </select>
+                        </div>
+                            <div class="col">
+                            <label for="titre"></label>
+                            <input hidden type="text" class="form-control" name="id" id="id" value="{{ menu.id }}">
                         </div>
                         <div class="col">
                             <label for="titre">Titre</label>
@@ -76,7 +80,12 @@
                     <div class="row">
                         <div class="col">
                             <label class="mt-3" for="image">Image (Format .jpg / Max 2 Mo)</label>
-                            <input class="form-control" name="image" type="file" value="{{ menu.image }}" required>
+                            <input class="form-control" name="image" type="file">
+                            <input type="hidden" name="image_test" value="{{ menu.image }}">
+                            <div class="card col-lg-12">
+                               {{ menu.image }}
+                                <img src="/assets/img/img-menu/{{menu.image}}"/>
+                            </div>
                         </div>
 
                         <div class="col">
@@ -105,6 +114,8 @@
                     </div>
 
                     <button type="submit" name="modif_menu" class="btn btn-success mt-3">Enregistrer</button>
+                    <br>
+                    <br>
                    {% endfor %}
                 </form>
 
@@ -173,9 +184,6 @@
             <button type="submit" class="btn btn-success mt-3">Enregistrer</button>
 
         </form>
-        {#        {%  if resultatAjoutMenu == FALSE %}
-                    <div class="alert alert-danger" role="alert">Erreur d'insertion dans la base de données</div>
-                {% endif %}#}
     </section>
 
 {% endblock %}
