@@ -125,6 +125,7 @@ class AdminActuController extends AbstractController
             if (file_exists($fileToDelete)) {
                 unlink($fileToDelete);
             }
+            echo $actu;
             $actuManager = new ActuManager();
             $actuManager->supprimer($actu);
         }
