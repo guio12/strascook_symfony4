@@ -26,40 +26,23 @@ class MenusManager extends EntityManager
         $donnees = $requete->fetchAll();
         return $donnees;
     }
-<<<<<<< HEAD
 
-    public function recupererTableauModifs($recup_id)
-    {
-        $requete = $this->conn->prepare("SELECT DISTINCT menus.fk_type_menu, menus.id, type_menu.nom, menus.titre, menus.prix, menus.introduction, menus.entree, menus.d_entree, menus.plat, menus.d_plat, menus.dessert, menus.d_dessert FROM type_menu INNER JOIN $this->table ON type_menu.id=menus.fk_type_menu WHERE menus.id = :id");
-        $requete->bindValue(':id', $recup_id);
-        echo $recup_id;
-=======
-    
     public function recupererTableauModifs($recup_id)
     {
         $requete = $this->conn->prepare("SELECT DISTINCT menus.fk_type_menu, menus.id, type_menu.nom, menus.titre, menus.prix, menus.image, menus.introduction, menus.entree, menus.d_entree, menus.plat, menus.d_plat, menus.dessert, menus.d_dessert FROM type_menu INNER JOIN $this->table ON type_menu.id=menus.fk_type_menu WHERE menus.id = :id");
         $requete->bindValue(':id', $recup_id);
->>>>>>> d8425031476069af2e3d0781b56eb624baacf1a7
         $requete->execute();
         $recupTableaux = $requete->fetchAll();
         return $recupTableaux;
     }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> d8425031476069af2e3d0781b56eb624baacf1a7
     public function modifier($donnees, $recup_id)
     {
         $requete = $this->conn->prepare("UPDATE $this->table SET `fk_type_menu` = \"" . $donnees['type']. "\", `titre` = \"" . $donnees['titre'] . "\", `image` = \"" . $donnees['image'] . "\", `introduction` = \"" .$donnees['introduction']. "\", `entree` = \"" . $donnees['entree']. "\", `d_entree` = \"" . $donnees['d_entree'] . "\", `plat` = \"" . $donnees['plat'] . "\", `d_plat` = \"" . $donnees['plat'] . "\", `dessert` = \"" . $donnees['dessert'] . "\", `d_dessert` = \"" . $donnees['d_dessert'] . "\", `prix` = \"" . $donnees['prix'] . "\" WHERE menus.id = :menu");
         $requete->bindValue(':menu', $recup_id);
         return $requete->execute();
     }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> d8425031476069af2e3d0781b56eb624baacf1a7
     public function supprimer($menu)
     {
         $requete = $this->conn->prepare("DELETE FROM $this->table WHERE id = :menu");
@@ -80,7 +63,7 @@ class MenusManager extends EntityManager
         $donneesVegetariens = $requete->fetchAll();
         return $donneesVegetariens;
     }
-    
+
     public function affichageMenusVegans() {
         $requete = $this->conn->prepare("SELECT DISTINCT menus.id, menus.titre, menus.image, menus.introduction, menus.entree, menus.d_entree, menus.plat, menus.d_plat, menus.dessert, menus.d_dessert, menus.prix FROM menus WHERE fk_type_menu = 3");
         $requete->execute();

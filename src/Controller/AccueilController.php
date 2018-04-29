@@ -9,13 +9,8 @@ class AccueilController extends AbstractController
 {
     public function index()
     {
-        // session_start();
-        //
-        // if (isset($_SESSION['user_id']))
-        // {
-        //     header('Status: 301 Moved Permanently', false, 301); header('Location: /login2'); exit();
-        //
-        // }
+        session_start();
+
 
         $actuManager = new ActuManager();
         $resultatActu = $actuManager->utilisation();
