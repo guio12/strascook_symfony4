@@ -20,7 +20,7 @@
     $r->addRoute('POST', '/login', 'Login/identifier');
     $r->addRoute('GET', '/login2', 'Login/entree');
     $r->addRoute('GET', '/logout', 'Login/deco');
-    $r->addRoute('GET', '/admin', 'AdminMenu/index');
+    $r->addRoute('GET', '/admin/menu', 'AdminMenu/index');
     $r->addRoute('POST', '/admin/ajouter', 'AdminMenu/ajouter');
     $r->addRoute('POST', '/admin/modifier', 'AdminMenu/modifier');
     $r->addRoute('POST', '/admin/modifier/{id: \d+}', 'AdminMenu/afficherModifsMenu');

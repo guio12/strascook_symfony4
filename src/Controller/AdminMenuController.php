@@ -78,9 +78,9 @@ class AdminMenuController extends AbstractController
             if (empty($this->erreurs)) {
                 $menusManager = new MenusManager();
                 $resultat = $menusManager->ajouter($donnees);
-                header('Location: /admin');
+                
             }
-            header('Location: /admin');
+            header('Location: /admin/menu');
         }
     }
     
@@ -159,7 +159,7 @@ class AdminMenuController extends AbstractController
                 $resultat = $menusManager->modifier($donnees, $recup_id);
                 
                 
-                header('Location: /admin');
+                header('Location: /admin/menu');
             } 
             
         } 
@@ -182,6 +182,6 @@ class AdminMenuController extends AbstractController
             $menusManager = new MenusManager();
             $menusManager->supprimer($menu);
         }
-        header('Location: /admin');
+        header('Location: /admin/menu');
     }
 }
