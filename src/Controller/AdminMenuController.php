@@ -92,7 +92,7 @@ class AdminMenuController extends AbstractController
             $recup_id = $id;
         if (isset($_POST['modifier']))
         {
-            $donnes['id'] = $recup_id;
+            $donnees['id'] = $recup_id;
             
             $menusManager = new MenusManager();
             $resultat = $menusManager->recupererTypeTitre();
