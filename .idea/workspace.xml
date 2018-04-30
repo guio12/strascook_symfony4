@@ -2,14 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0aadb48d-eba6-4320-be60-2a943b99cfb6" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dispatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/dispatcher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/App/Validator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/App/Validator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/calendar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/calendar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CalendarController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CalendarController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/CalendarManager.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Events.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Events.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MenuController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ReservationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReservationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/boostrapCalendar/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/boostrapCalendar/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MenusManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MenusManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/StrasCook/calendar/form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/StrasCook/calendar/form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_add.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strascook-22-04-2018.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +29,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
-    <pharConfigPath />
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <executablePath>composer</executablePath>
   </component>
   <component name="DatabaseView">
@@ -33,7 +43,44 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="strascook@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="strascook@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="strascook@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="strascook: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="strascook@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="strascook: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="events: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="strascook@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="strascook: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="menus: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="strascook@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="strascook: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="type_menu: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FavoritesManager">
@@ -44,8 +91,8 @@
       <file leaf-file-name="form.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/form.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="26" column="48" lean-forward="true" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+            <state relative-caret-position="235">
+              <caret line="11" column="121" lean-forward="true" selection-start-line="11" selection-start-column="121" selection-end-line="11" selection-end-column="121" />
             </state>
           </provider>
         </entry>
@@ -53,64 +100,17 @@
       <file leaf-file-name="reservation_edit.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_edit.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding>
-                <element signature="e#12#28#0#Twig" expanded="true" />
-                <element signature="e#625#658#0#Twig" expanded="true" />
-                <element signature="e#1277#1335#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="380">
+              <caret line="18" column="44" lean-forward="true" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminactu.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/StrasCook/adminactu.html.twig">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/LoginController.php">
+      <file leaf-file-name="MenusManager.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Model/MenusManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1368">
-              <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/StrasCook/admin.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-65" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="calendar.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/css/calendar.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="123" column="1" lean-forward="true" selection-start-line="123" selection-start-column="1" selection-end-line="123" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminMenuController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/AdminMenuController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2178">
-              <caret line="99" column="31" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
-              <folding>
-                <element signature="e#30#46#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reservation_index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-719">
-              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+            <state relative-caret-position="466">
+              <caret line="76" column="43" lean-forward="true" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -118,8 +118,11 @@
       <file leaf-file-name="CalendarController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/CalendarController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2670">
-              <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
+            <state relative-caret-position="429">
+              <caret line="124" column="124" lean-forward="true" selection-start-line="124" selection-start-column="108" selection-end-line="124" selection-end-column="124" />
+              <folding>
+                <element signature="e#28#57#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,13 +141,15 @@
       <find>raleway</find>
       <find>is-</find>
       <find>isto</find>
+      <find>titre</find>
+      <find>join</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="us_calendar" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
   </component>
@@ -165,11 +170,7 @@
         <option value="$PROJECT_DIR$/src/Controller/Calendar/EventValidator.php" />
         <option value="$PROJECT_DIR$/src/View/StrasCook/reservation.html.twig" />
         <option value="$PROJECT_DIR$/src/View/layout.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/ReservationController.php" />
         <option value="$PROJECT_DIR$/src/bootstrap.php" />
-        <option value="$PROJECT_DIR$/src/Controller/boostrapCalendar/bootstrap.php" />
-        <option value="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_add.html.twig" />
-        <option value="$PROJECT_DIR$/public/assets/css/calendar.css" />
         <option value="$PROJECT_DIR$/vendor/autoload.php" />
         <option value="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
         <option value="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
@@ -178,8 +179,6 @@
         <option value="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
         <option value="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
         <option value="$PROJECT_DIR$/vendor/composer/installed.json" />
-        <option value="$PROJECT_DIR$/app/db.php" />
-        <option value="$PROJECT_DIR$/src/View/StrasCook/calendar/form.html.twig" />
         <option value="$PROJECT_DIR$/public/404.php" />
         <option value="$PROJECT_DIR$/src/Controller/AdminMenuController.php" />
         <option value="$PROJECT_DIR$/src/Model/CalendarManager.php" />
@@ -187,9 +186,18 @@
         <option value="$PROJECT_DIR$/app/dispatcher.php" />
         <option value="$PROJECT_DIR$/src/Model/Events.php" />
         <option value="$PROJECT_DIR$/src/Controller/App/Validator.php" />
-        <option value="$PROJECT_DIR$/src/Controller/CalendarController.php" />
+        <option value="$PROJECT_DIR$/public/assets/css/calendar.css" />
+        <option value="$PROJECT_DIR$/app/db.php" />
+        <option value="$PROJECT_DIR$/src/Controller/boostrapCalendar/bootstrap.php" />
+        <option value="$PROJECT_DIR$/src/Controller/ReservationController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/MenuController.php" />
+        <option value="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_add.html.twig" />
         <option value="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_index.html.twig" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8d921820-291f-4341-80f3-058f1cff3f2a/console.sql" />
         <option value="$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/CalendarController.php" />
+        <option value="$PROJECT_DIR$/src/View/StrasCook/calendar/form.html.twig" />
+        <option value="$PROJECT_DIR$/src/Model/MenusManager.php" />
       </list>
     </option>
   </component>
@@ -202,7 +210,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.1">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
@@ -210,12 +218,14 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/nikic/fast-route" />
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="811" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1024" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -229,62 +239,70 @@
         <subPane>
           <expand>
             <path>
-              <item name="strasbourg_0218_php_Strascook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strasbourg_0218_php_Strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="strascook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="strasbourg_0218_php_Strascook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strasbourg_0218_php_Strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="strascook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="strasbourg_0218_php_Strascook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strasbourg_0218_php_Strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="strasbourg_0218_php_Strascook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strasbourg_0218_php_Strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="strasbourg_0218_php_Strascook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strasbourg_0218_php_Strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="strasbourg_0218_php_Strascook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strasbourg_0218_php_Strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="strascook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="strasbourg_0218_php_Strascook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strasbourg_0218_php_Strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="strascook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="strasbourg_0218_php_Strascook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strasbourg_0218_php_Strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="strascook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="boostrapCalendar" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="strasbourg_0218_php_Strascook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strasbourg_0218_php_Strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="strascook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Calendar" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="strascook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Model" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="strascook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="strasbourg_0218_php_Strascook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="strasbourg_0218_php_Strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="strascook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="StrasCook" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="strascook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="View" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="StrasCook" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="calendar" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="strascook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="strascook" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -299,7 +317,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -365,378 +383,476 @@
     <option name="totallyTimeSpent" value="91409000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="811" extended-state="0" />
+    <frame x="0" y="0" width="1024" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49856734" visible="true" weight="0.1695279" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3295129" />
-      <window_info anchor="right" id="Database" order="3" weight="0.3292683" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3295129" />
+      <window_info anchor="bottom" id="Database Console" order="0" weight="0.32909605" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49856734" weight="0.26464844" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32929292" />
+      <window_info anchor="right" id="Database" order="3" weight="0.23930754" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.519774" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32768363" />
       <window_info id="Structure" order="1" sideWeight="0.50143266" side_tool="true" weight="0.17359051" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.0" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32980973" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32937685" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3295129" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3295129" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="bottom" id="Database Console" order="0" weight="0.32971373" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32875264" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49856734" weight="0.265625" />
+      <window_info id="Structure" order="1" sideWeight="0.50143266" side_tool="true" weight="0.17359051" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3295129" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.24804688" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32980973" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32929292" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" weight="0.32937685" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/dispatcher.php</url>
+          <line>29</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/strascook-20-04-2018.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3870" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bootstrap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ReservationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_0.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="469" column="21" selection-start-line="469" selection-start-column="9" selection-end-line="469" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/accueil.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
-          <caret lean-forward="true" selection-end-column="32" />
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/twig/twig/lib/Twig/Environment.php" />
-    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="291" column="9" selection-start-line="291" selection-start-column="9" selection-end-line="291" selection-end-column="9" />
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_real.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/ClassLoader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1536">
-          <caret line="445" selection-start-line="445" selection-end-line="445" />
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_files.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_namespaces.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/installed.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="351" selection-start-line="351" selection-end-line="351" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-215" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-251" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AccueilController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-673" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/LoginManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/menu.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7788">
-          <caret line="354" column="33" selection-start-line="354" selection-start-column="33" selection-end-line="354" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/PDO/PDO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="1132" column="20" selection-start-line="1132" selection-start-column="20" selection-end-line="1132" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/MenusManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ContactController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="809">
-          <caret line="106" selection-start-line="106" selection-end-line="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Event.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/boostrapCalendar/bootstrap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="7" lean-forward="true" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/App/Validator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-451">
-          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Calendar/EventValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Calendar/Month.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/CalendarManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Actu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1058" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_add.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/404.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="21" />
+    <entry file="uml://DATABASE/8d921820-291f-4341-80f3-058f1cff3f2a.TABLE:strascook.events">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>8d921820-291f-4341-80f3-058f1cff3f2a.TABLE:strascook.events</OriginalElement>
+          <nodes>
+            <node x="0.0" y="0.0">8d921820-291f-4341-80f3-058f1cff3f2a.TABLE:strascook.events</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-230.0" y="-117.0" />
+          <SelectedNodes>
+            <node>8d921820-291f-4341-80f3-058f1cff3f2a.TABLE:strascook.events</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/dispatcher.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="53" />
+        <state relative-caret-position="378">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/AdminMenuController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="141">
+          <caret line="69" column="5" lean-forward="true" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Events.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/MenuController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
+        <state relative-caret-position="400">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/reservation.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="1" />
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/form.html.twig">
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Event.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="26" column="48" lean-forward="true" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+        <state relative-caret-position="180">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/menu.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="156" column="52" selection-start-line="156" selection-start-column="52" selection-end-line="156" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-719">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+        <state relative-caret-position="1460">
+          <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/calendar.css">
+    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/reservation.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="123" column="1" lean-forward="true" selection-start-line="123" selection-start-column="1" selection-end-line="123" selection-end-column="14" />
+        <state relative-caret-position="-57">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-516" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/adminMenu.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1109" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_add.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="24" column="75" selection-start-line="24" selection-start-column="75" selection-end-line="24" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/contact.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/8d921820-291f-4341-80f3-058f1cff3f2a.SCHEMA:strascook">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>8d921820-291f-4341-80f3-058f1cff3f2a.SCHEMA:strascook</OriginalElement>
+          <nodes>
+            <node x="" y="">8d921820-291f-4341-80f3-058f1cff3f2a.TABLE:strascook.actualite</node>
+            <node x="" y="">8d921820-291f-4341-80f3-058f1cff3f2a.TABLE:strascook.reservation</node>
+            <node x="" y="">8d921820-291f-4341-80f3-058f1cff3f2a.TABLE:strascook.events</node>
+            <node x="" y="">8d921820-291f-4341-80f3-058f1cff3f2a.TABLE:strascook.client</node>
+            <node x="" y="">8d921820-291f-4341-80f3-058f1cff3f2a.TABLE:strascook.login</node>
+            <node x="" y="">8d921820-291f-4341-80f3-058f1cff3f2a.TABLE:strascook.type_menu</node>
+            <node x="" y="">8d921820-291f-4341-80f3-058f1cff3f2a.TABLE:strascook.menus</node>
+            <node x="" y="">8d921820-291f-4341-80f3-058f1cff3f2a.TABLE:strascook.actu</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.8598382749326146" x="325.0" y="361.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Events.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1727">
+          <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8d921820-291f-4341-80f3-058f1cff3f2a/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/menus">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/events">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8d921820-291f-4341-80f3-058f1cff3f2a/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://8d921820-291f-4341-80f3-058f1cff3f2a/schema/strascook/table/menus.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/reservation_edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <element signature="e#12#28#0#Twig" expanded="true" />
-            <element signature="e#625#658#0#Twig" expanded="true" />
-            <element signature="e#1277#1335#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="380">
+          <caret line="18" column="44" lean-forward="true" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/adminactu.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/admin.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Controller/ReservationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-65" />
+        <state relative-caret-position="888">
+          <caret line="84" column="73" lean-forward="true" selection-start-line="84" selection-start-column="73" selection-end-line="84" selection-end-column="73" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CalendarController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2670">
-          <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-400" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AdminMenuController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2178">
-          <caret line="99" column="31" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
+        <state relative-caret-position="429">
+          <caret line="124" column="124" lean-forward="true" selection-start-line="124" selection-start-column="108" selection-end-line="124" selection-end-column="124" />
           <folding>
-            <element signature="e#30#46#0#PHP" expanded="true" />
+            <element signature="e#28#57#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/LoginController.php">
+    <entry file="file://$PROJECT_DIR$/src/View/StrasCook/calendar/form.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1368">
-          <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        <state relative-caret-position="235">
+          <caret line="11" column="121" lean-forward="true" selection-start-line="11" selection-start-column="121" selection-end-line="11" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/MenusManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="76" column="43" lean-forward="true" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
         </state>
       </provider>
     </entry>

@@ -14,7 +14,7 @@
         {% if success %}
         <div class="container">
             <div class="alert alert-success">
-                L'évènement a bien été enregistré
+                Le rendez-vous a bien été envoyé
             </div>
         </div>
         {% endif %}
@@ -22,7 +22,7 @@
         {% if success_delete %}
             <div class="container">
                 <div class="alert alert-success">
-                    L'évènement a bien été supprimé
+                    Le rendez-vous a bien été supprimé
                 </div>
             </div>
         {% endif %}
@@ -61,7 +61,16 @@
                 <a class="calendar__day" href="/reservation/add?date={{ date.format('Y-m-d') }}">{{ date.format('d') }}</a>
                 {% for event in eventsForDay %}
                 <div class="calendar__event">
-                    {{ event.getStart().format('H:i') }} - <a href="/reservation/edit?id={{ event.getId() }}">{{ event.getName() }}</a>
+                    {{ event.getStart().format('H:i') }} -
+
+                    {% if admin is defined %}
+                    <a href="/reservation/edit?id={{ event.getId() }}">{{ event.getName() }}</a>
+                    {% endif %}
+
+                    {% if admin is not defined %}
+                        <p>Occupé</p>
+                    {% endif %}
+
                 </div>
                 {% endfor %}
             </td>

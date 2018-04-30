@@ -11,12 +11,11 @@ class MenuController extends AbstractController
 
         session_start();
 
-
-
         $menusManager = new MenusManager();
         $resultatClassiques = $menusManager->affichageMenusClassiques();
         $resultatVegetariens = $menusManager->affichageMenusVegetariens();
         $resultatVegans = $menusManager->affichageMenusVegans();
+
         return $this->twig->render('StrasCook/menu.html.twig', ['donneesClassiques' => $resultatClassiques, 'donneesVegetariens' => $resultatVegetariens, 'donneesVegans' => $resultatVegans]);
     }
 }
