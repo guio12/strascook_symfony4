@@ -11,48 +11,66 @@
               <div class="alert alert-danger alerte_erreur">{{ error }}</div>
           </div>
       {% endfor %}
+      <br>
+      <a href="/login2"><button class="btn-block btn-faded">Retour au menu administration</button></a>
+      <br>
 
     <form class="row" method="post" action="/admin/actu/ajouter" enctype="multipart/form-data">
 
-    <div class="col-6">
+      <div class="col-6">
 
-        <label for="titre">Titre de l'actualité :</label><br>
-        <input type="text" name="titre" id="titre"><br><br>
+          <label for="titre">Titre de l'actualité :</label><br>
+          <input type="text" name="titre" id="titre"><br><br>
 
-    </div>
+      </div>
 
-    <div class="col">
+      <div class="col">
 
-            <label for="image">Image (Format .jpg / Max 2 Mo)</label>
-            <input class="form-control" name="image" type="file" required>
+              <label for="image">Image (Format .jpg / Max 2 Mo)</label>
+              <input class="form-control" name="image" type="file" required>
 
-    </div>
+      </div>
 
-    <div class="col-12">
+      <div class="col-12">
 
-        <label for="contenu">Introduction :</label><br>
-        <textarea class="form-control" name="contenu" id="contenu" cols="30" rows="10"></textarea>
-        <br>
-        <br>
+          <label for="contenu">Introduction :</label><br>
+          <textarea class="form-control" name="contenu" id="contenu" cols="30" rows="10"></textarea>
+          <br>
+          <br>
 
-    </div>
+      </div>
 
 
-    <div class="col-3 offset-5">
+      <div class="col-3 offset-5">
 
-        <input type="submit" value="Envoyer">
+          <input type="submit" value="Envoyer">
 
-    </div>
+      </div>
 
 
     </form>
 
+    <div class="row">
+
+      {% if modifs is not defined %}
+      <form action="/admin/actu/modif" method="post">
+        <input type="submit" name="Modifier" value="Modifier">
+      </form>
+      {% endif %}
+
+      {% if modifs is defined %}
+      <form  action="/admin/actu" method="post">
+        <input type="submit" value="Retour">
+      </form>
+      {% endif %}
+
     </div>
+
+  </div>
 
     <hr>
 
 
-      <form action="/admin/actu/supprimer" method="post">
         <table class="table table-striped table-bordered">
           <thead class="thead-dark">
             <tr>
@@ -61,23 +79,57 @@
               <th>Image</th>
               <th>Contenu</th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
+          <tbody>
           {% for actu in donnees %}
             <tr>
-              <input type="hidden" name="delete" value="{{actu.id}}">
-              <input type="hidden" name="supp" value="{{actu.image }}">
               <td>{{actu.id }}</td>
               <td>{{actu.titre }}</td>
               <td>{{actu.image }}</td>
               <td>{{actu.contenu}}</td>
+
+              {# bouton pour supprimer les données de la bdd,
+              et l'image associée #}
+
+              <form action="/admin/actu/supprimer" method="post">
+              <input type="hidden" name="delete" value="{{actu.id}}">
+              <input type="hidden" name="supp" value="{{actu.image }}">
               <td><button type="submit" name="supprimer" class="btn btn-danger ml-2">Supprimer</button></td>
+              </form>
+
+              {# bouton pour mettre à jour la partie actualité de la page actualité #}
+
+              <form class="" action="/admin/actu/update" method="post">
+              <input type="hidden" name="update" value="{{actu.id}}">
+              <td><button type="submit" name="utiliser" class="btn btn-primary ml-2">Utiliser</button></td>
+              </form>
             </tr>
             {% endfor %}
 
+            {# Modifier les données de la bdd et pouvoir les utiliser
+              tout de suite si souhaité #}
+
+            {% if modifs is defined %}
+            {% for modifs in modifs %}
+
+            <tr>
+            <form action="/admin/actu/modifier" method="post">
+            <td>{{modifs.id}}</td>
+            <td><input type="text" name="titre" value="{{modifs.titre}}"></td>
+            <td><input type="text" name="image" value="{{modifs.image}}"></td>
+            <td><textarea rows="5" cols="55" class="mt-2" name="contenu" required>{{ modifs.contenu }}</textarea></td>
+            <input type="hidden" name="modification" value="{{modifs.id}}">
+            <td><button type="submit" name="modifier" class="btn btn-primary ml-2">Modifier</button></td>
+            <td><button type="submit" name="modifierUtiliser" class="btn btn-primary ml-2">Modifier et utiliser</button></td>
+            </form>
+            </tr>
+
+            {% endfor %}
+            {% endif %}
 
         </table>
-      </form>
     </div>
 
 

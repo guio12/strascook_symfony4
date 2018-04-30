@@ -29,13 +29,13 @@
             </thead>
             <tbody>
 
-           
+
                 {% for menu in donnees %}
                     <tr>
                         <td>{{ menu.id }}</td>
                         <td>{{ menu.nom }}</td>
                         <td>{{ menu.titre }}</td>
-                        
+
                          <form action="/admin/supprimer" method="post" name="supprimer">
                          <input type="hidden" name="delete" value="{{ menu.id }}">
                         <td><button type="submit" name="supprimer" class="btn btn-danger ml-2">Supprimer</button></td>
@@ -46,10 +46,10 @@
                         </td>
                     </tr>
                 {% endfor %}
-            
-            
-                
-            
+
+
+
+
             <section class="container" id="modif_menu" style="<!--display: none-->">
                <br>
                <hr>
@@ -123,7 +123,7 @@
                 </form>
 
             </section>
-            
+
             </tbody>
 
         </table>

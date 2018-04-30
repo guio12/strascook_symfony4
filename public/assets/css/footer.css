@@ -12,6 +12,6 @@
 
 .lienFooter:hover
 {
-	text-decoration: underline !important;
+	text-decoration: none !important;
 	color: #FFB74D !important;
 }
