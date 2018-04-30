@@ -62,13 +62,14 @@ class AdminActuController extends AbstractController
                     $this->erreurs[] = "Le fichier n'est pas au format JPEG";
                     return $this->index();
 
-                } else { // s'il n'y a pas d'erreur, on recadre l'image en carré et on déplace dans le bon répertoire.
-                    $imageNonRecadree = imagecreatefromjpeg($repTemp);
-                    $imageRecadree = imagecrop($imageNonRecadree, ['x' => 0, 'y' => 0, 'width' => 900, 'height' => 900]);
-                    if ($imageRecadree !== FALSE) {
-                        imagejpeg($imageRecadree, $repFinal . 'image' . uniqid() . '.' . $extensionFichier);
-                    }
-                    $donnees['image'] = $imageRecadree;
+                }
+
+                // s'il n'y a pas d'erreur on envoie l'image dans le dossier :
+
+                else {
+                    $nomFinal = 'image' . uniqid() . '.' . $extensionFichier;
+                    move_uploaded_file($repTemp, $repFinal . $nomFinal);
+                    $donnees['image'] = $nomFinal;
                 }
             }
 
@@ -90,35 +91,65 @@ class AdminActuController extends AbstractController
 
     }
 
-    // Methode pour utiliser les données dans la bdd de la page admin/actu :
 
-    // public function utiliser()
-    // {
-    //     $menu = [];
-    //
-    //     if(isset($_POST['utiliser'])) {
-    //         $actu = $_POST['utilisation'];
-    //         echo $actu;
-    //         $actuManager = new ActuManager();
-    //         $actuManager->utilisation($actu);
-    //     }
-    //
-    //     header('Location: /admin/actu');
-    // }
-
-    //Methode pour update les données dans la bd de la page admin/actu :
+    //Methode pour update les données dans la bdd de la page admin/actu :
 
     public function update()
     {
         $actu = [];
 
-        if(isset($_POST['supprimer'])) {
-            $actu = $_POST['delete'];
+        if(isset($_POST['utiliser'])) {
+            $actu = $_POST['update'];
             $actuManager = new ActuManager();
             $actuManager->update($actu);
         }
 
         header('Location: /admin/actu');
+    }
+
+
+    // Mehode pour afficher les informations de la bcad
+    // pour les modifiers
+
+    public function afficherActuModif()
+    {
+
+      $actuManager = new ActuManager();
+      $resultat = $actuManager->afficherActuModif();
+
+      return $this->twig->render('StrasCook/adminactu.html.twig', ['erreurs' =>$this->erreurs, 'modifs' => $resultat]);
+
+    }
+
+
+    // Methode pour modifier les données dans la bdd de la page admin/actu :
+
+    public function modifier()
+    {
+        $actu = [];
+        $modifs = [];
+
+        if(isset($_POST['modifier'])) {
+            $actu = $_POST['modification'];
+            $modifs['titre'] = $_POST['titre'];
+            $modifs['image'] = $_POST['image'];
+            $modifs['contenu'] = $_POST['contenu'];
+            echo $actu;
+            $actuManager = new ActuManager();
+            $actuManager->modifier($actu, $modifs);
+        }
+
+        if(isset($_POST['modifierUtiliser'])) {
+            $actu = $_POST['modification'];
+            $modifs['titre'] = $_POST['titre'];
+            $modifs['image'] = $_POST['image'];
+            $modifs['contenu'] = $_POST['contenu'];
+            echo $actu;
+            $actuManager = new ActuManager();
+            $actuManager->modifierUtiliser($actu, $modifs);
+        }
+
+
     }
 
 
@@ -136,6 +167,7 @@ class AdminActuController extends AbstractController
             if (file_exists($fileToDelete)) {
                 unlink($fileToDelete);
             }
+            echo $actu;
             $actuManager = new ActuManager();
             $actuManager->supprimer($actu);
         }
