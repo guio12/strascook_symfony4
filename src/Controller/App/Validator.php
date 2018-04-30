@@ -59,7 +59,7 @@ class Validator {
             $start = \DateTime::createFromFormat('H:i', $this->data[$startField]);
             $end = \DateTime::createFromFormat('H:i', $this->data[$endField]);
             if ($start->getTimestamp() > $end->getTimestamp()) {
-                $this->errors[$startField] = "Le temps doit être inférieur au temps de fin";
+                $this->errors[$startField] = "Le temps de démarrage doit être inférieur au temps de fin";
                 return false;
             }
             return true;

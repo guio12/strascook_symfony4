@@ -19,6 +19,14 @@
         </div>
         {% endif %}
 
+        {% if success_delete %}
+            <div class="container">
+                <div class="alert alert-success">
+                    L'évènement a bien été supprimé
+                </div>
+            </div>
+        {% endif %}
+
     </div>
 
     <div class="container calendar__nav col-md-8 col-sm-10 col-xs-12">

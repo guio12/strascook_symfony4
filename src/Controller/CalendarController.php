@@ -33,6 +33,11 @@ class CalendarController extends AbstractController
         {$success = true;
         }
 
+        $success_delete=false;
+        if (isset($_GET['success_delete']))
+        {$success_delete = true;
+        }
+
         return $this->twig->render('StrasCook/calendar/reservation_index.html.twig',
         ['month'=>$month,
             'weeks'=>$weeks,
@@ -40,6 +45,7 @@ class CalendarController extends AbstractController
             'today'=>date('Y-m-d'),
             'events'=>$events,
             'success'=>$success,
+            'success_delete' =>$success_delete,
             'end'=>$end
         ]);
     }
@@ -155,24 +161,19 @@ class CalendarController extends AbstractController
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
      */
-    public function delete ()
+    public function delete (int $id)
     {
         $pdo = get_pdo();
-        $event = new \Model\Events($pdo);
         $errors = [];
 
-        $id = $_GET['id'];
-        if (isset($_GET['deleteEvent'])) {
-            $id = $_GET['id'];
-            $events = new \Model\Events($pdo);
+            $events = new Events($pdo);
             //$eventToDelete = ($_POST['delete']);
             //$data = $_POST['delete'];
 
             $events->delete($id);
-            header('Location: /reservation?success=1');
+            header('Location: /reservation?success_delete=1');
             exit();
-        }
-        $id = $event->getId();
+
         return $this->twig->render('StrasCook/calendar/reservation_edit.html.twig',
             ['errors'=>$errors,
                 'id'=>$id,
