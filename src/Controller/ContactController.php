@@ -16,11 +16,6 @@ class ContactController extends AbstractController
 
           session_start();
 
-          if (isset($_SESSION['user_id']))
-          {
-              header('Status: 301 Moved Permanently', false, 301); header('Location: /login2'); exit();
-
-          }
 
           $this->erreurs();
           if (isset($_POST['email'])) {
@@ -104,6 +99,5 @@ class ContactController extends AbstractController
         }
 
     }
-
 
 }
