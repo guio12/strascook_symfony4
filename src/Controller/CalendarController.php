@@ -3,6 +3,7 @@ namespace Controller;
 use Controller\App\Validator;
 use Controller\Calendar\Month;
 use Model\Events;
+use Model\MenusManager;
 
 require 'boostrapCalendar/bootstrap.php';
 
@@ -19,33 +20,80 @@ class CalendarController extends AbstractController
 
     public function index()
     {
-        $pdo = get_pdo();
-        $events = new Events($pdo);
-        $month = new Month($_GET['month'] ?? null, $_GET['year'] ?? null);
-        $start = $month->getStartingDay();
-        $start = $start->format('N') === '1' ? $start : $month->getStartingDay()->modify('last monday');
-        $weeks = $month->getWeeks();
-        $end = $start->modify('+' . (6 + 7 * ($weeks -1)) . ' days');
-        $events = $events->getEventsBetweenByDay($start, $end);
+        session_start();
 
-        $success=false;
-        if (isset($_GET['success']))
-        {$success = true;
+        if (isset($_SESSION['user_id'])) {
+
+            $admin = true;
+            $pdo = get_pdo();
+            $events = new Events($pdo);
+            $month = new Month($_GET['month'] ?? null, $_GET['year'] ?? null);
+            $start = $month->getStartingDay();
+            $start = $start->format('N') === '1' ? $start : $month->getStartingDay()->modify('last monday');
+            $weeks = $month->getWeeks();
+            $end = $start->modify('+' . (6 + 7 * ($weeks - 1)) . ' days');
+            $events = $events->getEventsBetweenByDay($start, $end);
+            $success = false;
+            if (isset($_GET['success'])) {
+                $success = true;
+            }
+            $success_delete = false;
+            if (isset($_GET['success_delete'])) {
+                $success_delete = true;
+            }
+            return $this->twig->render('StrasCook/calendar/reservation_index.html.twig',
+                ['month' => $month,
+                    'weeks' => $weeks,
+                    'start' => $start,
+                    'today' => date('Y-m-d'),
+                    'events' => $events,
+                    'success' => $success,
+                    'success_delete' => $success_delete,
+                    'end' => $end,
+                    'admin' => $admin
+                ]);
+        } else {
+
+            $pdo = get_pdo();
+            $events = new Events($pdo);
+            $month = new Month($_GET['month'] ?? null, $_GET['year'] ?? null);
+            $start = $month->getStartingDay();
+            $start = $start->format('N') === '1' ? $start : $month->getStartingDay()->modify('last monday');
+            $weeks = $month->getWeeks();
+            $end = $start->modify('+' . (6 + 7 * ($weeks - 1)) . ' days');
+            $events = $events->getEventsBetweenByDay($start, $end);
+            $success = false;
+            if (isset($_GET['success'])) {
+                $success = true;
+            }
+            $success_delete = false;
+            if (isset($_GET['success_delete'])) {
+                $success_delete = true;
+            }
+            return $this->twig->render('StrasCook/calendar/reservation_index.html.twig',
+                ['month' => $month,
+                    'weeks' => $weeks,
+                    'start' => $start,
+                    'today' => date('Y-m-d'),
+                    'events' => $events,
+                    'success' => $success,
+                    'success_delete' => $success_delete,
+                    'end' => $end
+                ]);
         }
-
-        return $this->twig->render('StrasCook/calendar/reservation_index.html.twig',
-        ['month'=>$month,
-            'weeks'=>$weeks,
-            'start'=>$start,
-            'today'=>date('Y-m-d'),
-            'events'=>$events,
-            'success'=>$success,
-            'end'=>$end
-        ]);
     }
 
     public function add()
     {
+        $donnees = [];
+        $menusManager = new MenusManager();
+
+        $resultatClassiques = $menusManager->affichageMenusClassiques();
+        $resultatVegetariens = $menusManager->affichageMenusVegetariens();
+        $resultatVegans = $menusManager->affichageMenusVegans();
+
+        //return $this->twig->render('StrasCook/calendar/reservation_add.html.twig', ['donneesClassiques' => $resultatClassiques, 'donneesVegetariens' => $resultatVegetariens, 'donneesVegans' => $resultatVegans]);
+
         $data = [
             'date'  => $_GET['date'] ?? date('Y-m-d'),
             'start' => date('H:i'),
@@ -56,9 +104,12 @@ class CalendarController extends AbstractController
             $data['date'] = date('Y-m-d');
         }
         $errors = [];
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
             $data = $_POST;
             $validator = new Calendar\EventValidator();
+
             $errors = $validator->validates($_POST);
             if (empty($errors)) {
                 $events = new \Model\Events(get_pdo());
@@ -70,7 +121,8 @@ class CalendarController extends AbstractController
         }
         return $this->twig->render('StrasCook/calendar/reservation_add.html.twig',
             ['errors'=>$errors,
-                'data'=>$data
+                'data'=>$data,
+                'donneesClassiques' => $resultatClassiques, 'donneesVegetariens' => $resultatVegetariens, 'donneesVegans' => $resultatVegans
             ]);
     }
 
@@ -79,6 +131,8 @@ class CalendarController extends AbstractController
         $pdo = get_pdo();
         $events = new \Model\Events($pdo);
         $errors = [];
+
+
         try {
             $event = $events->find($_GET['id'] ?? null);
         } catch (\Exception $e) {
@@ -86,6 +140,13 @@ class CalendarController extends AbstractController
         } catch (\Error $e) {
             e404();
         }
+
+        $menusManager = new MenusManager();
+
+        $resultatClassiques = $menusManager->affichageMenusClassiques();
+        $resultatVegetariens = $menusManager->affichageMenusVegetariens();
+        $resultatVegans = $menusManager->affichageMenusVegans();
+        $resultEventsName = $menusManager->recupNameEvents();
 
         $data = [
             'name'        => $event->getName(),
@@ -115,7 +176,8 @@ class CalendarController extends AbstractController
                 'date'=> $event->getStart()->format('Y-m-d'),
                 'start'=>$event->getStart()->format('H:i'),
                 'end'=>$event->getEnd()->format('H:i'),
-                'description' => $event->getDescription()
+                'description' => $event->getDescription(),
+                'donneesClassiques' => $resultatClassiques, 'donneesVegetariens' => $resultatVegetariens, 'donneesVegans' => $resultatVegans, 'recupNameEvents' => $resultEventsName
             ]);
     }
 
@@ -155,30 +217,25 @@ class CalendarController extends AbstractController
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
      */
-    public function delete ()
+    public function delete (int $id)
     {
         $pdo = get_pdo();
-        $event = new \Model\Events($pdo);
         $errors = [];
 
-        $id = $_GET['id'];
-        if (isset($_GET['deleteEvent'])) {
-            $id = $_GET['id'];
-            $events = new \Model\Events($pdo);
-            //$eventToDelete = ($_POST['delete']);
-            //$data = $_POST['delete'];
+        $events = new Events($pdo);
+        //$eventToDelete = ($_POST['delete']);
+        //$data = $_POST['delete'];
 
-            $events->delete($id);
-            header('Location: /reservation?success=1');
-            exit();
-        }
-        $id = $event->getId();
+        $events->delete($id);
+        header('Location: /reservation?success_delete=1');
+        exit();
+
         return $this->twig->render('StrasCook/calendar/reservation_edit.html.twig',
             ['errors'=>$errors,
                 'id'=>$id,
                 'eventToDelete'=>$eventToDelete
             ]);
-        }
+    }
 
 
 
