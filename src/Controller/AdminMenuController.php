@@ -96,7 +96,9 @@ class AdminMenuController extends AbstractController
 
             $donnees['type'] = $_POST['type'];
             $donnees['titre'] = $_POST['titre'];
-
+            /*$donnees['image'] = $_POST['image'];*/
+            $donnees['image_test'] = $_POST['image_test'];
+ 
             if (isset($_FILES['image'])) {
 
                 $typesAutorises = 'image/jpeg';
@@ -113,7 +115,11 @@ class AdminMenuController extends AbstractController
                     $this->erreurs[] = "L'image dépasse les 2 Mo";
                     return $this->index();
 
-                } elseif (!empty($_FILES) && $typeFichier != $typesAutorises) {
+                } if ($_FILES['image'] == $_POST['image_test'])  {
+                
+                     
+                    
+                } if ($typeFichier != $typesAutorises) {
                     $this->erreurs[] = "Le fichier n'est pas au format JPEG";
                     return $this->index();
 

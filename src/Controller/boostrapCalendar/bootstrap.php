@@ -15,13 +15,13 @@ function dd(...$vars) {
 }
 
 function get_pdo (): PDO {
-    return new PDO('mysql:host=localhost;dbname=strascook', 'root', 'root', [
+    return new PDO('mysql:host=localhost;dbname=strascook', 'user_strascook', 'StrasCookWCS2018', [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);
 }
 
-function h(?string $value): string {
+function h(string $value): string {
     if ($value === null) {
         return '';
     }
