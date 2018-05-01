@@ -2,82 +2,69 @@
 
 {% block stylesheetpages %}
 
-<link rel="stylesheet" href="/assets/css/style.css">
-<link rel="stylesheet" href="/assets/css/contact.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/contact.css">
 
 {% endblock %}
 
 {% block content %}
 
+    <div class="container-fluid">
 
-<div class="container-fluid">
+        <h2>Contact</h2>
 
-      <h2>Contact</h2>
+        <div class="container">
+            <p>Vous hésitez encore à faire appel à mes services ? Vous avez des questions sur les menus, la provenance des ingrédients, les allergènes ou avez besoin d'être rassurés ?</p>
+            <p>N'hésitez pas à m'envoyer un message ou à me téléphoner, je me ferai un plaisir de vous répondre !</p>
+            <p><strong>Charlotte</strong></p>
+        </div>
 
-      <div class="container">
-        <p>En tant que chef à domicile, j'anticipe certaines préparations culinaires que je cuisine dans les locaux de restaurants partenaires (cuisines agréées pour les normes sanitaires de restauration). Je n'ai donc pas de locaux à visiter ou pour me rencontrer.
+        {% if erreurs.echec is defined %}
+            <div class="alert alert-danger">
+                <p>Une erreur est survenue, votre e-mail n'a pas été pris en compte.</p>
+            </div>
+        {% endif %}
 
-        Merci de prendre contact par mail ou par téléphone.</p>
+        <div class="row">
 
-     </div>
+        <form class="form-group col-sm-6" action="/contact" method="post">
 
+            <select class="form-control" name="objet" id="Motif">
+                <option {% if value.objet == 0 %} selected {% endif %} value="0" disabled>Objet de votre message</option>
+                <option {% if value.objet == 1 %} selected {% endif %} value="1">Allergènes</option>
+                <option {% if value.objet == 2 %} selected {% endif %} value="2">Menus</option>
+                <option {% if value.objet == 3 %} selected {% endif %} value="3">Horaires</option>
+                <option {% if value.objet == 4 %} selected {% endif %} value="4">Matériel</option>
+                <option {% if value.objet == 4 %} selected {% endif %} value="5">Autre</option>
+            </select>
+            {{erreurs.objet}}
+            <br><br>
 
-     {% if erreurs.echec is defined %}
-      <div class="alert alert-danger">
-          <p>Une erreur est survenue, votre e-mail n'a pas été prise en compte.</p>
-      </div>
-     {% endif %}
+            <input class="form-control" type="nomprenom" name="nomprenom" placeholder="Vos nom et prénom" value="{{value.nomprenom}}">
+            {{erreurs.titre}}
+            <br><br>
 
+            <input class="form-control" type="email" name="email" placeholder="Votre adresse e-mail" value="{{value.email}}">
+            {{erreurs.email}}
+            <br><br>
 
+            <textarea class="form-control" name="message" rows="8" cols="60" placeholder="Votre message">{{value.message}}</textarea>
+            {{erreurs.message}}
+            <br><br>
 
+            <input type="submit" class="btn btn-light btn-lg" value="Envoyer">
 
+        </form>
 
+        <address class="col-sm-6 text-center">
+            <h4>Contactez-moi également par téléphone, ou envoyez-moi un e-mail !</h4>
+            <p><a class="lienContact" href="tel:0357271881">03 57 27 18 81</a></p>
+            <p><a class="lienContact" href="mailto:charlottehofraise@gmail.com">charlottehofraise@gmail.com</a></p>
+        </address>
 
-<div class="row">
-  <div class="offset-2 col-4">
+        </div>
 
-      <form class="form-group" action="/contact" method="post">
-
-        <select class="form-control" name="objet" id="Motif">
-            <option {% if value.objet == 0 %} selected {% endif %} value="0" disabled>Motif :</option>
-            <option {% if value.objet == 1 %} selected {% endif %} value="1">Objet</option>
-            <option {% if value.objet == 2 %} selected {% endif %} value="2">Menus</option>
-            <option {% if value.objet == 3 %} selected {% endif %} value="3">horaire</option>
-            <option {% if value.objet == 4 %} selected {% endif %} value="4">matériel</option>
-        </select>
-
-        {{erreurs.objet}}
-
-        <br><br>
-
-        <input class="form-control" type="title" name="titre" placeholder="titre" value="{{value.titre}}">
-        {{erreurs.titre}}
-        <br><br>
-
-        <input class="form-control" type="email" name="email" placeholder="e-mail" value="{{value.email}}">
-        {{erreurs.email}}
-        <br><br>
-
-
-        <textarea class="form-control" name="message" rows="8" cols="60" placeholder="Votre message">{{value.message}}</textarea>
-        {{erreurs.message}}
-        <br><br>
-
-        <input type="submit" class="btn btn-light btn-lg" value="Envoyer">
-
-
-  </div>
-
-  <address class="info offset-1 col-4">
-
-        <a class="lienContact" href="tel:0357271881">03 57 27 18 81</a>
-        <a class="lienContact" href="mailto:charlottehofraise@gmail.com">charlottehofraise@gmail.com</a>
-
-
-  </address>
-      </form>
-  </div>
-</div>
+    </div>
 
 
 {% endblock %}

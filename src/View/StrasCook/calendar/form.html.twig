@@ -42,7 +42,7 @@
         <div class="col-sm-6">
             <div class="form-group">
                 <label for="start">Début</label>
-                <input id="start" type="time" required class="form-control" name="start" placeholder="HH:MM" value="{{ start }}">
+                <input id="start" type="time" required class="form-control" name="start" placeholder="HH:MM" value="{% if start is defined %}{{ start }}{% else %}18:30{% endif %}">
                 {% if errors[start] is defined %}
                     <small class="form-text text-muted">{{ errors[start] }}</small>
                 {% endif %}
@@ -51,7 +51,7 @@
         <div class="col-sm-6">
             <div class="form-group">
                 <label for="end">Fin</label>
-                <input id="end" type="time" required class="form-control" name="end" placeholder="HH:MM" value="{{ end }}">
+                <input id="end" type="time" required class="form-control" name="end" placeholder="HH:MM" value="{% if start is defined %}{{ start }}{% else %}22:30{% endif %}">
             </div>
         </div>
     </div>

@@ -85,10 +85,10 @@ class ContactController extends AbstractController
             $this->objet = $_POST['objet'];
         }
 
-        if (!array_key_exists('titre', $_POST) || $_POST['titre'] == '') {
-            $this->errors['titre'] = "Vous n'avez pas renseigné de titre";
+        if (!array_key_exists('nomprenom', $_POST) || $_POST['nomprenom'] == '') {
+            $this->errors['titre'] = "Vous n'avez pas renseigné vos nom et prénom";
         } else {
-            $this->titre = $_POST['titre'];
+            $this->titre = $_POST['nomprenom'];
         }
 
         // Faire dispparaître les erreurs

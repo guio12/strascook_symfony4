@@ -16,6 +16,7 @@
     $r->addRoute('POST', '/contact', 'Contact/index');
     $r->addRoute('GET', '/menus', 'Menu/index');
     $r->addRoute('GET', '/partenaires', 'Partenaires/index');
+    $r->addRoute('GET', '/mentions', 'Mentions/index');
     $r->addRoute('GET', '/login', 'Login/index');
     $r->addRoute('POST', '/login', 'Login/identifier');
     $r->addRoute('GET', '/login2', 'Login/entree');

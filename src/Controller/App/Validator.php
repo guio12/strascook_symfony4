@@ -23,7 +23,7 @@ class Validator {
 
     public function validate(string $field, string $method, ...$parameters): bool {
         if (!isset($this->data[$field])) {
-            $this->errors[$field] = "Le champs $field n'est pas rempli";
+            $this->errors[$field] = "Le champ $field n'est pas rempli";
             return false;
         } else {
             return call_user_func([$this, $method], $field, ...$parameters);
@@ -32,7 +32,7 @@ class Validator {
 
     public function minLength(string $field, int $length): bool {
         if (mb_strlen($field) < $length) {
-            $this->errors[$field] = "Le champs doit avoir plus de $length caractères";
+            $this->errors[$field] = "Le champ doit avoir plus de $length caractères";
             return false;
         }
         return true;
@@ -48,7 +48,7 @@ class Validator {
 
     public function time (string $field): bool {
         if (\DateTime::createFromFormat('H:i', $this->data[$field]) === false) {
-            $this->errors[$field] = "Le temps ne semble pas valide";
+            $this->errors[$field] = "L'heure ne semble pas valide";
             return false;
         }
         return true;
@@ -59,7 +59,7 @@ class Validator {
             $start = \DateTime::createFromFormat('H:i', $this->data[$startField]);
             $end = \DateTime::createFromFormat('H:i', $this->data[$endField]);
             if ($start->getTimestamp() > $end->getTimestamp()) {
-                $this->errors[$startField] = "Le temps de démarrage doit être inférieur au temps de fin";
+                $this->errors[$startField] = "L'heure de début doit être inférieure à l'heure de fin";
                 return false;
             }
             return true;
