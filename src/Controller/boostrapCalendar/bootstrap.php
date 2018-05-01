@@ -15,7 +15,11 @@ function dd(...$vars) {
 }
 
 function get_pdo (): PDO {
+<<<<<<< HEAD
     return new PDO('mysql:host=localhost;dbname=strascook', 'root', 'Wild3r', [
+=======
+    return new PDO('mysql:host=localhost;dbname=strascook', 'user_strascook', 'StrasCookWCS2018', [
+>>>>>>> 9a1ac89b62ee04add1460348449856e96a59ee2e
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     ]);

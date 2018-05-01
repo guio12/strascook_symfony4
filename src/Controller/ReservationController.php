@@ -105,6 +105,3 @@ class ReservationController extends AbstractController
         return $this->twig->render('Item/index.html.twig');
     }
 }
-
-
-    

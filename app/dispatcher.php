@@ -16,6 +16,7 @@
     $r->addRoute('POST', '/contact', 'Contact/index');
     $r->addRoute('GET', '/menus', 'Menu/index');
     $r->addRoute('GET', '/partenaires', 'Partenaires/index');
+    $r->addRoute('GET', '/mentions', 'Mentions/index');
     $r->addRoute('GET', '/login', 'Login/index');
     $r->addRoute('POST', '/login', 'Login/identifier');
     $r->addRoute('GET', '/login2', 'Login/entree');
@@ -30,7 +31,7 @@
     $r->addRoute('POST', '/reservation/add', 'Calendar/add');
     $r->addRoute('GET', '/reservation/edit', 'Calendar/edit');
     $r->addRoute('POST', '/reservation/edit', 'Calendar/edit');
-    $r->addRoute('GET', '/reservation/edit?delete/{id:\d+}', 'Calendar/delete');
+    $r->addRoute('GET', '/reservation/delete/{id:\d+}', 'Calendar/delete');
     $r->addRoute('GET', '/admin/actu', 'AdminActu/index');
     $r->addRoute('POST', '/admin/actu', 'AdminActu/index');
     $r->addRoute('POST', '/admin/actu/ajouter', 'AdminActu/ajouter');
