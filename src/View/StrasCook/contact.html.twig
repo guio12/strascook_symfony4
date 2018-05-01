@@ -9,15 +9,16 @@
 
 {% block content %}
 
-    <div class="container-fluid">
+    <div class="container">
 
-        <h2>Contact</h2>
+        <aside>
+          <h2>Contact</h2>
 
-        <div class="container">
-            <p>Vous hésitez encore à faire appel à mes services ? Vous avez des questions sur les menus, la provenance des ingrédients, les allergènes ou avez besoin d'être rassurés ?</p>
-            <p>N'hésitez pas à m'envoyer un message ou à me téléphoner, je me ferai un plaisir de vous répondre !</p>
-            <p><strong>Charlotte</strong></p>
-        </div>
+          <p>Vous hésitez encore à faire appel à mes services ? Vous avez des questions sur les menus, la provenance des ingrédients, les allergènes ou avez besoin d'être rassurés ?</p>
+          <p>N'hésitez pas à m'envoyer un message ou à me téléphoner, je me ferai un plaisir de vous répondre !</p>
+          <p><strong>Charlotte</strong></p>
+        </aside>
+
 
         {% if erreurs.echec is defined %}
             <div class="alert alert-danger">
@@ -35,7 +36,7 @@
                 <option {% if value.objet == 2 %} selected {% endif %} value="2">Menus</option>
                 <option {% if value.objet == 3 %} selected {% endif %} value="3">Horaires</option>
                 <option {% if value.objet == 4 %} selected {% endif %} value="4">Matériel</option>
-                <option {% if value.objet == 4 %} selected {% endif %} value="5">Autre</option>
+                <option {% if value.objet == 5 %} selected {% endif %} value="5">Autre</option>
             </select>
             {{erreurs.objet}}
             <br><br>
