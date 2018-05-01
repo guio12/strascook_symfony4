@@ -7,21 +7,27 @@
                 <label for="type">Menu choisi</label>
                 <select class="form-control" name="name" id="type">
 
+                   <option value="{{ event.name }}"></option>
                     <optgroup label="Classique">
                     {% for menu in donneesClassiques %}
-                        <option {% if menu.titre == menu.name %} selected {% endif %} value="{{ menu.titre }}">{{ menu.titre }}</option>
+                       {% set selected = "selected" %}
+                        <option {% if menu.titre == event.name %} {{ selected }} {% endif %} value="{{ menu.titre }}">{{ menu.titre }}</option>
                     {% endfor %}
                     </optgroup>
 
+                   <option value="{{ event.name }}"></option>
                     <optgroup label="Végétarien">
                     {% for menu in donneesVegetariens %}
-                        <option {% if menu.titre == menu.name %} selected {% endif %} value="{{ menu.titre }}">{{ menu.titre }}</option>
+                       {% set selected = "selected" %}
+                        <option {% if menu.titre == event.name %} {{ selected }} {% endif %} value="{{ menu.titre }}">{{ menu.titre }}</option>
                     {% endfor %}
                     </optgroup>
 
+                   <option value="{{ event.name }}"></option>
                     <optgroup label="Vegan">
                     {% for menu in donneesVegans %}
-                        <option {% if menu.titre == menu.name %} selected {% endif %} value="{{ menu.titre }}">{{ menu.titre }}</option>
+                       {% set selected = "selected" %}
+                        <option {% if menu.titre == event.name %} {{ selected }} {% endif %} value="{{ menu.titre }}">{{ menu.titre }}</option>
                     {% endfor %}
                     </optgroup>
 
@@ -57,7 +63,7 @@
     </div>
     <div class="form-group">
         <label for="description">Veuillez renseigner ici votre nom, prénom, adresse, numéro de téléphone et le nombre de convives.</label>
-        <textarea name="description" id="description" class="form-control" rows="10"></textarea>
+        <textarea name="description" id="description" class="form-control" rows="10">{{ description }}</textarea>
 
     </div>
 
