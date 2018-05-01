@@ -14,7 +14,7 @@
     </div>
     {% endif %}
     <div class="calendar__container">
-        <h1>Ajouter un évènement</h1>
+        <h1>Ajouter un rendez-vous</h1>
     </div>
     <br>
     <form action="" method="post" class="form">
@@ -22,7 +22,7 @@
         {% include 'StrasCook/calendar/form.html.twig' with {'data' : 'errors'} %}
         <!--<?php render('calendar/form', ['data' => $data, 'errors' => $errors]); ?>-->
         <div class="form-group calendar__container">
-            <button class="btn btn-primary bouton">Ajouter l'évènement</button>
+            <button class="btn btn-primary bouton">Soumettre le rendez-vous</button>
         </div>
     </form>
 </div>

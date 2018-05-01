@@ -8,20 +8,17 @@
     <br><br>
 <div class="container">
     <div class="calendar__container">
-        <h1>Éditer l'évènement :<br>
-            <small>{{ name }}
-            </small>
-            <!--<small><?= h($event->getName()); ?></small>-->
-        </h1>
+        <h1>Mon rendez-vous</h1>
     </div>
 
     <div class="container calendar__nav">
         <div>
             <form action="" method="post" class="form">
                 <!--<?php render('calendar/form', ['data' => $data, 'errors' => $errors]); ?>-->
-                {% include 'StrasCook/calendar/form.html.twig' with {'data' : 'errors'} %}
+                {% include 'StrasCook/calendar/form.html.twig'
+                    with {'data' : 'errors'} %}
                 <div class="form-group calendar__container">
-                    <button class="btn btn-primary bouton">Modifier l'évènement</button>
+                    <button class="btn btn-primary bouton">Modifier le rendez-vous</button>
                 </div>
             </form>
         </div>
@@ -30,7 +27,7 @@
             <form action="/reservation/delete/{{ event.id }}" method="get" class="form" name="deleteEvent" value="deleteEvent">
                 <div class="form-group calendar__container">
                     <input type="hidden" id="deleteEvent" name="delete" value="{{ event.id }}">
-                    <button class="btn btn-primary bouton" name="delete" style="background-color: darkgrey; border-color: darkgrey">Supprimer l'évènement</button>
+                    <button class="btn btn-primary bouton" name="delete" style="background-color: darkgrey; border-color: darkgrey">Supprimer le rendez-vous</button>
                 </div>
             </form>
         </div>
