@@ -83,8 +83,9 @@
                     <div class="row">
                         <div class="col">
                             <label class="mt-3" for="image">Image (Format .jpg / Max 2 Mo)</label>
-                            <input class="form-control" name="image" type="file">
+                            <input class="form-control" name="image" type="file" accept="image/jpeg, image/jpg">
                             <input type="hidden" name="image_test" value="{{ menu.image }}">
+                            <input type="hidden" name="image_test2" value="assets/img/img-menu/{{ menu.image }}">
                             <div class="card col-lg-12">
                                {{ menu.image }}
                                 <img src="/assets/img/img-menu/{{menu.image}}"/>
