@@ -93,7 +93,7 @@ class Events
             $event->getName(),
             $event->getDescription(),
             $event->getStart()->format('Y-m-d H:i:s'),
-            $event->getEnd()->format('Y-m-d H:i:s'),
+            $event->getEnd()->format('Y-m-d H:i:s')
         ]);
     }
 
