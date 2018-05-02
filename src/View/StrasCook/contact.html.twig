@@ -19,16 +19,9 @@
           <p><strong>Charlotte</strong></p>
         </aside>
 
-
-        {% if erreurs.echec is defined %}
-            <div class="alert alert-danger">
-                <p>Une erreur est survenue, votre e-mail n'a pas été pris en compte.</p>
-            </div>
-        {% endif %}
-
         <div class="row">
 
-        <form class="form-group col-sm-6" action="/contact" method="post">
+        <form class="form-group col-sm-6" action=" #Motif " method="post">
 
             <select class="form-control" name="objet" id="Motif">
                 <option {% if value.objet == 0 %} selected {% endif %} value="0" disabled>Objet de votre message</option>
