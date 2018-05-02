@@ -31,7 +31,7 @@
         <div class="col-sm-6">
             <div class="form-group">
                 <label for="date">Date</label>
-                <input id="date" type="date" required class="form-control" name="date" value="{{ date }}">
+                <input id="date" type="date" required class="form-control" name="date" value="{% if date is defined %}{{ date }}{% elseif date_jour is defined %}{{ date_jour }}{% elseif date_jour is not defined %}''{% endif %}">
                 {% if errors[date] is defined %}
                     <small class="form-text text-muted">{{ errors[date] }}</small>
                 {% endif %}
@@ -57,7 +57,7 @@
     </div>
     <div class="form-group">
         <label for="description">Veuillez renseigner ici votre nom, prénom, e-mail, adresse, numéro de téléphone et le nombre de convives.</label>
-        <textarea name="description" id="description" class="form-control" rows="10">{{ description }}</textarea>
+        <textarea name="description" id="description" class="form-control" rows="10" placeholder="Nom, prénom, e-mail, adresse, n° téléphone, nombre de convives">{{ description }}</textarea>
 
     </div>
 
