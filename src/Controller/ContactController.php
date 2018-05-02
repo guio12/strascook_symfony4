@@ -14,15 +14,15 @@ class ContactController extends AbstractController
     public function index()
     {
 
-          session_start();
+        session_start();
 
 
-          $this->erreurs();
-          if (isset($_POST['email'])) {
-              $visuelErreur = $this->errors;
-              return $this->twig->render('StrasCook/contact.html.twig', ['erreurs' => $visuelErreur, 'value' => $_POST]);
-          }
-          return $this->twig->render('StrasCook/contact.html.twig');
+        $this->erreurs();
+        if (isset($_POST['email'])) {
+            $visuelErreur = $this->errors;
+            return $this->twig->render('StrasCook/contact.html.twig', ['erreurs' => $visuelErreur, 'value' => $_POST]);
+        }
+        return $this->twig->render('StrasCook/contact.html.twig');
     }
 
 
@@ -55,6 +55,8 @@ class ContactController extends AbstractController
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send(header('Location:/contact'));
+
+
         } catch (Exception $e) {
             echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
         }
@@ -86,7 +88,7 @@ class ContactController extends AbstractController
         }
 
         if (!array_key_exists('titre', $_POST) || $_POST['titre'] == '') {
-            $this->errors['titre'] = "Vous n'avez pas renseigné vos nom et prénom";
+            $this->errors['titre'] = "Vous n'avez pas renseigné votre objet";
         } else {
             $this->titre = htmlspecialchars($_POST['titre']);
         }
@@ -105,5 +107,6 @@ class ContactController extends AbstractController
         }
 
     }
+
 
 }

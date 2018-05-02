@@ -11,17 +11,22 @@
 
     <div class="container">
 
-        <aside>
-          <h2>Contact</h2>
+        {#{% if value is not defined and erreurs is  empty %}#}
+                {#<div class="alert alert-success">#}
+                    {#Votre message a bien été envoyé !#}
+                {#</div>#}
+        {#{% endif %}#}
 
-          <p>Vous hésitez encore à faire appel à mes services ? Vous avez des questions sur les menus, la provenance des ingrédients, les allergènes ou avez besoin d'être rassurés ?</p>
-          <p>N'hésitez pas à m'envoyer un message ou à me téléphoner, je me ferai un plaisir de vous répondre !</p>
-          <p><strong>Charlotte</strong></p>
-        </aside>
+        <h2>Contact</h2>
 
-        <div class="row">
+        <div class="container">
+            <p>Vous hésitez encore à faire appel à mes services ? Vous avez des questions sur les menus, la provenance des ingrédients, les allergènes ou avez besoin d'être rassurés ?</p>
+            <p>N'hésitez pas à m'envoyer un message ou à me téléphoner, je me ferai un plaisir de vous répondre !</p>
+            <p><strong><em>Charlotte</em></strong></p>
+        </div>
 
-        <form class="form-group col-sm-6" action=" #Motif " method="post">
+
+        <form class="form-group col-8 offset-2" action="/contact" method="post">
 
             <select class="form-control" name="objet" id="Motif">
                 <option {% if value.objet == 0 %} selected {% endif %} value="0" disabled>Objet de votre message</option>
@@ -34,12 +39,12 @@
             {{erreurs.objet}}
             <br><br>
 
-            <input class="form-control" type="titre" name="titre" placeholder="Objet de votre message" value="{{value.nomprenom}}">
+            <input class="form-control" type="text" name="titre" placeholder="Titre de votre message" value="{{value.titre}}">
             {{erreurs.titre}}
             <br><br>
 
-            <input class="form-control" type="nomprenom" name="nomprenom" placeholder="Veuillez renseigner votre Nom et Prénom" value="{{value.nomprenom}}">
-            {{erreurs.titre}}
+            <input class="form-control" type="text" name="nomprenom" placeholder="Vos nom et prénom" value="{{value.nomprenom}}">
+            {{erreurs.nomprenom}}
             <br><br>
 
             <input class="form-control" type="email" name="email" placeholder="Votre adresse e-mail" value="{{value.email}}">
@@ -50,16 +55,14 @@
             {{erreurs.message}}
             <br><br>
 
-            <input type="submit" class="btn btn-light btn-lg" value="Envoyer">
+            <input type="submit" class="btn btn-dark btn-lg" value="Envoyer">
 
         </form>
 
-        <address class="col-sm-6 text-center">
-            <h4>Contactez-moi également par téléphone</h4>
-            <p class="lienContact" >03 57 27 18 81</a></p>
+        <address class="text-center">
+            <h3 class="mb-4">Ou contactez-moi par téléphone !</h3>
+            <a class="lienContact" href="tel:0357271881">03.57.27.18.81</a>
         </address>
-
-        </div>
 
     </div>
 
