@@ -24,7 +24,7 @@
     <nav class="barre_filtres col-12">
         <div class="row">
             <ul class="col-12" id="filters">
-                <li><button class="offset-lg-1 col-lg-3 col-md-3 tous btn btn-primary">Tous les menus</button></li>
+                <li><button class=" col-lg-3 col-md-3 tous btn btn-dark">Tous les menus</button></li>
                 <li><button class="offset-lg-1 col-lg-2 col-md-3 classiques btn btn-primary">Menus Classiques</button></li><li><button class="col-lg-2 col-md-3 vegetariens btn btn-primary">Menus Végétariens</button></li><li><button class="col-lg-2 col-md-3 vegans btn btn-primary">Menus Vegans</button></li>
             </ul>
         </div>
@@ -152,7 +152,7 @@
         {% for menu in donneesVegans %}
 
             <div class="card col-lg-4 col-md-6">
-                <img class="card-img-top" src="/assets/img/img-menu/{{ menu.image }}" alt="Photo du menu">
+                <a href="/assets/img/img-menu/{{ menu.image }}"><img class="card-img-top" src="/assets/img/img-menu/{{ menu.image }}" alt="Photo du menu"></a>
                 <div class="card-body">
                     <h2 class="card-title">{{ menu.titre }}</h2>
                     <h3 class="card-text">{{ menu.introduction }}</h3>
@@ -184,7 +184,7 @@
                             <h4 class="titre">{{ menu.dessert }}</h4>
                             <p>{{ menu.d_dessert }}</p>
 
-                            <h2 class="tarifs">{{ menu.prix }}€ par convive</h2>
+                            <h5 class="tarifs">{{ menu.prix }}€ par convive</h5>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>

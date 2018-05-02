@@ -57,13 +57,23 @@ hr {
     padding-bottom: 10vh;
 }
 
-h3, p {
-    font-family: 'Raleway', sans-serif;
+h3 {
+    font-family: 'Raleway' !important, sans-serif;
     font-size: 1em;
+    font-style: italic;
+    text-align: left !important;
+    margin-bottom: 14px;
+}
+
+h4 {
+    font-family: 'Raleway' !important, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
     text-align: left !important;
 }
 
 .tarifs {
+    font-family: Raleway;
     font-size: 1.3em;
     font-weight: bold;
     text-align: right !important;
@@ -83,7 +93,8 @@ li, h3, p {
 .titre {
     text-decoration: underline;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.4em;
+    text-align: center;
 }
 
 .partenaires {
@@ -101,4 +112,8 @@ li, h3, p {
     bottom: 20px;
     right: 20px;
     display:none;
+}
+
+.modal-body p {
+    font-size: 1.2em;
 }

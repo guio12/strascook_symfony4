@@ -72,7 +72,7 @@ class MenusManager extends EntityManager
     }
 
     public function recupNameEvents() {
-        $requete = $this->conn->prepare("SELECT DISTINCT menus.titre, events.Fk_menu_titre, menus.id FROM events INNER JOIN menus ON menus.id = events.Fk_menu_id");
+        $requete = $this->conn->prepare("SELECT DISTINCT menus.titre, events.name, menus.id FROM events INNER JOIN menus ON menus.id = events.Fk_menu_id");
         $requete->execute();
         $resultNameEvents = $requete->fetchAll();
         return $resultNameEvents;

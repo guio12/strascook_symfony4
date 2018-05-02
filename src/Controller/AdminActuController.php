@@ -67,8 +67,37 @@ class AdminActuController extends AbstractController
                 // s'il n'y a pas d'erreur on envoie l'image dans le dossier :
 
                 else {
-                    $nomFinal = 'image' . uniqid() . '.' . $extensionFichier;
-                    move_uploaded_file($repTemp, $repFinal . $nomFinal);
+
+                    $ImageNews = getimagesize($repTemp);
+                    $ImageChoisie = imagecreatefromjpeg($repTemp);
+
+                    $TailleImageChoisie = getimagesize($repTemp);
+
+                    $NouvelleLargeur = 900; //Largeur choisie à 900 px
+
+                    //$Reduction = ( ($NouvelleLargeur * 100)/$TailleImageChoisie[0] );
+
+                    //$NouvelleHauteur = ( ($TailleImageChoisie[1] * $Reduction)/100 );
+
+                    $NouvelleHauteur = 900; //Hauteur choisie à 900 px
+
+
+                    $NouvelleImage = imagecreatetruecolor($NouvelleLargeur , $NouvelleHauteur) or die ("Erreur");
+
+
+
+                    imagecopyresampled($NouvelleImage , $ImageChoisie  , 0,0, 0,0, $NouvelleLargeur, $NouvelleHauteur, $TailleImageChoisie[0],$TailleImageChoisie[1]);
+
+                    imagedestroy($ImageChoisie);
+
+
+                    $nomFinal = 'image.'.uniqid().'.'.$extensionFichier;
+
+                    imagejpeg($NouvelleImage , 'assets/img/img-actu/'.$nomFinal, 100);
+
+                    //imagedestroy($ImageChoisie);
+
+                    // move_uploaded_file($repTemp, $repFinal . $nomFinal);
                     $donnees['image'] = $nomFinal;
                 }
             }
@@ -113,6 +142,13 @@ class AdminActuController extends AbstractController
 
     public function afficherActuModif()
     {
+      session_start();
+
+      if (!isset($_SESSION['user_id'])) {
+          header('Status: 301 Moved Permanently', false, 301);
+          header('Location: /login');
+          exit();
+      }
 
       $actuManager = new ActuManager();
       $resultat = $actuManager->afficherActuModif();

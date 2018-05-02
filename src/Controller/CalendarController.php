@@ -185,7 +185,7 @@ class CalendarController extends AbstractController
                 'start'=>$event->getStart()->format('H:i'),
                 'end'=>$event->getEnd()->format('H:i'),
                 'description' => $event->getDescription(),
-                'donneesClassiques' => $resultatClassiques, 'donneesVegetariens' => $resultatVegetariens, 'donneesVegans' => $resultatVegans, 'recupNameEvents' => $resultEventsName
+                'donneesClassiques' => $resultatClassiques, 'donneesVegetariens' => $resultatVegetariens, 'donneesVegans' => $resultatVegans, 'eventsName' => $resultEventsName
             ]);
     }
 

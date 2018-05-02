@@ -9,25 +9,24 @@
 
 {% block content %}
 
-    <div class="container-fluid">
+    <div class="container">
+
+        {#{% if value is not defined and erreurs is  empty %}#}
+                {#<div class="alert alert-success">#}
+                    {#Votre message a bien été envoyé !#}
+                {#</div>#}
+        {#{% endif %}#}
 
         <h2>Contact</h2>
 
         <div class="container">
             <p>Vous hésitez encore à faire appel à mes services ? Vous avez des questions sur les menus, la provenance des ingrédients, les allergènes ou avez besoin d'être rassurés ?</p>
             <p>N'hésitez pas à m'envoyer un message ou à me téléphoner, je me ferai un plaisir de vous répondre !</p>
-            <p><strong>Charlotte</strong></p>
+            <p><strong><em>Charlotte</em></strong></p>
         </div>
 
-        {% if erreurs.echec is defined %}
-            <div class="alert alert-danger">
-                <p>Une erreur est survenue, votre e-mail n'a pas été pris en compte.</p>
-            </div>
-        {% endif %}
 
-        <div class="row">
-
-        <form class="form-group col-sm-6" action="/contact" method="post">
+        <form class="form-group col-8 offset-2" action="/contact" method="post">
 
             <select class="form-control" name="objet" id="Motif">
                 <option {% if value.objet == 0 %} selected {% endif %} value="0" disabled>Objet de votre message</option>
@@ -35,13 +34,17 @@
                 <option {% if value.objet == 2 %} selected {% endif %} value="2">Menus</option>
                 <option {% if value.objet == 3 %} selected {% endif %} value="3">Horaires</option>
                 <option {% if value.objet == 4 %} selected {% endif %} value="4">Matériel</option>
-                <option {% if value.objet == 4 %} selected {% endif %} value="5">Autre</option>
+                <option {% if value.objet == 5 %} selected {% endif %} value="5">Autre</option>
             </select>
             {{erreurs.objet}}
             <br><br>
 
-            <input class="form-control" type="nomprenom" name="nomprenom" placeholder="Vos nom et prénom" value="{{value.nomprenom}}">
+            <input class="form-control" type="text" name="titre" placeholder="Titre de votre message" value="{{value.titre}}">
             {{erreurs.titre}}
+            <br><br>
+
+            <input class="form-control" type="text" name="nomprenom" placeholder="Vos nom et prénom" value="{{value.nomprenom}}">
+            {{erreurs.nomprenom}}
             <br><br>
 
             <input class="form-control" type="email" name="email" placeholder="Votre adresse e-mail" value="{{value.email}}">
@@ -52,17 +55,14 @@
             {{erreurs.message}}
             <br><br>
 
-            <input type="submit" class="btn btn-light btn-lg" value="Envoyer">
+            <input type="submit" class="btn btn-dark btn-lg" value="Envoyer">
 
         </form>
 
-        <address class="col-sm-6 text-center">
-            <h4>Contactez-moi également par téléphone, ou envoyez-moi un e-mail !</h4>
-            <p><a class="lienContact" href="tel:0357271881">03 57 27 18 81</a></p>
-            <p><a class="lienContact" href="mailto:charlottehofraise@gmail.com">charlottehofraise@gmail.com</a></p>
+        <address class="text-center">
+            <h3 class="mb-4">Ou contactez-moi par téléphone !</h3>
+            <a class="lienContact" href="tel:0357271881">03.57.27.18.81</a>
         </address>
-
-        </div>
 
     </div>
 
