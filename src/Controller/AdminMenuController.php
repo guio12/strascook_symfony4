@@ -115,15 +115,42 @@ class AdminMenuController extends AbstractController
                     $this->erreurs[] = "L'image dépasse les 2 Mo";
                     return $this->index();
 
-                } if ($_FILES['image'] == $_POST['image_test'])  {
+                } 
                 
-                     
+                if (is_file($repFinal . $_POST['image_test'])) {
+                
+                     $nomFinal = $_POST['image_test'];
+                    //checking if file exsists
+                    /*if(file_exists($repFinal . $nomFinal)) unlink($repFinal . $nomFinal);*/
                     
-                } if ($typeFichier != $typesAutorises) {
+                    move_uploaded_file($repTemp, $repFinal . $nomFinal);
+                    $donnees['image'] = $nomFinal;
+                    
+                    
+                                    $donnees['introduction'] = $_POST['introduction'];
+                                    $donnees['entree'] = $_POST['entree'];
+                                    $donnees['d_entree'] = $_POST['d_entree'];
+                                    $donnees['plat'] = $_POST['plat'];
+                                    $donnees['d_plat'] = $_POST['d_plat'];
+                                    $donnees['dessert'] = $_POST['dessert'];
+                                    $donnees['d_dessert'] = $_POST['d_dessert'];
+                                    $donnees['prix'] = $_POST['prix'];
+                                    $donnees['id'] = $_POST['id'];
+
+                                    $recup_id = $donnees['id'];
+                    
+                    $menusManager = new MenusManager();
+                    $resultat = $menusManager->modifier($donnees, $recup_id);
+                    /*return $this->twig->render('StrasCook/adminMenu.html.twig', ['donnees' => $resultat]);*/
+                    header('Location: /admin/menu');
+                    
+                } 
+                
+                if (!empty($_POST['image']) && $typeFichier != $typesAutorises) {
                     $this->erreurs[] = "Le fichier n'est pas au format JPEG";
                     return $this->index();
 
-                } else {
+                } elseif (!empty($_POST['image']) && $typeFichier === $typesAutorises) {
                     $nomFinal = 'image' . uniqid() . '.' . $extensionFichier;
                     move_uploaded_file($repTemp, $repFinal . $nomFinal);
                     $donnees['image'] = $nomFinal;
@@ -149,9 +176,8 @@ class AdminMenuController extends AbstractController
 
                 $resultat = $menusManager->modifier($donnees, $recup_id);
 
-
-                header('Location: /admin/menu');
             }
+            header('Location: /admin/menu');
 
         }
         return $nomFinal;
