@@ -42,7 +42,7 @@
 }
 
 .calendar__table td {
-  padding: 10px;
+  padding: 0.2em 0.7em 0.7em;
   border: 1px solid #CCC;
   vertical-align: top;
   width: 14.29%;
@@ -65,7 +65,7 @@
 }
 
 .calendar__day {
-  font-size: 1.3em;
+  font-size: 1.25em;
     color: #FFB74D;
     font-family: Raleway;
     text-decoration: none;
@@ -73,7 +73,7 @@
 }
 
 .calendar__day_user {
-    font-size: 1.3em;
+    font-size: 1.25em;
     color: #FFB74D;
     font-family: Raleway;
     text-decoration: none;

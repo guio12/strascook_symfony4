@@ -104,6 +104,11 @@ class CalendarController extends AbstractController
             $data['date'] = date('Y-m-d');
         }
         $errors = [];
+        //echo $_GET['date'];
+        $date_jour ='';
+        if (isset($_GET['date'])) {
+            $date_jour = $_GET['date'];
+        }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -122,7 +127,10 @@ class CalendarController extends AbstractController
         return $this->twig->render('StrasCook/calendar/reservation_add.html.twig',
             ['errors'=>$errors,
                 'data'=>$data,
-                'donneesClassiques' => $resultatClassiques, 'donneesVegetariens' => $resultatVegetariens, 'donneesVegans' => $resultatVegans
+                'donneesClassiques' => $resultatClassiques,
+                'donneesVegetariens' => $resultatVegetariens,
+                'donneesVegans' => $resultatVegans,
+                'date_jour' => $date_jour
             ]);
     }
 

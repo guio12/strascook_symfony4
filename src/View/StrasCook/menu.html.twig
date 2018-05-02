@@ -40,7 +40,7 @@
     {% for menu in donneesClassiques %}
 
         <div class="card col-lg-4 col-md-6">
-            <img class="card-img-top" src="/assets/img/img-menu/{{ menu.image }}" alt="Photo du menu">
+            <a href="/assets/img/img-menu/{{ menu.image }}"><img class="card-img-top" src="/assets/img/img-menu/{{ menu.image }}" alt="Photo du menu"></a>
             <div class="card-body">
                 <h2 class="card-title">{{ menu.titre }}</h2>
                 <h3 class="card-text">{{ menu.introduction }}</h3>
@@ -96,7 +96,7 @@
         {% for menu in donneesVegetariens %}
 
             <div class="card col-lg-4 col-md-6">
-                <img class="card-img-top" src="/assets/img/img-menu/{{ menu.image }}" alt="Photo du menu">
+                <a href="/assets/img/img-menu/{{ menu.image }}"><img class="card-img-top" src="/assets/img/img-menu/{{ menu.image }}" alt="Photo du menu"></a>
                 <div class="card-body">
                     <h2 class="card-title">{{ menu.titre }}</h2>
                     <h3 class="card-text">{{ menu.introduction }}</h3>

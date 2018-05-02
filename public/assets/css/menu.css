@@ -58,11 +58,18 @@ hr {
 }
 
 h3 {
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.4em;
-    font-weight: bold;
-    text-align: center !important;
+    font-family: 'Raleway' !important, sans-serif;
+    font-size: 1em;
+    font-style: italic;
+    text-align: left !important;
     margin-bottom: 14px;
+}
+
+h4 {
+    font-family: 'Raleway' !important, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: left !important;
 }
 
 .tarifs {
