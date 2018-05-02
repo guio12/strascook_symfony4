@@ -48,7 +48,7 @@ class ContactController extends AbstractController
 
             //Content
             $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = " $this->titre ";
+            $mail->Subject = " $this->nomprenom : $this->titre ";
 
             $mail->Body = " $this->message ";
 
@@ -70,25 +70,31 @@ class ContactController extends AbstractController
         } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             $this->errors['email'] = "Vous n'avez pas renseigné un email valide";
         } else {
-            $this->email = $_POST['email'];
+            $this->email = htmlspecialchars($_POST['email']);
         }
 
         if (!array_key_exists('message', $_POST) || $_POST['message'] == '') {
             $this->errors['message'] = "Vous n'avez pas renseigné votre message";
         } else {
-            $this->message = $_POST['message'];
+            $this->message = htmlspecialchars($_POST['message']);
         }
 
         if (!array_key_exists('objet', $_POST) || $_POST['objet'] == '') {
             $this->errors['objet'] = "Vous n'avez pas choisi de motif";
         } else {
-            $this->objet = $_POST['objet'];
+            $this->objet = htmlspecialchars($_POST['objet']);
         }
 
         if (!array_key_exists('titre', $_POST) || $_POST['titre'] == '') {
             $this->errors['titre'] = "Vous n'avez pas renseigné vos nom et prénom";
         } else {
-            $this->titre = $_POST['titre'];
+            $this->titre = htmlspecialchars($_POST['titre']);
+        }
+
+        if (!array_key_exists('nomprenom', $_POST) || $_POST['nomprenom'] == '') {
+            $this->errors['nomprenom'] = "Vous n'avez pas renseigné vos nom et prénom";
+        } else {
+            $this->nomprenom = htmlspecialchars($_POST['nomprenom']);
         }
 
         // Faire dispparaître les erreurs
