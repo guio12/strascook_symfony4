@@ -14,15 +14,15 @@ class ContactController extends AbstractController
     public function index()
     {
 
-          session_start();
+        session_start();
 
 
-          $this->erreurs();
-          if (isset($_POST['email'])) {
-              $visuelErreur = $this->errors;
-              return $this->twig->render('StrasCook/contact.html.twig', ['erreurs' => $visuelErreur, 'value' => $_POST]);
-          }
-          return $this->twig->render('StrasCook/contact.html.twig');
+        $this->erreurs();
+        if (isset($_POST['email'])) {
+            $visuelErreur = $this->errors;
+            return $this->twig->render('StrasCook/contact.html.twig', ['erreurs' => $visuelErreur, 'value' => $_POST]);
+        }
+        return $this->twig->render('StrasCook/contact.html.twig');
     }
 
 
@@ -48,13 +48,15 @@ class ContactController extends AbstractController
 
             //Content
             $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = " $this->titre ";
+            $mail->Subject = " $this->nomprenom : $this->titre ";
 
             $mail->Body = " $this->message ";
 
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send(header('Location:/contact'));
+
+
         } catch (Exception $e) {
             echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
         }
@@ -85,10 +87,16 @@ class ContactController extends AbstractController
             $this->objet = $_POST['objet'];
         }
 
-        if (!array_key_exists('nomprenom', $_POST) || $_POST['nomprenom'] == '') {
-            $this->errors['titre'] = "Vous n'avez pas renseigné vos nom et prénom";
+        if (!array_key_exists('titre', $_POST) || $_POST['titre'] == '') {
+            $this->errors['titre'] = "Vous n'avez pas renseigné votre objet";
         } else {
-            $this->titre = $_POST['nomprenom'];
+            $this->titre = ($_POST['titre']);
+        }
+
+        if (!array_key_exists('nomprenom', $_POST) || $_POST['nomprenom'] == '') {
+            $this->errors['nomprenom'] = "Vous n'avez pas renseigné vos nom et prénom";
+        } else {
+            $this->nomprenom = $_POST['nomprenom'];
         }
 
         // Faire dispparaître les erreurs
@@ -99,5 +107,6 @@ class ContactController extends AbstractController
         }
 
     }
+
 
 }
