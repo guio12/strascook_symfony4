@@ -10,7 +10,7 @@
     * @param \FastRoute\RouteCollector $r
     */
      function(FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/accueil', 'Accueil/index');
+    $r->addRoute('GET', '/', 'Accueil/index');
     $r->addRoute('GET', '/lechef', 'Lechef/index');
     $r->addRoute('GET', '/contact', 'Contact/index');
     $r->addRoute('POST', '/contact', 'Contact/index');

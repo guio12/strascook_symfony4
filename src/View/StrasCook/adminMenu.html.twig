@@ -15,7 +15,7 @@
             </div>
         {% endfor %}
         <br>
-        <a href="/login2"><button class="btn-block btn-faded" a href="/login2">Retour au menu administration</button></a>
+        <a href="/login2"><button class="btn btn-primary" a href="/login2">Retour au menu administration</button></a>
         <br>
         <h2>Liste des menus</h2>
         <table class="table">
@@ -43,7 +43,6 @@
                         <form action="/admin/modifier/{{ menu.id }}" method="post" name="modifier">
                         <td><button type="submit" name="modifier" id="bouton_modif_menu" class="btn btn-primary ml-2">Afficher / Modifier</button>
                         </form>
-                        </td>
                     </tr>
                 {% endfor %}
 

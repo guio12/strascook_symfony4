@@ -2,11 +2,12 @@
 
 namespace Model;
 
-class Menus
+class Actu
 {
     private $id;
     private $titre;
     private $image;
+    private $contenu;
 
     /**
      * @return mixed
@@ -71,4 +72,4 @@ class Menus
     {
         $this->contenu = $contenu;
     }
-    private $contenu;
+}

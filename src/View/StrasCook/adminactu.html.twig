@@ -1,4 +1,5 @@
 {% block stylesheetpages %}
+    <!--suppress Annotator -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
 {% endblock %}
@@ -12,7 +13,7 @@
           </div>
       {% endfor %}
       <br>
-      <a href="/login2"><button class="btn-block btn-faded">Retour au menu administration</button></a>
+      <a href="/login2"><button class="btn btn-primary">Retour au menu administration</button></a>
       <br>
 
     <form class="row" method="post" action="/admin/actu/ajouter" enctype="multipart/form-data">
@@ -130,7 +131,6 @@
             {% endif %}
 
         </table>
-    </div>
 
 
 {% endblock %}
