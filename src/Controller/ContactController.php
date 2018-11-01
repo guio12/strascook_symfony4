@@ -43,7 +43,7 @@ class ContactController extends AbstractController
 
             //Recipients
             $mail->setFrom('charlottehofraise@gmail.com', 'Mailer');
-            $mail->addAddress('charlottehofraise@gmail.com', 'Luc HUET');     // Add a recipient
+            $mail->addAddress('contact@crea15.fr', 'Charlotte Hofrez');     // Add a recipient
             $mail->addReplyTo(" $this->email ", 'Information');
 
             //Content
