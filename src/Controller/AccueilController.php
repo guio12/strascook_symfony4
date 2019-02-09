@@ -1,21 +1,19 @@
 <?php
 
-namespace Controller;
+namespace App\Controller;
 
-use Model\Actu;
-use Model\ActuManager;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
-class AccueilController extends AbstractController
+class AccueilController
 {
-    public function index()
+    /**
+     * @Route("/")
+     */
+    public function accueil()
     {
-        session_start();
-
-
-        $actuManager = new ActuManager();
-        $resultatActu = $actuManager->utilisation();
-
-        return $this->twig->render('StrasCook/accueil.html.twig', ['actu' => $resultatActu]);
+        return new Response(
+            '<html><body>Charlotte on arrive !!!</body></html>'
+        );
     }
-
 }
