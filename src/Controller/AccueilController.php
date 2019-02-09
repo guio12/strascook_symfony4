@@ -7,9 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AccueilController
 {
-    /**
-     * @Route("/")
-     */
+    
     public function accueil()
     {
         return new Response(
