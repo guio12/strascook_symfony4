@@ -33,6 +33,6 @@ easy_admin:
                     - titre2
                     - description2
                     - { property: 'imageFile2', type: 'vich_image' }
-        # List the entity class name you want to manage
-        - App\Entity\Menu
-        - App\Entity\Actu
+       
+        Actu:
+            class: App\Entity\Actu
