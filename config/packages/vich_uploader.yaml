@@ -5,3 +5,7 @@ vich_uploader:
         lechef_images:
             uri_prefix: /uploads/images/lechef
             upload_destination: '%kernel.project_dir%/public%app.path.lechef_images%'
+            
+        menu_images:
+            uri_prefix: /uploads/images/menu
+            upload_destination: '%kernel.project_dir%/public%app.path.menu_images%'

@@ -4,6 +4,47 @@ easy_admin:
 #        # List the entity class name you want to manage
         Menu:
             class: App\Entity\Menu
+            list:
+                fields:
+                    - type
+                    - titre
+                    - { property: 'image', type: 'image', base_path: '%app.path.menu_images%' }
+                    - introduction
+                    - entree
+                    - d_entree
+                    - plat
+                    - d_plat
+                    - dessert
+                    - d_dessert
+                    - prix
+                    
+            show:
+                fields:
+                    - type
+                    - titre
+                    - { property: 'image', type: 'image', base_path: '%app.path.menu_images%' }
+                    - introduction
+                    - entree
+                    - d_entree
+                    - plat
+                    - d_plat
+                    - dessert
+                    - d_dessert
+                    - prix
+                    
+            form:
+                fields:
+                    - type
+                    - titre
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - introduction
+                    - entree
+                    - d_entree
+                    - plat
+                    - d_plat
+                    - dessert
+                    - d_dessert
+                    - prix
         
         LeChef:
             class: App\Entity\LeChef
