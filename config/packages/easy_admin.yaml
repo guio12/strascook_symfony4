@@ -1,5 +1,6 @@
 easy_admin:
     site_name: "Chach'Admin"
     entities:
-#        # List the entity class name you want to manage
+        # List the entity class name you want to manage
         - App\Entity\Menu
+        - App\Entity\Actu
