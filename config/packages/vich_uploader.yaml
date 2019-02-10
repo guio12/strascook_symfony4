@@ -1,0 +1,7 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        lechef_images:
+            uri_prefix: /uploads/images/lechef
+            upload_destination: '%kernel.project_dir%/public%app.path.lechef_images%'
