@@ -11,3 +11,7 @@ contact:
 lechef:
     path: /lechef
     controller: App\Controller\LeChefController::index
+
+menu:
+    path: /menu
+    controller: App\Controller\MenuController::index
