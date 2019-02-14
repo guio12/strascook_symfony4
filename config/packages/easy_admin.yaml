@@ -1,5 +1,11 @@
 easy_admin:
     site_name: "Chach'Admin"
+
+    design:
+        form_theme:
+            - '@EasyAdmin/form/bootstrap_4.html.twig'
+            # - '@VichUploader/Form/fields.html.twig'
+
     entities:
 #        # List the entity class name you want to manage
         Menu:
@@ -8,7 +14,7 @@ easy_admin:
                 fields:
                     - type
                     - titre
-                    - { property: 'image', type: 'image', base_path: '%app.path.menu_images%' }
+                    - { property: 'image', type: 'image', base_path: 'build%app.path.menu_images%' }
                     - introduction
                     - entree
                     - d_entree
@@ -22,7 +28,7 @@ easy_admin:
                 fields:
                     - type
                     - titre
-                    - { property: 'image', type: 'image', base_path: '%app.path.menu_images%' }
+                    - { property: 'image', type: 'image', base_path: 'build%app.path.menu_images%' }
                     - introduction
                     - entree
                     - d_entree
@@ -50,30 +56,21 @@ easy_admin:
             class: App\Entity\LeChef
             list:
                 fields:
-                    - titre1
-                    - description1
-                    - { property: 'image1', type: 'image', base_path: '%app.path.lechef_images%' }
-                    - titre2
-                    - description2
-                    - { property: 'image2', type: 'image', base_path: '%app.path.lechef_images%' }
+                    - titre
+                    - description
+                    - { property: 'image', type: 'image', base_path: 'build%app.path.lechef_images%' }
                     
             show:
                 fields:
-                    - titre1
-                    - description1
-                    - { property: 'image1', type: 'image', base_path: '%app.path.lechef_images%' }
-                    - titre2
-                    - description2
-                    - { property: 'image2', type: 'image', base_path: '%app.path.lechef_images%' }
+                    - titre
+                    - description
+                    - { property: 'image', type: 'image', base_path: 'build%app.path.lechef_images%' }
                     
             form:
                 fields:
-                    - titre1
-                    - description1
-                    - { property: 'imageFile1', type: 'vich_image' }
-                    - titre2
-                    - description2
-                    - { property: 'imageFile2', type: 'vich_image' }
+                    - titre
+                    - description
+                    - { property: 'imageFile', type: 'vich_image', base_path: 'build%app.path.lechef_images%' }
        
         Actu:
             class: App\Entity\Actu

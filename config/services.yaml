@@ -5,8 +5,8 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'en'
-    app.path.lechef_images: /uploads/images/lechef
-    app.path.menu_images: /uploads/images/menu
+    app.path.lechef_images: /images/uploads/lechef
+    app.path.menu_images: /images/uploads/menu
 
 services:
     # default configuration for services in *this* file
