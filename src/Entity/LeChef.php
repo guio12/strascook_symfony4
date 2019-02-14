@@ -22,58 +22,31 @@ class LeChef
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $titre1;
+    private $titre;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $description1;
+    private $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */
-    private $image1;
+    private $image;
 
     /**
-     * @Vich\UploadableField(mapping="lechef_images", fileNameProperty="image1")
+     * @Vich\UploadableField(mapping="lechef_images", fileNameProperty="image")
      * @var File
      */
-    private $imageFile1;
+    private $imageFile;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      * @var \DateTime
      */
-    private $updatedAt1;
+    private $updatedAt;
     
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $titre2;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $description2;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @var string
-     */
-    private $image2;
-
-    /**
-     * @Vich\UploadableField(mapping="lechef_images", fileNameProperty="image2")
-     * @var File
-     */
-    private $imageFile2;
-
-    /**
-     * @ORM\Column(type="datetime")
-     * @var \DateTime
-     */
-    private $updatedAt2;
 
     
     
@@ -83,131 +56,66 @@ class LeChef
         return $this->id;
     }
 
-    public function getTitre1(): ?string
+    public function getTitre(): ?string
     {
-        return $this->titre1;
+        return $this->titre;
     }
 
-    public function setTitre1(string $titre1): self
+    public function setTitre(string $titre): self
     {
-        $this->titre1 = $titre1;
+        $this->titre = $titre;
 
         return $this;
     }
 
-    public function getDescription1(): ?string
+    public function getDescription(): ?string
     {
-        return $this->description1;
+        return $this->description;
     }
 
-    public function setDescription1(string $description1): self
+    public function setDescription(string $description): self
     {
-        $this->description1 = $description1;
+        $this->description = $description;
 
         return $this;
     }
     
-    public function setImageFile1(File $image1 = null)
+    public function setImageFile(File $image = null)
     {
-        $this->imageFile1 = $image1;
+        $this->imageFile = $image;
 
         // VERY IMPORTANT:
         // It is required that at least one field changes if you are using Doctrine,
         // otherwise the event listeners won't be called and the file is lost
-        if ($image1) {
+        if ($image) {
             // if 'updatedAt' is not defined in your entity, use another property
-            $this->updatedAt1 = new \DateTime('now');
+            $this->updatedAt = new \DateTime('now');
         }
     }
     
-    public function getImageFile1()
+    public function getImageFile()
     {
-        return $this->imageFile1;
+        return $this->imageFile;
     }
 
-    public function getImage1(): ?string
+    public function getImage(): ?string
     {
-        return $this->image1;
+        return $this->image;
     }
 
-    public function setImage1($image1)
+    public function setImage($image)
     {
-        $this->image1 = $image1;
+        $this->image = $image;
     }
 
-    public function getUpdatedAt1(): ?\DateTimeInterface
+    public function getUpdatedAt(): ?\DateTimeInterface
     {
-        return $this->updatedAt1;
+        return $this->updatedAt;
     }
 
-    public function setUpdatedAt1(\DateTimeInterface $updatedAt1): self
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
-        $this->updatedAt1 = $updatedAt1;
-
-        return $this;
-    }
-
-    public function getTitre2(): ?string
-    {
-        return $this->titre2;
-    }
-
-    public function setTitre2(string $titre2): self
-    {
-        $this->titre2 = $titre2;
-
-        return $this;
-    }
-
-    public function getDescription2(): ?string
-    {
-        return $this->description2;
-    }
-
-    public function setDescription2(string $description2): self
-    {
-        $this->description2 = $description2;
-
-        return $this;
-    }
-
-    public function setImageFile2(File $image2 = null)
-    {
-        $this->imageFile2 = $image2;
-
-        // VERY IMPORTANT:
-        // It is required that at least one field changes if you are using Doctrine,
-        // otherwise the event listeners won't be called and the file is lost
-        if ($image2) {
-            // if 'updatedAt' is not defined in your entity, use another property
-            $this->updatedAt2 = new \DateTime('now');
-        }
-    }
-    
-    public function getImageFile2()
-    {
-        return $this->imageFile2;
-    }
-
-    public function getImage2(): ?string
-    {
-        return $this->image2;
-    }
-
-    public function setImage2($image2)
-    {
-        $this->image2 = $image2;
-      
-    }
-
-    public function getUpdatedAt2(): ?\DateTimeInterface
-    {
-        return $this->updatedAt2;
-    }
-
-    public function setUpdatedAt2(\DateTimeInterface $updatedAt2): self
-    {
-        $this->updatedAt2 = $updatedAt2;
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
