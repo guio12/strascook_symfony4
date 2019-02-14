@@ -42,7 +42,7 @@ easy_admin:
                 fields:
                     - type
                     - titre
-                    - { property: 'imageFile', type: 'vich_image' }
+                    - { property: 'imageFile', type: 'vich_image', base_path: 'build%app.path.menu_images%' }
                     - introduction
                     - entree
                     - d_entree

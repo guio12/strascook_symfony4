@@ -30,6 +30,7 @@ class MenuFixtures extends Fixture
         $menu = new Menu();
         $menu->setType($type);
         $menu->setTitre("Menu test " . $type);
+        $menu->setImage('mimie-mathy.png'); // rajouter le nom d'un fichier image d'abord rajouté dans /assets/images/uploads/menu/
         $menu->setIntroduction("Introduction");
         $menu->setEntree("Nom d'entrée");
         $menu->setDEntree("Description de l'entrée");
