@@ -23,6 +23,7 @@ easy_admin:
                     - dessert
                     - d_dessert
                     - prix
+                    - updatedAt
                     
             show:
                 fields:
@@ -37,6 +38,7 @@ easy_admin:
                     - dessert
                     - d_dessert
                     - prix
+                    - updatedAt
                     
             form:
                 fields:
@@ -59,12 +61,14 @@ easy_admin:
                     - titre
                     - description
                     - { property: 'image', type: 'image', base_path: 'build%app.path.lechef_images%' }
+                    - updatedAt
                     
             show:
                 fields:
                     - titre
                     - description
                     - { property: 'image', type: 'image', base_path: 'build%app.path.lechef_images%' }
+                    - updatedAt
                     
             form:
                 fields:
@@ -74,3 +78,20 @@ easy_admin:
        
         Actu:
             class: App\Entity\Actu
+            list:
+                fields:
+                    - titre
+                    - contenu
+                    - date_actu
+                    
+            show:
+                fields:
+                    - titre
+                    - contenu
+                    - date_actu
+                    
+            form:
+                fields:
+                    - titre
+                    - contenu
+                    - date_actu
