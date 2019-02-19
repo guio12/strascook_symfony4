@@ -15,6 +15,7 @@ class LeChefFixtures extends Fixture
         for ($i = 0; $i < 2; $i++)
         {
             $chef = new LeChef();
+            $chef->setOnline(0);
             $chef->setTitre("Titre bio");
             $chef->setDescription("Description");
             $chef->setImage('mimie-mathy.png'); // rajouter le nom d'un fichier image d'abord rajouté dans /assets/images/uploads/lechef/

@@ -12,6 +12,7 @@ easy_admin:
             class: App\Entity\Menu
             list:
                 fields:
+                    - online
                     - type
                     - titre
                     - { property: 'image', type: 'image', base_path: 'build%app.path.menu_images%' }
@@ -27,6 +28,7 @@ easy_admin:
                     
             show:
                 fields:
+                    - online
                     - type
                     - titre
                     - { property: 'image', type: 'image', base_path: 'build%app.path.menu_images%' }
@@ -53,11 +55,13 @@ easy_admin:
                     - dessert
                     - d_dessert
                     - prix
+                    - online
         
         LeChef:
             class: App\Entity\LeChef
             list:
                 fields:
+                    - online
                     - titre
                     - description
                     - { property: 'image', type: 'image', base_path: 'build%app.path.lechef_images%' }
@@ -65,6 +69,7 @@ easy_admin:
                     
             show:
                 fields:
+                    - online
                     - titre
                     - description
                     - { property: 'image', type: 'image', base_path: 'build%app.path.lechef_images%' }
@@ -75,17 +80,20 @@ easy_admin:
                     - titre
                     - description
                     - { property: 'imageFile', type: 'vich_image', base_path: 'build%app.path.lechef_images%' }
+                    - online
        
         Actu:
             class: App\Entity\Actu
             list:
                 fields:
+                    - online
                     - titre
                     - contenu
                     - date_actu
                     
             show:
                 fields:
+                    - online
                     - titre
                     - contenu
                     - date_actu
@@ -95,3 +103,4 @@ easy_admin:
                     - titre
                     - contenu
                     - date_actu
+                    - online

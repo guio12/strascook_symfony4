@@ -2,22 +2,25 @@
 
 {% block body %}
 
+
 {% for item in items %}
-{# Style dégueu pour test fonctionnel du back #}
-<div class="card" style="width: 18rem;">
-        <img src="{{ asset('build/images/uploads/menu/') }}{{ item.image }}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h2 class="card-text">{{ item.titre }}</h2>
-          <p class="card-text">{{ item.introduction }}</p>
-          <p class="card-text">{{ item.entree }}</p>
-          <p class="card-text">{{ item.DEntree }}</p>
-          <p class="card-text">{{ item.plat }}</p>
-          <p class="card-text">{{ item.DPlat }}</p>
-          <p class="card-text">{{ item.dessert }}</p>
-          <p class="card-text">{{ item.DDessert }}</p>
-          <p class="card-text">{{ item.prix }}</p>
-        </div>
-      </div>
+  {% if item.online == 1 %}
+    {# Style dégueu pour test fonctionnel du back #}
+    <div class="card" style="width: 18rem;">
+            <img src="{{ asset('build/images/uploads/menu/') }}{{ item.image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h2 class="card-text">{{ item.titre }}</h2>
+              <p class="card-text">{{ item.introduction }}</p>
+              <p class="card-text">{{ item.entree }}</p>
+              <p class="card-text">{{ item.DEntree }}</p>
+              <p class="card-text">{{ item.plat }}</p>
+              <p class="card-text">{{ item.DPlat }}</p>
+              <p class="card-text">{{ item.dessert }}</p>
+              <p class="card-text">{{ item.DDessert }}</p>
+              <p class="card-text">{{ item.prix }}</p>
+            </div>
+          </div>
+  {% endif %}      
 {% endfor %}
 
 {% endblock body %}

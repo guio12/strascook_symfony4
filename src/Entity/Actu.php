@@ -31,6 +31,11 @@ class Actu
      */
     private $date_actu;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $online;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,6 +73,18 @@ class Actu
     public function setDateActu(\DateTimeInterface $date_actu): self
     {
         $this->date_actu = $date_actu;
+
+        return $this;
+    }
+
+    public function getOnline(): ?bool
+    {
+        return $this->online;
+    }
+
+    public function setOnline(bool $online): self
+    {
+        $this->online = $online;
 
         return $this;
     }

@@ -87,6 +87,11 @@ class Menu
      */
     private $prix;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $online;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -249,6 +254,18 @@ class Menu
     public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getOnline(): ?bool
+    {
+        return $this->online;
+    }
+
+    public function setOnline(bool $online): self
+    {
+        $this->online = $online;
 
         return $this;
     }

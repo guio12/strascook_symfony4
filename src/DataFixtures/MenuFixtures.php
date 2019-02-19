@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xavier
- * Date: 10/02/2019
- * Time: 13:53
- */
 
 namespace App\DataFixtures;
 
@@ -28,6 +22,7 @@ class MenuFixtures extends Fixture
         foreach ($typeMenu as $type) {
         
         $menu = new Menu();
+        $menu->setOnline(0);
         $menu->setType($type);
         $menu->setTitre("Menu test " . $type);
         $menu->setImage('logo-blanc2.png'); // rajouter le nom d'un fichier image d'abord rajouté dans /assets/images/uploads/menu/

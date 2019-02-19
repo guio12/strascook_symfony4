@@ -2,15 +2,17 @@
 
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Actu;
+use Doctrine\ORM\EntityManagerInterface;
 
-class AccueilController
+class AccueilController extends AbstractController
 {
     
-    public function index()
+    public function index(EntityManagerInterface $entityManager)
     {
-        return new Response(
-            '<html><body>Charlotte on arrive !!!</body></html>'
-        );
+        $items = $entityManager->getRepository(Actu::class)->findAll();
+        
+        return $this->render('accueil/index.html.twig', ['items' => $items]);
     }
 }

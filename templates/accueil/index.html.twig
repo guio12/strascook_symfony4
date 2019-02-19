@@ -6,10 +6,11 @@
   {% if item.online == 1 %}
     {# Style dégueu pour test fonctionnel du back #}
     <div class="card" style="width: 18rem;">
-      <img src="{{ asset('build/images/uploads/lechef/') }}{{ item.image }}" class="card-img-top" alt="...">
+      {# <img src="{{ asset('build/images/uploads/actu/') }}{{ item.image }}" class="card-img-top" alt="..."> #}
       <div class="card-body">
         <h2 class="card-text">{{ item.titre }}</h2>
-        <p class="card-text">{{ item.description }}</p>
+        <p class="card-text">{{ item.contenu }}</p>
+        <p class="card-text">{{ item.dateActu|date("d/m/Y") }}</p>
       </div>
     </div>
   {% endif %}
