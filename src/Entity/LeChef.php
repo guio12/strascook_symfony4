@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +37,11 @@ class LeChef
     private $image;
 
     /**
+     * @Assert\File(
+     *     maxSize = "1024k",
+     *     mimeTypes = {"image/jpeg", "image/png"},
+     *     mimeTypesMessage = "Veuillez envoyer un fichier jpeg ou png"
+     * )
      * @Vich\UploadableField(mapping="lechef_images", fileNameProperty="image")
      * @var File
      */
