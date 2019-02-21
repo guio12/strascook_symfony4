@@ -1,4 +1,6 @@
 security:
+    access_denied_url: /
+    
     encoders:
         App\Entity\User:
             algorithm: argon2i
@@ -31,9 +33,15 @@ security:
                 authenticators:
                     - App\Security\LoginFormAuthenticator
             # https://symfony.com/doc/current/security/form_login_setup.html
+            logout:
+                path:   app_logout
+                target: / #This is home url
+            
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
+         - { path: ^/login, allow_if: "not has_role('ROLE_ADMIN')"}
          - { path: ^/chachadmin, roles: ROLE_ADMIN }
+         - { path: /booking/calendar, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Menu;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -11,6 +12,9 @@ use Doctrine\ORM\EntityManagerInterface;
 class MenuController extends AbstractController
 {
 
+    /**
+     * @Route("/menu", name="menu")
+     */
     public function index(EntityManagerInterface $entityManager)
     {
         $items = $entityManager->getRepository(Menu::class)->findAll();
