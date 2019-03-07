@@ -6,6 +6,7 @@ use App\Entity\Contact;
 use App\Form\ContactType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Notification\ContactNotification;
 
@@ -13,6 +14,9 @@ use App\Notification\ContactNotification;
 class ContactController extends AbstractController
 {
 
+    /**
+     * @Route("/contact", name="contact")
+     */
     public function index(Request $request, ContactNotification $notification): Response
     {   
         $contact = new Contact();
