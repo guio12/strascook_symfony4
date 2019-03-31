@@ -44,6 +44,9 @@ Encore
     // enables Sass/SCSS support
     .enableSassLoader()
 
+    // enables Vue.js support
+    .enableVueLoader()
+
     //CopyWebpackPlugin - sert à copier les fichiers images de /assets/images vers /public/build
     .addPlugin(new CopyWebpackPlugin([
         { from: './assets/images', to: 'images' }

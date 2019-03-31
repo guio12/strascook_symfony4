@@ -2,25 +2,81 @@
 
 {% block body %}
 
+<div id="app-menu">
+  {# <div class="container">
+    <div class="row">
 
-{% for item in items %}
-  {% if item.online == 1 %}
-    {# Style dégueu pour test fonctionnel du back #}
-    <div class="card" style="width: 18rem;">
-            <img src="{{ asset('build/images/uploads/menu/') }}{{ item.image }}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h2 class="card-text">{{ item.titre }}</h2>
-              <p class="card-text">{{ item.introduction }}</p>
-              <p class="card-text">{{ item.entree }}</p>
-              <p class="card-text">{{ item.DEntree }}</p>
-              <p class="card-text">{{ item.plat }}</p>
-              <p class="card-text">{{ item.DPlat }}</p>
-              <p class="card-text">{{ item.dessert }}</p>
-              <p class="card-text">{{ item.DDessert }}</p>
-              <p class="card-text">{{ item.prix }}</p>
+      {% for menu in menus %}
+      {% if menu.online == 1 %}
+      {% if menu.type == 'classique' %}
+      <my-menus titre="{{ menu }}"></my-menus>
+      <div class="card col-3" style="width: 18rem;">
+        
+        <img src="{{ asset('build/images/uploads/menu/') }}{{ menu.image }}" class="card-img-top" alt="...">
+        <div class="card-body">
+         
+          <h2 class="card-text">{{ menu.titre }}</h2>
+          
+          <h3 class="card-text">{{ menu.introduction }}</h3>
+          <ul>
+            <li><span class="card-text">{{ menu.entree }}</span></li>
+            <li><span class="card-text">{{ menu.plat }}</span></li>
+            <li><span class="card-text">{{ menu.dessert }}</span></li>
+            <li><span class="card-text">{{ menu.prix }}</span></li>
+          </ul>
+          
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalClassique">
+            Détails
+          </button>
+
+          
+          <div class="modal fade" id="modalClassique" tabindex="-1" role="dialog" aria-labelledby="modalClassiqueLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalClassiqueLabel">{{ menu.titre }}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <h3>{{ menu.introduction }}</h3>
+
+                  <h4>{{ menu.entree }}</h4>
+                  <p>{{ menu.DEntree }}</p>
+
+                  <h4>{{ menu.plat }}</h4>
+                  <p>{{ menu.DPlat }}</p>
+
+                  <h4>{{ menu.dessert }}</h4>
+                  <p>{{ menu.DDessert }}</p>
+
+                  <h2>{{ menu.prix }}€ par convive</h2>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                </div>
+              </div>
             </div>
           </div>
-  {% endif %}      
-{% endfor %}
+
+
+        </div>
+      </div>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+
+    </div>
+  </div>#}
+
+  
+
+  <my-menus :menu="{{ menus | json_encode }}"></my-menus>
+ 
+  
+</div> 
 
 {% endblock body %}

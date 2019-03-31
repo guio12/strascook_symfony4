@@ -1,7 +1,9 @@
 {% extends "base.html.twig" %}
 
+
 {% block body %}
 
+<div id="app">
 {% for item in items %}
   {% if item.online == 1 %}
     {# Style dégueu pour test fonctionnel du back #}
@@ -16,4 +18,8 @@
   {% endif %}
 {% endfor %}
 
+    <div class="jumbotron text-center">
+        <exemple></exemple>
+    </div>
+  </div>
 {% endblock body %}

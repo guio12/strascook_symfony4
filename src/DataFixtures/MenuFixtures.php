@@ -25,7 +25,7 @@ class MenuFixtures extends Fixture
         $menu->setOnline(0);
         $menu->setType($type);
         $menu->setTitre("Menu test " . $type);
-        $menu->setImage('logo-blanc2.png'); // rajouter le nom d'un fichier image d'abord rajouté dans /assets/images/uploads/menu/
+        $menu->setImage('oGamQhz.png'); // rajouter le nom d'un fichier image d'abord rajouté dans /assets/images/uploads/menu/
         $menu->setUpdatedAt(new \DateTime());
         $menu->setIntroduction("Introduction");
         $menu->setEntree("Nom d'entrée");
