@@ -21,6 +21,7 @@ Encore
     .addEntry('app', './assets/js/app.js')
     .addEntry('calendarjs', './assets/js/calendar.js')
     .addStyleEntry('calendar', './assets/css/theme_calendar_sketchy.scss')
+    .addStyleEntry('accueil', './assets/css/accueil.scss')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 

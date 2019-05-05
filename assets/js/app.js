@@ -24,11 +24,8 @@ console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 
 import Vue from 'vue';
 
-//import Menus from './components/Menus'
-import Exemple from './components/Exemple'
-
-
-  import Menus from './components/Menus.vue'
+  import Header from './components/Header'
+  import Menus from './components/Menus'
 
   Vue.component('my-menus', Menus)
 
@@ -46,24 +43,17 @@ import Exemple from './components/Exemple'
       }
   })
 
-//   new Vue({
-//     el: '#app-menu',
-//     data: {
-//       currentFilter: 'ALL',
-//       projects: [
-//         {title: "Artwork", image: "https://picsum.photos/g/200?image=122", category: 'ART'},
-//         {title: "Charcoal", image: "https://picsum.photos/g/200?image=116", category: 'ART'},
-//         {title: "Sketching", image: "https://picsum.photos/g/200?image=121", category: 'DOODLES'},
-//         {title: "Acrillic", image: "https://picsum.photos/g/200?image=133", category: 'WORKSHOPS'},
-//         {title: "Pencil", image: "https://picsum.photos/g/200?image=134", category: 'DOODLES'},
-//         {title: "Pen", image: "https://picsum.photos/g/200?image=115", category: 'ART'},
-//         {title: "Inking", image: "https://picsum.photos/g/200", category: 'WORKSHOPS'},
-//       ]
-//     },
-//     methods: {
-//       setFilter: function(filter) {
-//         this.currentFilter = filter;
-//       }
-//     },
-//     delimiters: ['${', '}$'],
-//   })
+
+  Vue.component('my-header', Header)
+
+  new Vue({
+    delimiters: ['${', '}$'],
+    el: '#app-header',
+    components: {Header},
+    data: {
+        
+    },
+    methods: {
+        
+    }
+  })

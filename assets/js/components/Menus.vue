@@ -30,17 +30,15 @@
 
   <div class="container">
     <transition-group class="menus col-12" name="menus">
-      <div class="menu col-3" v-bind:key="m.id" v-for="m in menu" v-if="currentFilter === m.type.type || currentFilter === 'tous' && m.online">
+      <div class="menu col-3" v-bind:key="m.id" v-for="m in filterMenus" v-if="(currentFilter === 'tous' || currentFilter === m.type.type) && (m.online)">
           <div class="menu-image-wrapper">
             <img class="menu-image" :src="imgUrl(m.image)">
-            
             <div class="menu-title-container">
               <span class="menu-title">{{ m.titre }}</span>
               <!-- <button id="show-modal" @click="[showModal = true, showMenu = false]">Show Modal</button>
               <menu-modal v-if="showModal" @close="[showModal = false, showMenu = true]">
                 <h3 slot="header">custom header</h3>
               </menu-modal> -->
-              
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <defs>
@@ -91,6 +89,16 @@ export default {
       showModal: false,
       showMenu: true
     };
+  },
+  computed: {
+    filterMenus: function() {
+      return this.menu.filter(function(m) {
+        return {
+            online: m.online,
+            type: m.type.type
+          }
+      })
+    }
   },
   methods: {
     setFilter: function(filter) {

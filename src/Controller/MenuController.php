@@ -16,7 +16,7 @@ class MenuController extends AbstractController
 {
 
     /**
-     * @Route("/menu", name="menu")
+     * @Route("/menus", name="menus")
      */
     public function index(EntityManagerInterface $entityManager, SerializerInterface $serializer)
     {

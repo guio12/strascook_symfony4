@@ -1,25 +1,95 @@
 {% extends "base.html.twig" %}
 
+{% block stylesheets %}
+{{ encore_entry_link_tags('app') }}
+{{ encore_entry_link_tags('accueil') }}
+{% endblock stylesheets %}
 
 {% block body %}
 
-<div id="app">
-{% for item in items %}
-  {% if item.online == 1 %}
-    {# Style dégueu pour test fonctionnel du back #}
-    <div class="card" style="width: 18rem;">
-      {# <img src="{{ asset('build/images/uploads/actu/') }}{{ item.image }}" class="card-img-top" alt="..."> #}
-      <div class="card-body">
-        <h2 class="card-text">{{ item.titre }}</h2>
-        <p class="card-text">{{ item.contenu }}</p>
-        <p class="card-text">{{ item.dateActu|date("d/m/Y") }}</p>
+<section class="container-fluid" id="activites">
+  <div class="row">
+    <aside class="col-md-6">
+      <h2>Mes activités</h2>
+      <p>Chef à domicile, je conçois des menus, les prépare essentiellement chez mes clients, effectue le service et
+        gère le nettoyage de la cuisine.
+        <br />J'interviens uniquement dans les 33 communes de <a href="#carte" class="lien">l'Eurométropole.</a></p>
+      <p>Je vous propose des menus gastronomiques "healthy" (vegan, végétarien...) et des aliments bio sélectionnés au
+        sein d'une réseau de producteurs locaux, parce que le plaisir culinaire peut se faire dans une approche
+        respectueuse de l'environnement.</p>
+    </aside>
+    <aside class="col-md-6">
+      <img src="{{ asset('build/images/accueil/activites.jpg') }}" class="img-fluid"
+        alt="Assiette d'oeufs durs sur lit de mâche">
+    </aside>
+  </div>
+</section>
+<section class="container-fluid" id="garanties">
+  <div class="row">
+    <aside class="col-md-6">
+      <img src="{{ asset('build/images/accueil/garanties.jpg') }}" class="img-fluid" alt="Mains façonnant de la pâte">
+    </aside>
+    <aside class="col-md-6 order-first order-md-2">
+      <h2>Mes Garanties</h2>
+      <p>Stras'Cook c’est un chef expérimenté qui se déplace chez vous, avec les ingrédients et le <a
+          href="modaleMateriel" data-toggle="modal" data-target="#modaleMateriel" class="lien">matériel nécessaire</a>.
+      </p>
+
+      <!-- Modale Matériel -->
+      <div class="modal fade" id="modaleMateriel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLongTitle">Matériel Nécessaire</h2>
+            </div>
+            <div class="modal-body">
+              <p class="modale">Voici une liste du matériel nécessaire pour faire appel à mes services :</p>
+              <ul>
+                <li>Four</li>
+                <li>Plaque de cuisson</li>
+                <li>Trois casseroles</li>
+                <li>Poêle</li>
+                <li>Couteaux de cuisine, spatules, louche, …</li>
+                <li>Planche à découper</li>
+                <li>Assiettes, verres, couverts, … pour le service</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p>En adéquation avec le respect de l’environnement, Stras'Cook s’engage à ne cuisiner que des produits de saison
+        et à favoriser autant que possible les produits locaux</p>
+      <p>En tant que chef à domicile, j'anticipe certaines préparations culinaires que je cuisine dans les locaux de
+        restaurants partenaires (cuisines agréées pour les normes sanitaires de restauration).</p>
+    </aside>
+  </div>
+</section>
+<section class="container">
+  {% for actu in items %}
+  {% if actu.online == 1 %}
+  <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img class="card-img" src="{{ asset('build/images/uploads/actu/') }}{{ actu.image }}" alt="actualité">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h4 class="card-title">{{ actu.titre }}</h4>
+          <p class="card-text">{{ actu.contenu }}</p>
+          <p class="card-text"><small class="text-muted">{{ actu.dateActu|date('d-m-Y') }}</small></p>
+        </div>
       </div>
     </div>
-  {% endif %}
-{% endfor %}
-
-    <div class="jumbotron text-center">
-        <exemple></exemple>
-    </div>
   </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+</section>
+
+
 {% endblock body %}
