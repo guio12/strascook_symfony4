@@ -7,6 +7,7 @@ parameters:
     locale: 'fr'
     app.path.lechef_images: /images/uploads/lechef
     app.path.menu_images: /images/uploads/menu
+    app.path.actu_images: /images/uploads/actu
 
 services:
     # default configuration for services in *this* file

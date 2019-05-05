@@ -19,3 +19,41 @@ $(document).ready(function() {
 });
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+
+// VueJS
+
+import Vue from 'vue';
+
+  import Header from './components/Header'
+  import Menus from './components/Menus'
+
+  Vue.component('my-menus', Menus)
+
+  new Vue({
+      delimiters: ['${', '}$'],
+      el: '#app-menu',
+      components: {Menus},
+      data: {
+          menu: "",
+          currentFilter: "",
+          showModal: false
+      },
+      methods: {
+          setFilter(filter) {}
+      }
+  })
+
+
+  Vue.component('my-header', Header)
+
+  new Vue({
+    delimiters: ['${', '}$'],
+    el: '#app-header',
+    components: {Header},
+    data: {
+        
+    },
+    methods: {
+        
+    }
+  })

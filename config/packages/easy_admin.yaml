@@ -6,6 +6,7 @@ easy_admin:
             - '@EasyAdmin/form/bootstrap_4.html.twig'
             # - '@VichUploader/Form/fields.html.twig'
         menu:
+            - { entity: 'Actu', label: "Page d'accueil (Actu)" }
             - { entity: 'LeChef', label: "Biographie ('Le Chef')" }
             - { entity: 'Menu', label: 'Menus' }
             - { label: 'Calendrier', route: 'booking_calendar' }
@@ -93,18 +94,20 @@ easy_admin:
                     - online
                     - titre
                     - contenu
-                    - date_actu
+                    - { property: 'image', type: 'image', base_path: 'build%app.path.actu_images%' }
+                    - updatedAt
                     
             show:
                 fields:
                     - online
                     - titre
                     - contenu
-                    - date_actu
+                    - { property: 'image', type: 'image', base_path: 'build%app.path.actu_images%' }
+                    - updatedAt
                     
             form:
                 fields:
                     - titre
                     - contenu
-                    - date_actu
+                    - { property: 'imageFile', type: 'vich_image', base_path: 'build%app.path.actu_images%' }
                     - online

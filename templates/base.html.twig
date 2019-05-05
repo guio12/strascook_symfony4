@@ -8,8 +8,27 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block header %}
+            <div id="app-header">
+                <my-header></my-header>
+            </div>
+        {% endblock header %}
+
+        {% block body %}
+        
+        {% endblock %}
+        
+
         {% block javascripts %}
+            <script>
+            window.globalVars = {
+                route1: "{{ path('menus')|escape('js') }}",
+                route2: "{{ path('accueil')|escape('js') }}",
+                route3: "{{ path('contact')|escape('js') }}",
+                route4: "{{ path('lechef')|escape('js') }}",
+                route5: "{{ path('booking_index')|escape('js') }}"
+            }
+            </script>
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </body>
